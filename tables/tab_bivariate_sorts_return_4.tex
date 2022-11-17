@@ -1,0 +1,42 @@
+
+\newgeometry{margin=1in}
+\begin{landscape}\begin{table}
+
+\caption[Bivariate Portfolio Sorts: FF-3 alpha and residuals]{\label{tab:bivariate_sorts_return_4}Bivariate Sorts: FF-3 alpha cum residuals rank by disagreement and various control terciles}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{9}{c}{$FF3\_ALPHA\_ERR\_R_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-10}
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{$\mathbf{Control\_Var\_Ter_{(1,.)}}$} & \multicolumn{3}{c}{$\mathbf{Control\_Var\_Ter_{(2,.)}}$} & \multicolumn{3}{c}{$\mathbf{Control\_Var\_Ter_{(3,.)}}$} \\
+\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
+ & $T_{11}$ & $T_{12} - T_{11}$ & $T_{13} - T_{12}$ & $T_{21}$ & $T_{22} - T_{21}$ & $T_{23} - T_{22}$ & $T_{31}$ & $T_{32} - T_{31}$ & $T_{33} - T_{32}$\\
+\midrule
+$L\_ME_{t-1}$ & 49.391 & -0.810** & -0.720** & 50.271 & -0.836** & -1.594** & 50.450 & -0.115 & -0.785**\\
+\addlinespace
+$BTM_{t-1}$ & 49.806 & -0.856** & -1.697** & 50.150 & -0.482** & -1.206** & 50.746 & -1.030** & -0.925**\\
+\addlinespace
+$L\_PRC_{t-1}$ & 49.573 & -1.082** & -0.940** & 50.355 & -0.209** & -0.913** & 50.749 & -0.171 & -0.253\\
+\addlinespace
+$RET\_6\_t\_2$ & 49.622 & -0.986** & -1.017** & 50.549 & -0.581** & -1.225** & 50.129 & -0.389** & -1.480**\\
+\addlinespace
+$RET\_12\_t\_7$ & 48.886 & -0.636** & -0.860** & 50.395 & -0.407** & -1.264** & 50.838 & -0.602** & -1.516**\\
+\addlinespace
+$L\_TURN_{t-1}$ & 49.988 & -0.654** & -0.968** & 50.714 & -0.585** & -1.578** & 50.201 & -0.875** & -1.393**\\
+\addlinespace
+$RES\_STD\_TURN_{t-1}$ & 50.332 & -0.338** & -1.415** & 50.374 & -0.567** & -1.116** & 49.483 & -0.896** & -1.329**\\
+\addlinespace
+$DIV\_12M_{t-1}$ & 49.904 & -0.822** & -1.291** & 50.415 & -0.107 & -0.582** & 50.529 & -0.064 & -0.651**\\
+\addlinespace
+$FDISP_{t-1}$ & 50.992 & -0.224* & -0.385** & 50.310 & -0.168 & -0.419** & 49.635 & -0.440** & -0.210\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item Average \cite{fama_french1992} alpha cum residuals rank measured over bivariate $3 \times 3$ sorts. The first sorting variable is one the control variables and the second sorting variable is the one period lagged disagreement measure. Sorting is done at time $t-2$ for disagreement and $t-1$ for controls while returns are measured at time $t$. The bivariate sorts are dependent sorts where first, one of the control variable is used to make portfolios and then within those portfolios, disagreement is used to make sub-portfolios. Both dimensions of sorting are cross-sectional where a fresh sorting is performed each month. 70/30 portfolio breakpoints are used to make terciles. $T_{i,j}$ is the average FF3 alpha cum residuals rank for $i^{th}$ control variable tercile and $j^{th}$ disagreement tercile. Each row represents a new control variable being used to make terciles. Within a row, each control variable tercile is represented as a group of three values. There are three groups each corresponding to a different control variable tercile. The second and third entries in each group presents difference in average log turnover over two successive terciles. $T_{i,j} - T_{i,j^\prime}$ is the difference between disagreement terciles $j$ and $j^\prime$ within control variable tercile $i$. Corresponding signficance levels are from a t-test of sample means across corresponding tercile pairs. Statistical significance of 5\% and 1\% are indicated by * and ** respectively
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{landscape}
+\restoregeometry

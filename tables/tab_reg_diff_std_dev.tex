@@ -1,0 +1,31 @@
+\begin{table}
+
+\caption[Regression: Different Measures of Disagreement]{\label{tab:reg_diff_std_dev}Monthly cross-sectional regression: different measures of disagreement}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{5.5cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{2.8cm}}
+\multicolumn{4}{p{\linewidth}}{Log turnover regressed on set of controls and several measures of disagreement. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Within $R^2$ is the $R^2$ for within-groups variation with fixed effects projected out while Adj. $R^2$ is for the entire model. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\%, and 1\% are indicated by *, **, and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{$L\_TURN_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-4}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3)\\
+\midrule
+$STD\_DEV_{t-1}$ & $\phantom{-}1.575$*** &  & \\
+ & (\phantom{-}$0.062$) &  & \\
+\addlinespace
+$ABS\_DEV_{t-1}$ &  & $\phantom{-}1.265$*** & \\
+ &  & (\phantom{-}$0.048$) & \\
+\addlinespace
+$CONT\_DEV_{t-1}$ &  &  & $\phantom{-}4.084$***\\
+ &  &  & (\phantom{-}$0.151$)\\
+ &  &  \vphantom{1} & \\
+\midrule
+ &  &  & \\
+$\textrm{Within} \: R^2$ & {$\phantom{-}0.192$} & {$\phantom{-}0.192$} & {$\phantom{-}0.200$}\\
+$\textrm{Adj.} \: R^2$ & {$\phantom{-}0.406$} & {$\phantom{-}0.406$} & {$\phantom{-}0.412$}\\
+$\% \: R^2 \: \textrm{Explained}$ & {$\phantom{-}4.550$} & {$\phantom{-}4.820$} & {$\phantom{-}6.270$}\\
+$\textrm{Observations}$ & {\phantom{-}954,029} & {\phantom{-}954,029} & {\phantom{-}954,029}\\
+\bottomrule
+\end{tabular}
+\end{table}

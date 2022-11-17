@@ -1,0 +1,680 @@
+---
+title: Internet Appendix for Trading Volume and Dispersion of Signals
+author: Nikhil Vidhani
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+documentclass: article
+classoption:
+  - a4paper # letterpaper, #a5paper
+  - twoside # oneside
+  - onecolumn #onecolumn, #twocolumn. #Note that twocolumn doesn't work with longtable
+geometry:
+  - top=1.0in
+  - bottom=1.0in
+  - right=1.0in
+  - left=1.0in
+link-citations: yes
+urlcolor: blue
+linkcolor: red
+citecolor: blue
+fontsize: 11pt
+# for font use the latex command \usepackage{"FONT_PACKAGE"}. See https://www.overleaf.com/learn/latex/font_typefaces#Reference_guide
+# fontfamily: fouriernc
+# linestretch controls the spacing between lines. I use latex command: `\singlespacing` for this
+# linestretch: 1.0
+indent: true
+output:
+  pdf_document:
+    # The entire list of options is available from documentation: rmarkdown::pdf_document().
+    # Also see https://bookdown.org/yihui/rmarkdown/pdf-document.html and https://pandoc.org/MANUAL.html#templates
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    # fig_width: 6.5
+    # fig_height: 4.5
+    # fig_crop: true
+    fig_caption: true
+    dev: pdf
+    df_print: default
+    highlight: default
+    template: default
+    keep_tex: true
+    keep_md: true
+    latex_engine: pdflatex
+    # citation_package: natbib
+    includes:
+      in_header:
+        - "../preamble.tex"
+      before_body:
+        - "../doc-prefix.tex"
+      after_body:
+        - "../doc-suffix.tex"
+    md_extensions: null
+    output_extensions: null
+    # pandoc_args:
+    #   - --filter
+    #   - C:/Users/nikhi/AppData/Roaming/Python/Python38/Scripts/pandoc-secnos
+    extra_dependencies: null
+# Either use \bibliography{bibliography} wherever you want references OR uncomment the below line. You can't use both.
+# bibliography: bibliography.bib
+# Download citation style files (.csl) from https://www.zotero.org/styles
+# csl: "journal-of-finance.csl"
+# lof: true
+# lot: true
+# classoption: draft
+header-includes:
+    - \usepackage[T1]{fontenc}
+    - \usepackage[utf8]{inputenc}
+  # For font
+    # - \usepackage{fouriernc} # this is for Journal of Finance type fonts
+    # - \usepackage{mathptmx} # this is for times new roman font
+    - \usepackage{booktabs}
+    - \usepackage{longtable}
+    - \usepackage{array}
+    - \usepackage{multirow}
+    - \usepackage{wrapfig}
+    - \usepackage{float}
+    - \usepackage{colortbl}
+    - \usepackage{setspace}
+    - \usepackage{pdflscape}
+    - \usepackage{tabu}
+    - \usepackage{threeparttable}
+    - \usepackage{threeparttablex}
+    - \usepackage[normalem]{ulem}
+    - \usepackage{makecell}
+    - \usepackage{xcolor}  
+    - \usepackage{rotating}
+    - \usepackage{mathtools}
+    - \usepackage{commath}
+    - \usepackage[all]{hypcap}
+    - \usepackage{placeins}
+    - \usepackage{microtype}
+    - \usepackage{tcolorbox}
+    - \usepackage{pagecolor}
+    - \usepackage{titling}
+    - \setlength{\droptitle}{-10em} # to reduce space before title appears
+    - \usepackage{amsmath}
+    - \usepackage{siunitx}
+    - \usepackage{xltabular}
+    - \usepackage[font=normalfont]{subcaption}
+    - \usepackage[skip=1ex, font=bf]{caption}
+    - \setlength{\abovetopsep}{0.5ex}
+    - \setlength{\belowrulesep}{0.5ex}
+    - \usepackage{textcomp}
+  # the below produces figure, table and equation number in the format "SEC_NUM.FIG_NUM". The below doesn't work when plots and tables are put at the end of the document.
+    - \usepackage{chngcntr}
+    # - \counterwithin{figure}{section}
+    # - \counterwithin{table}{section}
+    # - \counterwithin{equation}{section}
+    - \usepackage{ltablex}
+  # For commenting out sections of document. Note that commenting out doesn't stop Rmarkdown pre-processing and expansion!
+    - \usepackage{comment}
+  # comment the below lines, if you wish to use usual footnotes as they appear on each page. Another option is to do the following: \usepackage{enotez} \setenotez{backref=true}. Then in the end do \printendnotes
+    # start commenting here ------------>
+    # - \usepackage[continuous]{pagenote}
+    # - \makepagenote
+    # - \renewcommand*{\notedivision}{\section*{\notesname}}
+    # - \renewcommand*{\pagenotesubhead}[2]{}
+    # - \let\footnote=\pagenote
+    # <------------- stop commenting here
+  # Disable/Enable footnotes (latex code in preamble.tex). \DisableFootNotes \EnableFootNotes
+    - \EnableFootNotes
+    # - \pagecolor{lightgray!40}
+    # - \usepackage{breqn}
+    # - \usepackage{indentfirst}
+  # Line spacing
+    # - \doublespacing
+    - \onehalfspacing
+    # - \singlespacing
+    # - \setstretch{1.1}
+  # Footnote spacing
+    - \usepackage{footmisc}
+    - \setlength{\footnotemargin}{\parindent} # footnotes will be indented by this amount
+    - \renewcommand{\footnotelayout}{\setstretch{1}} # line-spacing in footnotes
+    - \setlength{\footnotesep}{\baselineskip} # the space between two footnotes. Use 1.67\baselineskip for a double space
+    - \renewcommand{\footnotesize}{\small} # size of footnote text. \scriptsize gives footnote size 3pt smaller than main text font size, \footnotesize gives 2pt smaller, \small gives 1pt smaller, \normalsize gives same size
+  # Header and footers
+    - \usepackage{fancyhdr}
+    - \pagestyle{fancy} # use fancy header instead of default header
+    - \fancyhf{} # clear existing header formatting
+    # - \renewcommand{\headrulewidth}{0.5pt} # header-line width
+    # - \renewcommand{\footrulewidth}{0.5pt} # footer-line width
+    - \fancyhead[LE]{Nikhil Vidhani} # name on left-side on even pages
+    - \fancyhead[RE]{Internet Appendix} # Internet Appendix on right-side of even pages
+    - \fancyhead[CO]{Trading Volume and Dispersion of Signals} # title at centre of all odd pages
+    - \fancyfoot[C]{\thepage} # centred footer on all pages
+  # APA style bibliography.
+    - \usepackage[natbibapa]{apacite}
+    - \bibliographystyle{apacite} # you can try jf, rfs, jfe here!
+params:
+  table_caption: Table caption missing
+  fig_caption: Figure caption missing
+---
+
+
+```{r global_options, include=F}
+base_dir = "C:/Users/nikhi/Dropbox/research/trading_volume/";
+
+source2(file = "C:/Users/nikhi/Dropbox/research/trading_volume/signal_dispersion_ESSENTIALS.R", echo = F);
+
+library(knitr);
+library(kableExtra);
+library(stringr);
+setwd(base_dir);
+setwd("paper_latex/jof_paper");
+# .aux file causes lot of issues if it's content are not deleted befre each run
+if(file.exists("internet_appendix.aux")) {
+  file.remove("internet_appendix.aux");
+}
+file.create("internet_appendix.aux");
+# knitr::opts_knit$set(root.dir = "C:/Users/nikhi/Dropbox/research/trading_volume/paper_latex/);
+
+
+
+# title
+paper_title = "Internet Appendix for Trading Volume and Dispersion of Signals"
+
+
+# Options
+my_options = list(cite_all_anomalies = T,
+                  keep_all_vars_in_appendix = F,
+                  eval_tables = T,
+                  tables_at_end = T,
+                  plots_at_end = T,
+                  landscape_margin = "1in",
+                  global_table_font_size = NA);
+
+
+exclude_sections = list(nature_of_disagreement = F,
+                        information_env = F);
+
+
+# process yaml options
+temp = readLines("jof_paper.Rmd");
+idx = which(temp == "---"); # identify yaml portion of Rmd file
+temp = temp[idx[1]:idx[2]];
+yaml = yaml::yaml.load(temp);
+
+# find optimal width for figures and tables. Every column is separated by 12 points. A paper has 72 spaces in both width and height. It turns out that col_spacing_width is 0.1666 inches for all paper types
+avlbl_width = avlbl_height = col_spacing_width = col_spacing_height = NA;
+if("a4paper" %in% yaml$classoption) {
+  size = c(8.3, 11.7);
+  col_spacing_width = (12/595)*size[1];
+  col_spacing_height = (12/842)*size[2];
+} else {
+  # assuming letter
+  size = c(8.5, 11);
+  col_spacing_width = (12/612)*size[1];
+  col_spacing_height = (12/792)*size[2];
+}
+temp = yaml$geometry %>% strsplit("=") %>% unlist;
+idx = match(c("top", "bottom", "right", "left"), temp);
+margins = temp[idx+1] %>% substr(., 1, nchar(.) - 2) %>% as.numeric;
+names(margins) = temp[idx];
+margins = as.list(margins);
+# subtract n*col_spacing_width from the table where n is the no. of columns
+# The spacing is 6 pt on either side of every column, i.e. each column contributes 12 pt of spacing
+avlbl_width = size[1] - margins$right - margins$left - 0.2;
+avlbl_height = size[2] - margins$top - margins$bottom - 0.2;
+
+
+
+list_of_plots = NULL;
+saveRDS(list_of_plots, "list_of_plots.RData");
+
+list_of_tables = NULL;
+saveRDS(list_of_tables, "list_of_tables.RData");
+
+combined_list = NULL;
+saveRDS(combined_list, "combined_list_of_plots_and_tables.RData");
+
+
+# print a figure or a text saying: Insert figure x here
+rmd_print_figure = function(pdf_file, insert_at_end = my_options$plots_at_end, skip = F, is_landscape = F, landscape_margin = "1in") {
+  
+  if(skip) {
+    return(knitr::raw_latex(""));
+  }
+  
+  fig = readRDS(paste0(base_dir, "paper_latex/.fig.RData"));
+  
+  search_pdf = pdf_file %>% strsplit("/") %>% {.[[1]]} %>% last;
+  search_pdf = paste0(base_dir, search_pdf);
+  
+  idx = match(search_pdf, fig$pdf_file);
+  
+  if(length(idx) > 1 || is.na(idx)) {
+    stop("Figure: ", pdf_file, " doesn't exists in figure_captions.Rmd");
+  }
+  
+  temp = paste0("\n", "\\begin{figure}",
+                "\n", "\\caption{", fig$small_caption[idx], "}",
+                "\n", fig$label[idx],
+                "\n", "\\subcaption*{", fig$caption[idx], "}",
+                "\n", "\\rule[0.25ex]{\\linewidth}{1pt}",
+                "\n", "\\begin{center}",
+                "\n", "\\includegraphics{", fig$pdf_file[idx], "}",
+                "\n", "\\end{center}",
+                "\n", "\\end{figure}"
+                );
+  
+  if(is_landscape) {
+    temp = paste0("\n", "\\newgeometry{margin=", landscape_margin, "}",
+                  "\n", "\\begin{landscape}",
+                  temp,
+                  "\n", "\\end{landscape}",
+                  "\n", "\\restoregeometry");
+  }
+
+  if(insert_at_end == F) {
+    return(knitr::raw_latex(temp));
+  } else {
+    list_of_plots = readRDS("list_of_plots.RData");
+    list_of_plots = c(list_of_plots, temp) %>% unique;
+    TRY_CATCH(expression = saveRDS(list_of_plots, "list_of_plots.RData"),
+              print.attempts = F, max.attempts = 10, ret_val = NULL, sleep = 50);
+    # save in common file now
+    combined_list = readRDS("combined_list_of_plots_and_tables.RData");
+    combined_list = c(combined_list, temp) %>% unique;
+    TRY_CATCH(expression = saveRDS(combined_list, "combined_list_of_plots_and_tables.RData"),
+              print.attempts = F, max.attempts = 10, ret_val = NULL, sleep = 50);
+
+    
+    fig_name = pdf_file %>% strsplit("/") %>% {.[[1]]} %>% last %>% substr(., 1, nchar(.) - 4);
+    
+    return(paste0("\\begin{center} { [Insert Figure \\ref{fig:",
+                  fig$obj[idx],
+                  "} here] } \\end{center}"));
+
+    # return(paste0("\\begin{center} \\tcbox[colframe=green, colback=white]{",
+    #               " [Insert Figure \\ref{fig:", fig$obj[idx], "} here.] ",
+    #               "} \\end{center}"));
+
+  }
+  
+}
+
+
+
+# print a table or a text saying: Insert table x here
+rmd_print_table = function(file, insert_at_end = my_options$tables_at_end, skip = F) {
+  
+  if(skip) {
+    return(knitr::raw_latex(""));
+  }
+  
+  if(insert_at_end == F) {
+    temp = readRDS(file);
+    return(knitr::raw_latex(temp));
+  } else {
+    list_of_tables = readRDS("list_of_tables.RData");
+    list_of_tables = c(list_of_tables, file) %>% unique;
+    TRY_CATCH(expression = saveRDS(list_of_tables, "list_of_tables.RData"),
+              print.attempts = F, max.attempts = 10, ret_val = NULL, sleep = 50);
+    # save in common file now
+    combined_list = readRDS("combined_list_of_plots_and_tables.RData");
+    combined_list = c(combined_list, file) %>% unique;
+    TRY_CATCH(expression = saveRDS(combined_list, "combined_list_of_plots_and_tables.RData"),
+              print.attempts = F, max.attempts = 10, ret_val = NULL, sleep = 50);
+
+        
+    tab_name = file %>% strsplit("/") %>% {.[[1]]} %>% last %>% substr(., 5, nchar(.) - 10);
+
+    return(paste0("\\begin{center} { [Insert Table \\ref{tab:",
+                  tab_name,
+                  "} here] } \\end{center}"));
+    
+    # return(paste0("\\begin{center} \\tcbox[colframe=green, colback=white]{",
+    #               " [Insert Table \\ref{tab:", tab_name, "} here.] ",
+    #               "} \\end{center}"));
+    
+  }
+  
+}
+
+
+```
+
+
+
+
+
+<!-- Figure captions are evaluated in the below file. The below file (tables.Rmd) is not meant to be knitted as standalone. The necessary options and latex packages are included in jof_paper.Rmd. Pls compile jof_paper.Rmd directly.-->
+```{r child = '../figure_captions.Rmd'}
+```
+
+
+<!-- Tables are evaluated (constructed) in the below file. The below file (tables.Rmd) is not meant to be knitted as standalone. The necessary options and latex packages are included in jof_paper.Rmd. Pls compile jof_paper.Rmd directly. The below file is created just for separately placing tables. It serves no other purpose!-->
+```{r child = '../tables.Rmd'}
+```
+
+
+
+
+\renewcommand{\thesection}{IA.\arabic{section}}
+\renewcommand{\thesubsection}{IA.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{IA.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\setcounter{page}{1}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+
+\renewcommand{\thepage}{IA\textendash\arabic{page}}
+\renewcommand\thefigure{IA.\arabic{figure}}    
+\renewcommand\thetable{IA.\arabic{table}}    
+\renewcommand\theequation{IA.\arabic{equation}}    
+
+
+
+# Definition of Anomalies
+
+Table \ref{tab:anomaly_list} gives the list of thirty-nine anomalies. Except for the momentum category, which are from \cite{mclean_pontiff2016}, all other anomalies are from \cite{roberts2018}. 
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_anomaly_list.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+Below is the definition and original study prediction for all thirty-nine anomalies. I also provide the CRSP/COMPUSTAT variable name in the anomaly definitions.
+
+<!-- Givng 1. to each item actually creates a numbered list. It is intentional -->
+1. **Gross Profitability** is constructed as revenues minus the cost of goods sold scaled by total assets. $GrProf = \frac{revt_t - cogs_t}{at_t}$. Table 1 in \cite{novymarx2013} predicts a positive relationship between gross profitability and future returns.
+
+1. **Operating Profitability** is revenues minus the sum of cost of goods sold, interest expense and SGA expenses scaled by book value of equity. $OpProf = \frac{revt_t - cogs_t - xint_t - xsga_t}{BE_t}$. \cite{fama_french2015} Table 1 Panel B finds a positive association between operating profitability and returns.
+
+1. **Return on Assets** is defined as income before extraordinary items divided by total assets. $RoA = \frac{ib_t}{at_t}$. Table 3 in \cite{haugen1996} provides evidence of positive relationship between return on assets and returns.
+
+1. **Return on Equity** is income before extraordinary items divided by the book value of equity. $RoE = \frac{ib_t}{BE_t}$. \cite{haugen1996} Table 3 documents a positive relation between RoE and returns.
+
+1. **Profit Margin** is operating income after depreciation scaled by revenues. $PfMg = \frac{oiadp_t}{revt_t}$. Table 4 of \cite{soliman2008} finds a positive relationship between profit margin and returns.
+
+1. **Change is Asset Turnover** is constructed as an annual change in the ratio of revenues to assets. $ChgAssTurn = \Delta ( \frac{revt_t}{at_t} )$. \cite{soliman2008} Table 4 gives and evidence of positive relationship between change in asset turnover and returns.
+
+1. **Accrual anomaly** predicts that stocks with lower accruals earn abnormally high returns in the future (Table 6 and 7, \cite{sloan1996}). Accruals are defined as earnings minus the cash components of earnings divided by average assets. $Accr = \frac{(\Delta act_t - \Delta che_t) - (\Delta lct_t - \Delta dlc_t - \Delta txp_t) - dp_t}{at_t}$ . Since the predicted relationship is negative, I transform the last equation by taking the negative of RHS as accrual anomaly.
+
+1. **Net Operating Assets** is defined as the difference of operating assets and operating liabilities scaled by lagged total assets. $NOA = \frac{(at_t - che_t ) - (at_t - dlc_t - dltt_t - BE_t)}{at_{t-1}}$. \cite{hirshleifer_etal2004} Table 5 finds a negative relationship of NOA with returns.
+
+1. **Net Working Capital changes** (annual) are negatively associated with future returns, as depicted in Table 7 of \cite{soliman2008}. Net working capital is current assets minus current liabilities. $ChgNWC = \frac{\Delta (act_t - che_t) - \Delta (lct_t - dlc_t)}{at_t}$.
+
+1. **Book to Market ratio** is book value equity divided by the market value of equity. Table 6 of \cite{fama_french1992} finds that stocks with a high book to market ratio earn higher future returns. $BTM = \frac{BE_t}{ME_t}$.
+
+1. **Cash Flow to Price ratio**, as the name suggests, is the sum of earnings and depreciation (the cash flow of a firm) divided by its market equity. $CFP = \frac{ib_t+dp_t}{ME_t}$. \cite{lakonishok_etal1994} Table 4 finds a positive relation between future returns and the CFP ratio.
+
+1. **Earnings to Price ratio** is positively related to future returns (Table 4, \cite{lakonishok_etal1994}). $EP_t = \frac{ib_t}{ME_t}$. The anomaly originally appeared in \cite{basu1977}.
+
+1. **Enterprise Multiple** is defined as the ratio of enterprise value to operating cash flow. $EntMult = \frac{ME_t + dlc_t + dltt_t + pstkrv_t - che_t}{oibdp_t}$. \cite{loughran_wellman2011} Table 2 depicts a negative relation between enterprise multiple and future returns.
+
+1. **Sales to price ratio** is negatively associated with returns (Table 2, \cite{barbee_etal1996}). $SP = \frac{revt_t}{ME_t}$.
+
+1. **Short-term momentum** $(ret.6t2)$ is the cumulative buy and hold return from $t-6$ to $t-2$, where $t$ is the current month. \cite{jegadeesh_titman1993}, in Table 7, find a positive association between short-term momentum and future returns.
+
+1. **Lagged Momentum** $(ret.12t7)$ is cumulative buy and hold return from $t-12$ to $t-7$, where $t$ is the current month. Table 1 \cite{novymarx2012}
+ gives evidence of positive association with returns.
+
+1. **Short-term reversal** $(ret.1t1)$ is just the last month's return. Table 7 of \cite{jegadeesh_titman1993} finds a negative relation with future returns.
+
+1. **Momentum reversal** $(ret.18t13)$ is the six-month buy and hold return starting 18 months prior. Table 7 of \cite{jegadeesh_titman1993} finds a negative relation with future returns.
+
+1. **Long-term reversal** $(ret.60t13)$ is the buy and hold return from $t-60$ to $t-13$. \cite{debondt_thaler1985} document a negative association.
+
+1. **Asset Growth** is defined as the relative change in the total asset compared to last year. $AssGr = \frac{\Delta at_t}{at_{t-1}}$. \cite{cooper_etal2008} in Table III present evidence of negative relation between asset growth and future returns.
+
+1. **Inventory Growth** is the ratio of change in inventory scaled by average assets. $ChgInvt = \frac{\Delta invt_t}{\overline{at_t}}$. \cite{thomas_zhang2002} in Table 1 document a negative relationship with returns.
+
+1. **Sales Growth** is defined as the weighted average of sales growth rank over the previous five years. $SalesGr = 5r_t + 4r_{t-1} + 3r_{t-2} + 2r_{t-3} + r_{t-4}$ where $r_t$ is the sales rank in year $t$. \cite{lakonishok_etal1994} Table 4 finds a negative relation between sales growth and future returns.
+
+1. **Sustainable Growth** is defined as the relative change in book value of equity compared to last year. $SustGr = \frac{\Delta BE_t}{BE_{t-1}}$. \cite{lockwood2010} Table 6 finds a negative relation between sustainable growth and future returns.
+
+1. **CAPX Growth** is the relative increase in capital expenditure compared to the average expenditure two years before. $CapxGr = \frac{capx_t - \overline{capx_{t-1}}}{\overline{capx_{t-1}}}$. Table 2, Panel B in \cite{abarbanell_bushee1998} depict a negative association with future returns.
+
+1. **Growth in Sales minus inventory** is the ratio of relative growth in revenues scaled by relative growth in inventories. $SalesGr\_InvtGr = \frac{revt_t - \overline{rev_{t-1}}}{\overline{rev_{t-1}}} / \frac{invt_t - \overline{invt_{t-1}}}{\overline{invt_{t-1}}}$. \cite{abarbanell_bushee1998} in Panel B of Table 2 find a positive association with future returns.
+
+1. **Investment Growth** is the relative growth in capital expenditure. $InvstGr = \frac {\Delta capx_t}{capx_{t-1}}$. \cite{xing2007} Table 4 depicts negative relation with returns.
+
+1. **Abnormal Capital Investment** is the growth in capital expenditure divided by revenues with respect to its previous three-year average. $AbCapInvst = \frac{capx_t/revt_t}{\frac{1}{3} \cdot \sum_{s=t-3}^{s=t-1} capx_s/rev_s}$. \cite{titman_etal2004}, in Table 6, find it to be negatively related to future returns.
+
+1. **Investment to Capital Ratio** is negatively associated with returns (Table 4, \cite{xing2007}). $IK = \frac{capx_t}{ppent_{t-1}}$.
+
+1. **Investment to Asset Ratio** is negatively associated with returns (Section 4, \cite{lyandres_etal2007}). $IA = \frac{\Delta ppent_t + \Delta invt_t}{at_{t-1}}$.
+
+1. **Debt Issued Indicator** is the ratio of net debt issued and total assets. $DebtIssueInd = \frac{\Delta dlc_t + \Delta dltt_t}{at_t}$. \cite{spiess1999} used an indicator variable capturing whether a firm has issued new debt in a year. He finds it to be negatively associated with future returns.
+
+1. **Leverage** is defined as long-term debt to book value of equity. $LEV = \frac{dltt_t}{ME_t}$. \cite{bhandari1988}, in Table 2 Panel A, finds it to be positively related to future returns.
+
+1. **One-year Share issuance** is the increase in the number of shares outstanding with respect to last year. $ShIssue\_1 = \frac{shrout_t\ \cdot\ cfacshr_t}{shrout_{t-1}\ \cdot\ cfacshr_{t-1}}$. Table 3 in \cite{pontiff_woodgate2008} depicts a negative relation with future returns.
+
+1. **Five-year Share issuance** is the increase in the number of shares outstanding with respect to shares outstanding five years ago. $ShIssue\_5 = \frac{shrout_t\ \cdot\ cfacshr_t}{shrout_{t-5}\ \cdot\ cfacshr_{t-5}}$. Table 3 in \cite{daniel_titman2006} depicts a negative relation with future returns. The anomaly originally appeared in \cite{daniel_titman2006}.
+
+1. **External Finance -- I** is the net financing raised in a year, including both equity and debt. \cite{bradshaw_etal2006} in Table 5 find it to be negatively related to future returns. $ExtFin = \frac{(ShIssue\_1_t - 1) \cdot ME_t + \Delta dlc_t + \Delta dltt_t - dvc_t}{at_t}$
+
+1. **External Finance -- II** is the second version of the external finance measure from Table 5 of \cite{bradshaw_etal2006}. It negatively relates to future returns. $ExtFin2 = \frac{sstk_t - prstkc_t + dltis_t - dltr_t + dlcch_t - dv_t}{at_t}$
+
+1. **O-Score** is a measure of distress by \cite{ohlson1980}. It is the fitted value of a logistic regression. $O\_Score = -1.32 -0.407 \cdot \log(\frac{at_t}{cpiind_t}) + 6.03 \cdot \frac{lt_t}{at_t} - 1.43 \cdot \frac{act_t - lct_t}{at_t} + 0.076 \cdot \frac{lct_t}{act_t} - 1.72 \cdot 1_{lt_t - at_t > 0} -2.37 \cdot \frac{ib_t}{at_t} -1.83 \cdot \frac{oiadp_t}{lt_t} + 0.285 \cdot1_{ib_t < 0,\ ib_{t-1} < 0} -0.521 \cdot \frac{\Delta ib_t}{\lvert ib_t \rvert + \lvert ib_{t-1} \rvert}$. \cite{dichev1998} in Table 4 find O-score to negatively predict future returns.
+
+1. **Z-score** is a distress measure by \cite{altman1968}. $Z\_Score = 1.2 \cdot \frac{act_t - lct_t}{at_t} + 1.4 \cdot \frac{re_t}{at_t} + 3.3 \cdot \frac{ni_t + xint_t + txp_t}{at_t} + 0.6 \cdot \frac{ME_t}{lt_t} + 1.0 \cdot \frac{revt_t}{at_t}$. Table 3 in \cite{dichev1998} finds a positive relation with returns.
+
+1. **Distress Risk** is another measure of distress by \cite{campbell_etal_distress}. I employ the 12-month horizon regression from Table 6. Authors find a negative association between distress risk $(Distress)$ and future returns.
+
+1. **Industry Concentration** is the three-year simple average of the Herfindahl index computed on three-digit SIC codes and sales. Table 3 in \cite{industry_conc} presents a negative association between industry concentration $(IndustryConc)$ and future returns.
+
+\begin{comment}
+
+# Disagreement and Correlations
+
+Disagreement and signal correlations are tightly related to each other. If two signals are perfectly corrleated then they have zero disagreement within them while if they are perfectly negatively correlated then they have maximum deviation. Thus correlation and disagreement are negatively related to each other. To see the connection more generally, assume that for each signal a fraction $p$ of the stocks fall in the buy category, $q$ in sell category and the rest $1-p-q$ in the hold category. $T_{f,t,s}$ can then be modelled as a random variable such that,
+
+```{r equation_2, echo = F}
+eq2 = noquote(paste(expression("1, & \\textrm{w.p.} \\quad p\\\\-1, & \\textrm{w.p.} \\quad q\\\\0, & \\textrm{w.p.} \\quad 1-p-q")))
+```
+
+$$ T_{f,t,s} = \begin{cases} `r eq2` \end{cases} $$
+We can drop the firm identifier $f$ as all the avergaes and correlation will be across all firms. The signals also have a time-varying correlation structure given by $Corr(T_{ts}, T_{ts'}) = \rho_{tss'}$. Its straightforward to show that, $\mathbb{E}[T_{ts}] = p-q, \quad \mathbb{E}[T_{ts}^2] = p+q \quad \textrm{and} \quad \textrm{var} [T_{ts}^2] = p+q - (p-q)^2$. $\mathbb{E}[T_{ts} T_{ts'}] = \mathbb{E}[T_{ts}] \cdot \mathbb{E}[T_{ts'}] + \textrm{cov} (T_{ts}, T_{ts'}) = (p-q)^2(1-\rho_{tss'}) + (p+q)\rho_{tss'}$. The mean signal, $\overline{T_t} \equiv \frac{1}{N} \sum_s T_{ts}$, where $N$ is the total number of anomaly signals, has a mean of $\frac{p-q}{N}$ and $\mathbb{E}[\overline{T_t}^2] = \frac{1}{N^2} \sum_s \sum_{s'} \mathbb{E}[T_{ts} T_{ts'}] = \frac{1}{N^2} \sum_s \sum_{s'} \left( (p-q)^2(1-\rho_{tss'}) + (p+q)\rho_{tss'} \right) = (p-q)^2 + \frac{C_t}{N^2} \left( (p+q) - (p-q)^2 \right)$ where $C_t \equiv \sum_s \sum_{s'} \rho_{tss'}$ is sum of all $N^2$ correlations. The disagreement between signals is defined as, $S_t \equiv \frac{1}{N-1} \sum_s (T_{ts} - \overline{T_t})^2 = \frac{1}{N-1} \left( \sum_s T_{ts}^2 - N \overline{T_t}^2 \right)$. Taking expectation we get,
+$$ \mathbb{E}[S_t] = \frac{N}{N-1} \left( 1 - \frac{C_t}{N^2} \right) \left( p+q-(p-q)^2 \right)$$
+
+$\mathbb{E}[S_t]$ is the cross sectional average of disagreement at time $t$, which is maximized when $p=q=0.5$. However in the time-series it depends only on signal correlations and the dependence is only through sum of all indivudal correlations, $C_t$. This is reassuring in terms of the construction of disagreement where its dependence on one particular signal is limited to how the signal is correlated with all other signals. Skipping or adding a few signals shouldn't vastly change the disagreement. The dependence of disagreement on correlation also gives a natural demarcation of low and high disagreement regimes. We can partition the entire set of signals $(\mathcal{S})$ into two disjoint subsets $\mathcal{S}^{lo}$ and $\mathcal{S}^{hi}$ such that $C_t^{hi} - C_t^{lo}$ is maximized. $\mathcal{S}^{lo}$ represents a set of signals which have small correlations among themselves while $\mathcal{S}^{hi}$ is the set of highly correlated signals. Since $\frac{\partial \mathbb{E}[S_t]}{\partial C_t} < 0$, disagreement within $\mathcal{S}^{lo}$ should be higher on average. We are interested in examining which set of signals predicts trading volume more strongly. Signals within $\mathcal{S}^{hi}$ are usually of the same sign becuase of high correlation. Investors would expect these signals to move together and any disagreement would come as a surprise. Thus whenver signals in this set disagree, it should cause a heightened trading response because disagreement within $\mathcal{S}^{hi}$ is less likely and when it occurs it creates more uncertainty about the asset's future performance[^var_of_disagreement].
+
+[^var_of_disagreement]: Unfortunately, we can't say anything about $\textrm{var}[S_t]$ within the framework of the above model. This requires computation of covariances between signal pairs, i.e. $\textrm{cov}(T_{ts} T_{ts'}, T_{ts''} T_{ts'''})$. Estimating these from data is also not possible since with 39 signals the total number of estimations every period would be $^{39}C_4 = 82251$.
+
+
+# Disagreement and number of buy and sell signals
+
+Figure \ref{fig:disagreement_and_num_buy_sells} presents average disagreement as a function of the difference in the number of buy and sell signals. Disagreement is highest when we have an equal number of buy and sell signals. This is expected since a buy signal is given a value of +1 while a sell signal is given -1. If we think of signals as a sequence of $\pm 1$ Bernoulli trials, then its variance[^doubt] is maximized when the likelihood of buy signals is the same as that of sell signals.
+
+[^doubt]: With 70/30 splits, the average number of buy and sell signals across firms is fixed and equal to $0.3*39 = 14.2$. However, within a time-period number of buy and sell signals will vary across firms. Since the signals are not independent, the number of buy signals is not a binomial random variable. Hence, finding the analytical variance of the number of buy signals is much more involved and depends on the correlation structure of signals.
+
+<!-- Insert Figure! -->
+`r rmd_print_figure("../../disagreement_and_num_buy_sells.pdf", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+# Household Disagreement
+
+Anomaly disagreement captures investor belief dispersion with respect to market-wide return predicting anomalies. A natural question to ask is whether investor belief dispersion relates to economy-wide household belief dispersion? To test this, I create a proxy for the latter using the University of Michigan's detailed Surveys of Consumers data. I compute two measures of household disagreement by computing monthly dispersion of consumer sentiment ($ICS$) and consumer expectations ($ICE$).[^RoF_paper] Figure \ref{fig:household_and_anomaly_disagreement} shows a time-series of $STD\_DEV$, standard deviation of $ICS$ ($ICS\_SD$), and standard deviation of $ICE$ ($ICE\_SD$). The correlation of $STD\_DEV$ with $ICS\_SD$ is $0.42$ and with $ICE\_SD$ is $0.32$. Post EDGAR implementation, i.e., after May 1996, the correlation with $ICS\_SD$ rises to $0.62$ and with $ICE\_SD$ rises to $0.55$. The strong relation between anomaly disagreement and household disagreement further justifies the differences in opinion interpretation assigned to $STD\_DEV$.
+
+[^RoF_paper]: \cite{household_disagreement_2021} also construct a measure of household disagreement from the Surveys of Consumers dataset and find it significantly related to market-wide turnover.
+
+<!-- Insert Figure! -->
+`r rmd_print_figure("../../household_and_anomaly_disagreement.pdf", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+An important distinction between anomaly disagreement ($STD\_DEV$) and household disagreement ($ICS\_SD$) is worth noting. $STD\_DEV$ has both time-series and cross-sectional structure to it, while $ICS\_SD$ is only a time-series measure. Inclusion or exclusion of household disagreement should not impact the inferences from main regressions (Table 4) as long as there are time fixed effects. The latter will subsume any time-series variation induced by $ICS\_SD$ and would render it insignificant. The correlations in Figure \ref{fig:household_and_anomaly_disagreement} only depict the time-series relationship of the two disagreement variables.
+
+
+## Disagreement and Trunover by Industry
+
+See Figure \ref{fig:disagreement_and_turnover_by_industry}.
+
+<!-- Insert Figure! -->
+`r rmd_print_figure("../../disagreement_and_turnover_by_industry.pdf", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+
+# Disagreement and Anomalies
+
+The correlation heat map (Figure 2), although helpful in the visual distinction of groups of anomaly signals, doesn't provide any information on how different anomalies affect disagreement. Figure 4 plots the average disagreement constructed using all but one group of anomaly signals.[^num_signals_require] If excluding a particular group reduces the disagreement substantially, then that group contributes significantly to the disagreement measure. Only the momentum group of anomalies impacts disagreement significantly and its removal reduces average disagreement from 0.74 to 0.70. Since, momentum anomalies are only faintly correlated with other anomalies (Figure 2), their exclusion significantly affects overall disagreement measure[^technical_vs_fundamental].
+
+[^num_signals_require]: For constructing disagreement from the full set of 39 signals, I require at least 10 anomaly signals to be available. However, I relax this requirement for disagreement constructed in Figure 4 as the number of anomalies are reduced.
+
+[^technical_vs_fundamental]: It also suggests that trading may be driven by a wedge between expectations of technical and fundamental investors. Technical trading relies mostly on past price based signals (momentum anomalies) and fundamental trading is driven by company's fundamentals (profitability and investment anomalies) and their ratio with stock price (valuation anomalies).
+
+\end{comment}
+
+# Number of Anomalies and Disagreement
+
+Researchers have used a wide number of anomalies (see Table 1) to study their return characteristics. I choose 39 anomalies to strike a balance between high power and accuracy in capturing disagreement. To construct a reasonable measure of disagreement, we require sufficient variation within the anomalies. Choosing too few anomalies may not accurately depict disagreement. On the other hand, choosing too many factors may only give a gradual improvement in accuracy and relevance of disagreement. Moreover, there seems to be little evidence on the actual number of significant anomalies within the \textit{anomaly zoo}. \cite{replicating_anomalies_2020} report a success rate of 35% out of 452 anomalies, and \cite{green_etal_2017} find only 12 anomalies to be significant out of 94 in non-microcap stocks.
+
+To this end, I provide simulation results to understand better the effect of anomaly numbers on properties of disagreement. Figure \ref{fig:disagreement_simulation} plots mean, standard deviation, correlation, and auto-correlation of disagreement as I vary the number of anomalies ($N$) from which disagreement is constructed. The results broadly justify using a moderate (35--50) number of anomalies to capture most of the desirable properties in disagreement. More specifically, average disagreement is variable for low $N$ and becomes stable as $N$ is increased beyond 40. The standard deviation of disagreement falls slowly with $N$. This property is expected from every statistical measure where its accuracy increases with the number of data points. Autocorrelation is also remarkably stable across the entire range of $N$. Lastly, the green line captures the correlation of 200-anomaly disagreement with $N$-anomaly disagreement where $N$ varies from 5 to 200. With just 40 anomalies, 50% of the covariance in 200-anomaly disagreement is achieved. Thus increasing the number of anomalies may only give a very small and gradual increase in the efficiency of disagreement. At the same time, choosing too few (< 30) factors may reduce the stability and relevance of the disagreement measure.
+
+I briefly describe the simulation exercise to generate the plots in Figure \ref{fig:disagreement_simulation}. Return anomalies display significant correlations wherein one anomaly tends to be highly correlated with other anomalies. This clustering of correlations is most pronounced in anomalies from the same group (see Figure 2). On top of that, anomalies and hence disagreement tend to be sticky (auto-correlated) over time (see Figure 3). I use the "vine" approach described in \cite{vine_corr_mx_2009}. I first transform the $39 \times 39$ correlation matrix of real anomalies to a partial correlation matrix. Using these correlations, I randomly draw a $350 \times 350$ partial correlation matrix[^shasho_dist] and convert it into a correlation matrix. With the simulated correlation structure, $1000$ independent samples of $350$ anomalies are drawn. To reflect auto-correlation within anomalies, I randomly assign first-order auto-correlation parameters to $350$ anomalies drawn from a standard uniform distribution. The time series of anomalies is then updated as: $X_{t+1} = \alpha \odot X_{t} + \sqrt{a - \alpha^2} \odot X_{t+1}$ for all $t \in 1,2,\dots 349$. $X_t$ is a vector of $350$ anomalies at time $t$ drawn using desired cross-correlations and $\alpha$ is a $350 \times 1$ vector of random auto-correlations. $\odot$ represents element-wise vector multiplication Once $1000$ auto-correlated samples of $350$ cross-correlated anomalies are present, I randomly draw $N'$ anomalies from the set to compute disagreement where $N' \in [5,200]$. This process is repeated $100$ times to get reliable estimates of mean, standard deviation, correlation, and auto-correlation of disagreement.
+
+[^shasho_dist]: \cite{vine_corr_mx_2009} use a symmetric-beta distribution to sample a new partial correlation matrix. In my tests, I found that a Sinh-arcsinh distribution (\cite{sinh_arcsinh}) more accurately captures kurtosis in partial correlations of anomalies. Most anomalies tend to be very thinly correlated with other anomalies, thus inducing higher kurtosis. Sinh-arcsinh is a 4-parameter distribution, while symmetric-beta is a one-parameter distribution. Computational challenges partially dictate the choice of 350 simulated anomalies in generating a large positive-definite matrix of desired correlations.
+
+<!-- Insert Figure! -->
+`r rmd_print_figure("../../disagreement_simulation.pdf", insert_at_end = F, skip = F, is_landscape = T) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+\begin{comment}
+
+# Correlation between disagreement and signals
+
+I explore the correlations between disagreement and signals. According to Figure 4, momentum anomalies contributes most to the disagreement level but it doesn't tell how does signal variation relate to variation in disagreement. If one particular signal or a class of signals is recommending sell then what does it tells us about the disagreement? Will it be higher, lower or unaffected? Figure \ref{fig:corr_plot_signals_and_disagreement} gives the correlation map of disagreement and signals. Profitability, value, security issuance and distress signals are mostly negatively correlated while earnings quality is positively correlated. Other signals groups doesn't seem to have a clear direction of association with disagreement. Of the 39 signals, Earnings to Price ratio has a correlation of -0.280 and Net Operating Assets has a correlation of 0.158 with disagreement. The average correlation across all 39 signals is -0.028. If we exclude distress anomalies from disagreement this correlation goes upto -0.126. It is an interesting finding that most of the signals correlate negatively with disagreement. The signals are return predicting anomalies and a higher value of signal predicts higher future return[^scaling_anomalies]. Thus a negative association between anomalies and disagreement hints at a negative disagreement return relationship.
+
+[^scaling_anomalies]: All anomalies which predict a negative association with future returns are scaled by -1 so as to make them positively associate with future returns. The predicted association is as per the original source which documented the anomaly. The complete list of anomalies and the predicted relationship is present in Table \ref{tab:anomaly_list}.
+
+<!-- Insert Figure! -->
+`r rmd_print_figure("../../corr_plot_signals_and_disagreement.pdf", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+\end{comment}
+
+
+# Within and Cross Disagreement
+
+Figure 4 reveals that different anomaly groups affect disagreement differently. In particular, momentum anomalies has the most contribution to disagreement measure. Do these differences in disagreement across anomaly groups also materialize in volume regressions? Conversely, how much of the disagreement volume relationship is explained by disagreement within anomaly groups and disagreement across anomaly groups.
+
+Let there be $G$ anomaly groups with $g^{th}$ group containing $n_g$ anomalies $(g \in 1,2,\dots ,G)$. Let $T_{f,t,g}$ be the average trading signal[^using_ranks_here] for anomaly group $g$, firm $f$ at time $t$. Thus, $T_{f,t,g} = \frac{1}{n_g}\cdot \sum_{i=1}^{n_g} T_{f,t,i}$ where $i$ denotes a particular anomaly within a group. Let $N = \sum_{g=1}^{G} n_g$ equal total number of anomales and, $\overline{T_{f,t}} = \frac{1}{N}\cdot \sum_{i=1}^{N} T_{f,t,i} = \frac{1}{N}\cdot \sum_{g=1}^{G} n_g \cdot T_{f,t,g}$ be the average trading signal across all anomalies. The cross anomaly disagreement captures the extent to which group trading signals differ from the mean signal across all groups. We can define the cross-group sum of squares as $SS^{cross} = \sum_{g=1}^{G} n_g \cdot (T_{f,t,g} - \overline{T_{f,t}})^2$. The total sum of squares is, $SS^{total} = \sum_{g=1}^{G} \sum_{i=1}^{n_g} (T_{f,t,i} - \overline{T_{f,t}})^2$. Using these two squared sums, we can define within sum of squares as, $SS^{within} = SS^{total} - SS^{cross}$. Since different groups have a different number of constituent anomalies, we can compute disagreement across anomaly groups by weighing the group sum of squares with the number of anomalies in that group. $STD\_DEV_{f,t}^{cross} = \sqrt{ \frac{1}{G-1} \cdot \sum_{g=1}^{G} \frac{n_g}{N/G} \cdot (T_{f,t,g} - \overline{T_{f,t}})^2 }$. An equally weighted computation would use unity in place of $\frac{n_g}{N/G}$ as weights. Overall disagreement across all signals is $STD\_DEV_{f,t}^{total} = \sqrt{ \frac{SS^{total}}{N-1} }$. Similarly, the within disagreement is defined as $STD\_DEV_{f,t}^{within} = \sqrt{ \frac{SS^{within}}{N-G} }$.
+
+[^using_ranks_here]: For ease of disagreement computation within an anomaly group, I am considering variable ranks rather than -1/0/1 signals. For small anomaly groups (like earnings quality group), the variability of disagreement is severely restricted if discrete valued signals are used.
+
+I consider six anomaly groups viz. profitability (P), earnings quality (E), valuation (V), momentum (M), investment (I) and, financing \& distress (F). Table \ref{tab:anomaly_list} gives the list of 39 anomalies and their groups. Table \ref{tab:reg_within_and_between} gives regression results. Of the six groups, disagreement across earnings quality and valuation anomalies do not significantly impact volume (columns 1-2 and 7). The momentum group is by far the most impactful anomaly group affecting the disagreement-volume relation. Disagreement within five momentum anomalies alone explains up to 6% of the variation in turnover (column 4). Investing and financing anomalies are also significant, albeit less than momentum anomalies (columns 5 and 6). Within disagreement explains 4.6% turnover next period while disagreement across anomaly groups explain 2.3% turnover (columns 9 and 10). Both types of disagreement are statistically and economically significant. The sample size in this table is considerably smaller than the sample in the base specification (Table 4) due to the requirement that all anomalies must be present for computing group-wise disagreement.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_within_and_between.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+# Disagreement and Firm Characteristics
+
+In this section, I look at how firm characteristics vary with disagreement deciles. To facilitate comparison across deciles and characteristics, I use cross-sectional ranks of firm characteristics[^ranking]. Figure \ref{fig:variable_ranks_and_disagreement_2} presents the variation in ranks of firm characteristics over ten disagreement deciles. Different measures of turnover increase monotonically with disagreement. Log turnover rank rises from 0.42 in the first decile to 0.59 in the tenth decile. Changes in GRT adjusted turnover ranks closely follow the changes in log turnover rank, while changes in value-weighted turnover are much more gentle. Absolute deviation, another measure of disagreement, moves sharply with disagreement, making the particular choice of disagreement measure irrelevant. Since disagreement captures the standard deviation of return predicting signals, it is expected to strongly correlate with standard deviation of daily returns ($RET_VOL$).
+
+[^ranking]: Stocks are ranked each month by each characteristic and then scaled to fall between 0 and 1. Thus they are equivalent to percentiles. Details of variable construction appear in Section A.2.
+
+Excess return, CAPM alpha, and CAPM beta are stable across the ten disagreement deciles. Interestingly, the firm's dividend payout falls dramatically from first to the last decile reaching a rank close to 0. Thus a high disagreement firm pays no or very low dividend. Fundamental uncertainty captured by earnings surprise and earnings volatility also associates positively with disagreement. Moving from first to last disagreement decile, earnings surprise, and volatility rank change from 35% to 70%. The signals making up the disagreement measure are mostly constructed using fundamentals from the balance sheet and P/L statements. A more uncertain income stream and business forecast cast doubt on the future asset value, and the signals which measure future value will indicate this uncertainty as increased disagreement.
+
+Forecast dispersion, derived from analyst estimates, is also a measure of disagreement. Unlike other disagreement measures, $FDISP$ ranks does not vary strongly with $STD_DEV$ deciles. Over the ten deciles, dispersion ranks move from 0.35 to 0.60. Anomaly disagreement captures differential interpretation of common information arising out of anomaly usage, while forecast dispersion captures analyst-level belief differences, including private information gathering by analysts (\cite{barron_etal1998}). Forecast dispersion, being a proxy for differential private information content, is different in form and structure from fundamental disagreement. The number of analysts following a firm falls sharply from 85% to 55% as we move across ten disagreement deciles.
+
+Disagreement is also significantly higher among small and younger firms. Across the ten disagreement deciles, the ranking for firm size and age falls by roughly 25 percentiles. Disagreement also associates negatively with book to market ratio, where growth firms (having low BTM ratio) tend to be firms with high disagreement. Growth firms derive a major chunk of their value from real options and growth opportunities, making their revenue projections difficult to estimate. This may lead to higher disagreement among investors about the future asset value of these firms. $CMP\_WORDS$, a measure of firm complexity, and $LENGTH$, a measure of document readability, rise with disagreement.
+
+Overall, the average firm in high disagreement decile pays no dividend, experience volatile returns, is small and young, has low BTM ratio, and has high earnings uncertainty when compared to a firm in low disagreement decile.
+
+<!-- Insert Figure! -->
+`r rmd_print_figure("../../variable_ranks_and_disagreement_2.pdf", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+# EDGAR Adoption
+
+Rational investors utilize both signals and outside information in making investing decisions. 10-K reports are an important source of additional information. Thus, as firms adopt the EDGAR system of information disbursal, investors would reduce their weight on anomalies in making trading decisions. Hence, I expect the coefficient on disagreement to diminish for firms that release 10-Ks. To test this hypothesis, I filter four years (1993--1996) from the original sample and identify firms at the end of 1996 that have adopted EDGAR filing. I measure EDGAR adoption as a dummy variable taking a value of one if a firm has released the 10-K form in the past. The sample period of 1993--1996 is carefully chosen to allow partial EDGAR adoption at the end of 1996. This lets me compare firms that adopt EDGAR against firms that do not. Table \ref{tab:reg_edgar_adoption} gives regression results where I regress volume on disagreement, controls, EDGAR adoption dummy, and interaction with disagreement. I include industry and year fixed effects in all four specifications, but I do not include standard error clustering since the sample is smaller. Column (1) has the base regression specification, while column (4) has the EDGAR dummy and its interaction with disagreement. Comparing the two columns, the disagreement coefficient in (1) is inaccurate since it does not take into account EDGAR adoption by firms. Column (4) suggests that EDGAR adoption reduces 11.4% of the disagreement-induced trading (0.211/1.859), translating to more than 2% of next month's trading volume. Thus, the adoption of the EDGAR system of information release diminishes the extent to which investors rely on AFs for investment decisions.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_edgar_adoption.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+
+
+# Robustness Checks
+
+In this section I report several robustness regressions to strengthen the trading volume results reported in Section 6.2.
+
+### Regressions with size included
+
+Evidence from Panel B of Table 3 suggests that the largest correlations occur between $L\_PRC$, $L\_ME$, and $NUMEST$; hence I chose to exclude size ($L\_ME$) from regressions. Table \ref{tab:reg_diff_specs_with_size} below presents regressions specifications by augmenting logarithm of market size to the base specification from Table 4.
+
+The inclusion of $L\_ME$ has a minute impact on STD_DEV coefficient and $R^2$ (columns 1 and 3). Most noticeably, the coefficients on $BTM$ and $EVOL$ become insignificant. This could be explained by a size being in the denominator of these variables, and its inclusion takes away any mechanical correlation of these variables with turnover. The coefficients of $L\_PRC$ and $NUMEST$ also decline substantially, proving the multi-collinearity concern evident from correlations. Interestingly, the exclusion of $L\_PRC$ in columns 4 and 6 make FDISP insignificant while increasing the coefficient on $L\_ME$. The coefficient of disagreement also reduces slightly owing to the price being in the denominator of several anomalies. The relative stability of the disagreement coefficient strengthens the case of anomaly-driven disagreement, causing trading volume. Additionally, the instability of FDISP casts doubts on its applicability as a measure of disagreement. The negative correlation between $FDISP$ and $L\_PRC$ (Table 3 Panel B) may be driving the positive association with turnover.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_diff_specs_with_size.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## Financial Firms
+
+Table \ref{tab:reg_fin_and_nonfin_firms} shows regression results for all firms, financial firms ,and non-financial firms. Results indicate that the disagreement-volume relationship is significant both statistically and economically, irrespective of whether financial firms are included in the sample. Interestingly, in the smaller sample of just financial firms (columns 3 and 4), the coefficients on $NASDAQ$, $LEV$, $BTM$, $FAGE$, and $FDISP$ lose significance.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_fin_and_nonfin_firms.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## S\&P 500 Membership
+
+Evidence from Table \ref{tab:reg_sp500_membership} suggests that the disagreement-volume relationship is stronger for non S\&P-500 firms.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_sp500_membership.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## Book to market splits
+
+Investment using accounting fundamentals and related ratios is popular among value investors. Several books on value investing give prominence to price to book ratio as an indicator of value firms[^value_firms]. Value investment attempts to estimate the intrinsic value of a stock using information from the balance sheet and profit and loss statements. The intrinsic value is then compared to the current stock price, and a buy (sell) trade is initiated when the intrinsic value is smaller than the current price. Price to book ratio is also a proxy for visibility where a firm with high valuations, i.e., growth firms, is often talked about in media and followed more by analysts[^corr_btwn_numest_and_btm]. Thus the information environment of value firms is limited, and hence the use of anomalies would be higher. We should expect the disagreement-volume relation to be stronger for the high book to market firms since these firms fall into the category of value firms and are more likely to be evaluated using return anomalies originating from accounting fundamentals.
+
+[^value_firms]: Lower P/B ratio (or high book to market) signifies that a firm's market price does not accurately reflect its book value and is undervalued. \cite{graham1965} is a popular investing book following value investing tenets.
+
+[^corr_btwn_numest_and_btm]: Number of analyst following and book to market ratio has a rank correlation of $-0.12$.
+
+Table \ref{tab:reg_btm_terciles} gives the regression results for $BTM$ terciles. The coefficient on $STD\_DEV$ is highest for high $BTM$ stocks, i.e., value stocks. Across the three terciles, a one SD change in $STD\_DEV$ predicts 4.9%, 8.9%, and 12.5% higher turnover in the next month, respectively. Thus, disagreement arising from fundamental anomalies has more explanatory power for value stocks. This also provides evidence in favor of the hypothesis that investors in value stocks primarily use return anomalies for their trading decisions, and hence disagreement among the anomalies strongly predicts next month's trading volume.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_btm_terciles.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## NASDAQ stocks
+
+NASDAQ stocks are structurally different from NYSE/AMEX stocks. The exchange was constituted in 1971 with the electronic stock market. The stocks at the NASDAQ exchange tend to be young and small technology firms. As of December 2018, the average NYSE/AMEX firm is 2.6 times bigger and nine years older than the average NASDAQ firm. Results from Table 7 suggest that small and young stocks have a bigger disagreement coefficient. Since NASDAQ stocks generally have both these characteristics, we should expect to see larger coefficients than base regression (column (2) of Table 4). Table \ref{tab:reg_nasdaq} below gives the regression summary for NASDAQ stocks.
+
+<!-- The code for above looks somethig like:
+funda.anomaly.all[exchcd %in% c(1,2), lapply(.SD, mean, na.rm = T), .SDcols = c("ME", "BE", "LEV")];
+data.crsp.cln[Date == "Dec 2018" & exchcd %in% c(1,2), mean(age, na.rm = T)] - data.crsp.cln[Date == "Dec 2018" & exchcd %in% 3, mean(age, na.rm = T)]
+-->
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_nasdaq.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## Portfolio sorts
+
+In Table \ref{tab:univariate_sorts_std_dev_and_turn}, Panel A gives the changes in average turnover over deciles made on different disagreement measures. Panel B presents portfolio averages of different turnover measures with portfolios sorted on $STD\_DEV$. Turnover is measured at time $t$ while portfolios are made at time $t-1$.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_univariate_sorts_std_dev_and_turn.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+# Asymmetric Effect of Buy and Sell Signals
+
+Does a buy signal affect an investor's trading behavior in the same way as a sell signal? Prior research has shown the presence of a disposition effect which predicts that investors tend to keep losses and realize gains (\cite{odean1998_disposition}). This phenomenon has two consequences: (i) the trading volume response following gains should be higher than the trading volume response following losses, and, (ii) the price variability would be subdued since investors hold (sell) stocks following negative (positive) shocks.
+
+In Table 5, I find contradictory evidence where negative price change has a higher magnitude volume response than positive price changes. Specifically, the coefficient on $RET^-$ is 45\% higher in magnitude than the coefficient on $RET^+$ (column 2 Table 5). Since positive and negative price change is viewed differently by the market with respect to trading volume, the natural question to ask is whether buy and sell trading signals are viewed differently by the market. In Panel A of Table \ref{tab:bivariate_sorts_nbuy_nsell}, I examine the effect of increasing the number of sell signals $(NSELL)$ while keeping the number of buy signals $(NBUY)$ fixed on trading volume and stock returns. In the data, $NBUY$ and $NSELL$ are positively correlated; hence increasing one also increases the other. A portfolio of low $NBUY$ and high $NSELL$ would return very few observations. To overcome this, I perform two-way dependent sorts first on $NBUY$ terciles and then on $NSELL$ terciles. This ensures that each portfolio has a reasonable number of observations. In Panel B, I reverse the sorting order. We can compare the tercile changes across the two panels to understand the differential impact of increasing $NSELL$ while keeping $NBUY$ constant and vice-versa.
+
+The results support the evidence in contradiction to disposition effect, and trading volume changes more in Panel A than in Panel B. Within low $NBUY$ ($NSELL$) tercile, moving from medium to high $NSELL$ ($NBUY$) tercile changes volume by roughly $8 \; (3)$ percentiles. The effect on returns is similar and the same $NSELL$ ($NBUY$) tercile change within low $NBUY$ ($NSELL$) tercile causes a $-2.4 \; (0.3)$ percentile change in return rank. Another observation is that while sorting by $NBUY$ and then $NSELL$ in Panel A, the turnover and return ranks are higher when moving from second to third $NSELL$ tercile. However, when sorting is done using $NSELL$ and then $NBUY$, they are higher when moving from first to second $NBUY$ tercile in Panel B. This means that the effect of an increase in sell signals on turnover and returns is reflected more aggressively in moving from second to third tercile while for the number of sell signals, it happens in moving from first to second tercile.
+
+In Table \ref{tab:nbuy_nsell_sorts_reg}, I regress turnover and return ranks on $NBUY$ and $NSELL$ ranks. I do not include other regressors for brevity, and the use of variable ranks[^var_ranks] rather than levels should provide some relief against issues of spurious relationships. In Panel B, both the coefficients and $R^2$ provide the same evidence and turnover turns out to be more than six times as sensitive to $NSELL$ than $NBUY$ (column 3 of Panel B). Return regressions in Panel C also point to the same evidence, and $NSELL$ affects returns much more sharply than $NBUY$ (column 3 of Panel C). The coefficient of the interaction term in column 5 is insignificant as expected since an increase in both the number of buy and sell signals should give an ambiguous signal for returns.
+
+[^var_ranks]: Variable ranks are evaluated each month separately to counter spurious time-series relation between turnover and other variables.
+
+`r rmd_print_table("../tables/tab_bivariate_sorts_nbuy_nsell.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+`r rmd_print_table("../tables/tab_nbuy_nsell_sorts_reg.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+\newpage
+
+
+
+# References {-}
+
+\bibliography{../bibliography}
+\clearpage
+
+
+
+
+

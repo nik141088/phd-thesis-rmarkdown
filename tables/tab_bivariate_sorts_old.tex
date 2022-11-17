@@ -1,0 +1,46 @@
+
+\newgeometry{margin=1in}
+\begin{landscape}\begin{table}
+
+\caption[Bivariate Portfolio Sorts]{\label{tab:bivariate_sorts_old}Bivariate Sorts}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{1.2cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.4cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{9}{c}{$L\_TURN_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-10}
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{$\mathbf{Control\_Var\_Ter_{(1,.)}}$} & \multicolumn{3}{c}{$\mathbf{Control\_Var\_Ter_{(2,.)}}$} & \multicolumn{3}{c}{$\mathbf{Control\_Var\_Ter_{(3,.)}}$} \\
+\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
+ & $T_{11}$ & $T_{12} - T_{11}$ & $T_{13} - T_{12}$ & $T_{21}$ & $T_{22} - T_{21}$ & $T_{23} - T_{22}$ & $T_{31}$ & $T_{32} - T_{31}$ & $T_{33} - T_{32}$\\
+\midrule
+$RET^+_{t-1}$ & -2.937 & 0.185** & 0.194** & -2.821 & 0.161** & 0.186** & -2.474 & 0.164** & 0.112**\\
+\addlinespace
+$RET^-_{t-1}$ & -2.488 & 0.100** & 0.030** & -2.828 & 0.139** & 0.113** & -2.956 & 0.108** & 0.226**\\
+\addlinespace
+$LEV_{t-1}$ & -2.843 & 0.358** & 0.184** & -2.850 & 0.108** & 0.124** & -2.968 & 0.172** & 0.079**\\
+\addlinespace
+$CAPM\_\beta_{t-1}$ & -3.141 & 0.169** & 0.208** & -2.913 & 0.194** & 0.177** & -2.713 & 0.163** & 0.185**\\
+\addlinespace
+$BTM_{t-1}$ & -2.465 & 0.150** & 0.070** & -2.864 & 0.093** & 0.164** & -3.050 & 0.152** & 0.110**\\
+\addlinespace
+$L\_PRC_{t-1}$ & -3.094 & 0.223** & 0.206** & -2.936 & 0.263** & 0.524** & -2.416 & 0.223** & 0.375**\\
+\addlinespace
+$L\_FAGE_{t-1}$ & -2.868 & 0.289** & 0.228** & -2.824 & 0.167** & 0.135** & -3.006 & 0.084** & 0.098**\\
+\addlinespace
+$ESURP_{t-1}$ & -2.920 & 0.186** & 0.375** & -2.847 & 0.189** & 0.253** & -2.733 & 0.086** & 0.091**\\
+\addlinespace
+$EVOL_{t-1}$ & -2.911 & 0.205** & 0.479** & -2.837 & 0.171** & 0.256** & -2.799 & 0.093** & 0.097**\\
+\addlinespace
+$NUMEST_{t-1}$ & -2.820 & 0.266** & 0.269** & -2.324 & 0.234** & 0.392** & -2.381 & 0.169** & 0.241**\\
+\addlinespace
+$FDISP_{t-1}$ & -2.747 & 0.230** & 0.341** & -2.602 & 0.279** & 0.240** & -2.584 & 0.210** & 0.134**\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item Average log turnover measured over bivariate $3 \times 3$ sorts. The first sorting variable is one of the 11 control variables and the second sorting variable is the disagreement measure. Sorting is done at time $t-1$ and turnover is measured at time $t$. The bivariate sorts are dependent sorts where first, one of the control variable is used to make portfolios and then within those portfolios, disagreement is used to make sub-portfolios. Both dimensions of sorting are cross-sectional where a fresh sorting is performed each month. 70/30 portfolio breakpoints are used to make terciles. $T_{i,j}$ is the avergae log turnover for $i^{th}$ control variable tercile and $j^{th}$ disagreement tercile. Each row represents a new control variable being used to make terciles. Within a row, each control variable tercile is represented as a group of three values. There are three groups each corresponding to a different control variable tercile. The second and third entries in each group presents difference in average log turnover over two successive terciles. $T_{i,j} - T_{i,j^\prime}$ is the difference between disagreement terciles $j$ and $j^\prime$ within control variable tercile $i$. Corresponding signficance levels are from a t-test of sample means across corresponding tercile pairs. Statistical significance of 5\% and 1\% are indicated by * and ** respectively
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{landscape}
+\restoregeometry

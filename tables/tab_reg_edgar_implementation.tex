@@ -1,0 +1,63 @@
+\begin{table}
+
+\caption[Regression: EDGAR Implementaion]{\label{tab:reg_edgar_implementation}Monthly cross-sectional regression: EDGAR implementation}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{1.6cm}}
+\multicolumn{7}{p{\linewidth}}{Log turnover regressed on different set of explanatory variables for three disjoint periods: pre EDGAR from Jan 1976 to Mar 1993, post EDGAR from Jun 1996 to Dec 2019, and the period between as during EDGAR. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Within $R^2$ is the $R^2$ for within-groups variation with fixed effects projected out while Adj. $R^2$ is for the entire model. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\%, and 1\% are indicated by *, **, and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{6}{c}{$L\_TURN_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-7}
+\multicolumn{1}{c}{\em{ }} & \multicolumn{2}{c}{\em{pre EDGAR}} & \multicolumn{2}{c}{\em{during EDGAR}} & \multicolumn{2}{c}{\em{post EDGAR}} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3) & \phantom{-}(4) & \phantom{-}(5) & \phantom{-}(6)\\
+\midrule
+$STD\_DEV_{t-1}$ &  & $\phantom{-}1.307$*** &  & $\phantom{-}2.181$*** &  & $\phantom{-}1.492$***\\
+ &  & (\phantom{-}$0.099$) &  & (\phantom{-}$0.125$) &  & (\phantom{-}$0.069$)\\
+\addlinespace
+$FDISP_{t-1}$ & $\phantom{-}0.019$* & $\phantom{-}0.004$ & $\phantom{-}0.037$** & $\phantom{-}0.007$ & $\phantom{-}0.021$*** & $\phantom{-}0.006$\\
+ & (\phantom{-}$0.012$) & (\phantom{-}$0.012$) & (\phantom{-}$0.018$) & (\phantom{-}$0.017$) & (\phantom{-}$0.007$) & (\phantom{-}$0.007$)\\
+\addlinespace
+$NASDAQ$ & $\phantom{-}0.501$*** & $\phantom{-}0.507$*** & $\phantom{-}0.466$*** & $\phantom{-}0.466$*** & $\phantom{-}0.084$*** & $\phantom{-}0.060$**\\
+ & (\phantom{-}$0.035$) & (\phantom{-}$0.035$) & (\phantom{-}$0.035$) & (\phantom{-}$0.033$) & (\phantom{-}$0.024$) & (\phantom{-}$0.024$)\\
+\addlinespace
+$RET^+_{t-1}$ & $\phantom{-}2.038$*** & $\phantom{-}1.870$*** & $\phantom{-}2.376$*** & $\phantom{-}2.029$*** & $\phantom{-}1.625$*** & $\phantom{-}1.465$***\\
+ & (\phantom{-}$0.104$) & (\phantom{-}$0.098$) & (\phantom{-}$0.093$) & (\phantom{-}$0.092$) & (\phantom{-}$0.071$) & (\phantom{-}$0.065$)\\
+\addlinespace
+$RET^-_{t-1}$ & $-1.724$*** & $-1.537$*** & $-2.916$*** & $-2.463$*** & $-2.566$*** & $-2.353$***\\
+ & (\phantom{-}$0.267$) & (\phantom{-}$0.244$) & (\phantom{-}$0.118$) & (\phantom{-}$0.105$) & (\phantom{-}$0.077$) & (\phantom{-}$0.071$)\\
+\addlinespace
+$LEV_{t-1}$ & $\phantom{-}0.068$*** & $\phantom{-}0.058$*** & $\phantom{-}0.120$*** & $\phantom{-}0.090$*** & $\phantom{-}0.065$*** & $\phantom{-}0.053$***\\
+ & (\phantom{-}$0.009$) & (\phantom{-}$0.009$) & (\phantom{-}$0.019$) & (\phantom{-}$0.018$) & (\phantom{-}$0.008$) & (\phantom{-}$0.008$)\\
+\addlinespace
+$CAPM\_\beta_{t-1}$ & $-0.062$ & $-0.042$ & $-0.006$ & $-0.016$ & $\phantom{-}0.097$*** & $\phantom{-}0.102$***\\
+ & (\phantom{-}$0.167$) & (\phantom{-}$0.164$) & (\phantom{-}$0.086$) & (\phantom{-}$0.083$) & (\phantom{-}$0.033$) & (\phantom{-}$0.032$)\\
+\addlinespace
+$BTM_{t-1}$ & $\phantom{-}0.084$*** & $\phantom{-}0.092$*** & $-0.030$ & $\phantom{-}0.003$ & $-0.038$*** & $-0.015$\\
+ & (\phantom{-}$0.017$) & (\phantom{-}$0.016$) & (\phantom{-}$0.031$) & (\phantom{-}$0.029$) & (\phantom{-}$0.012$) & (\phantom{-}$0.012$)\\
+\addlinespace
+$L\_PRC_{t-1}$ & $\phantom{-}0.058$*** & $\phantom{-}0.093$*** & $\phantom{-}0.133$*** & $\phantom{-}0.193$*** & $\phantom{-}0.196$*** & $\phantom{-}0.232$***\\
+ & (\phantom{-}$0.020$) & (\phantom{-}$0.020$) & (\phantom{-}$0.023$) & (\phantom{-}$0.023$) & (\phantom{-}$0.013$) & (\phantom{-}$0.013$)\\
+\addlinespace
+$L\_FAGE_{t-1}$ & $\phantom{-}0.065$*** & $\phantom{-}0.084$*** & $-0.115$*** & $-0.064$** & $-0.160$*** & $-0.133$***\\
+ & (\phantom{-}$0.021$) & (\phantom{-}$0.020$) & (\phantom{-}$0.026$) & (\phantom{-}$0.025$) & (\phantom{-}$0.015$) & (\phantom{-}$0.015$)\\
+\addlinespace
+$ESURP_{t-1}$ & $\phantom{-}0.191$*** & $\phantom{-}0.164$*** & $\phantom{-}0.553$*** & $\phantom{-}0.392$*** & $\phantom{-}0.316$*** & $\phantom{-}0.276$***\\
+ & (\phantom{-}$0.065$) & (\phantom{-}$0.063$) & (\phantom{-}$0.102$) & (\phantom{-}$0.101$) & (\phantom{-}$0.034$) & (\phantom{-}$0.032$)\\
+\addlinespace
+$EVOL_{t-1}$ & $-0.303$** & $-0.537$*** & $-0.072$ & $-0.425$** & $\phantom{-}0.191$*** & $\phantom{-}0.088$*\\
+ & (\phantom{-}$0.143$) & (\phantom{-}$0.142$) & (\phantom{-}$0.218$) & (\phantom{-}$0.213$) & (\phantom{-}$0.047$) & (\phantom{-}$0.046$)\\
+\addlinespace
+$NUMEST_{t-1}$ & $\phantom{-}0.028$*** & $\phantom{-}0.027$*** & $\phantom{-}0.034$*** & $\phantom{-}0.032$*** & $\phantom{-}0.040$*** & $\phantom{-}0.039$***\\
+ & (\phantom{-}$0.002$) & (\phantom{-}$0.002$) & (\phantom{-}$0.002$) & (\phantom{-}$0.002$) & (\phantom{-}$0.002$) & (\phantom{-}$0.002$)\\
+ &  &  &  &  &  \vphantom{1} & \\
+\midrule
+ &  &  &  &  &  & \\
+$\textrm{Within} \: R^2$ & {$\phantom{-}0.139$} & {$\phantom{-}0.157$} & {$\phantom{-}0.172$} & {$\phantom{-}0.211$} & {$\phantom{-}0.202$} & {$\phantom{-}0.220$}\\
+$\textrm{Adj.} \: R^2$ & {$\phantom{-}0.271$} & {$\phantom{-}0.287$} & {$\phantom{-}0.295$} & {$\phantom{-}0.328$} & {$\phantom{-}0.349$} & {$\phantom{-}0.363$}\\
+$\% \: R^2 \: \textrm{Explained}$ & {} & {$\phantom{-}2.090$} & {} & {$\phantom{-}4.710$} & {} & {$\phantom{-}2.220$}\\
+$\textrm{Observations}$ & {\phantom{-}196,866} & {\phantom{-}196,866} & {\phantom{-}83,782} & {\phantom{-}83,782} & {\phantom{-}673,381} & {\phantom{-}673,381}\\
+\bottomrule
+\end{tabular}
+\end{table}

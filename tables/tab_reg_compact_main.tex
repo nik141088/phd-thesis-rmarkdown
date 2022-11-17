@@ -1,0 +1,74 @@
+
+\begin{landscape}
+\begingroup\fontsize{12}{14}\selectfont
+
+\begin{spacing}{1.0}
+\begin{xltabular}{\linewidth}{X * {9}{S[table-format=5.3]}}
+\caption[Regression: Different Specifications]{\label{tab:reg_compact_main}Cross-sectional regression: different specifications}\\
+\multicolumn{10}{p{\linewidth}}{Log turnover regressed on lagged disagreement and controls. $L\_TURN_{i,t} = \beta \cdot STD\_DEV_{i,t-1} + \alpha \cdot CONTROLS_{i,t-1} + \gamma \cdot DUMMIES_{i,t-1} + \epsilon_{i,t}$. Specification (5) uses 80/20 stock splits to compute disagreement, while others use 70/30 split. In specification (6), I compute disagreement by excluding all momentum signals viz. $ret.6t2$, $ret.12t7$, $ret.1t1$, $ret.18t13$, and $ret.60t13$. In specification (7), all dependent variables except $NASDAQ$ dummy and $NUMEST$ are converted to their respective cross-sectional ranks. Specification (8) and (9) has log turnover computed on the following day and week (5 days), respectively. Specification (3) has 256,507 firm-months of observations while all other specifications have 872,061 firm-months. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. \textit{t}-statistics are present in paranthesis based on standard errors double clustered by firm and year-month. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{\bgroup\fontsize{12}{14}\selectfont  \egroup{}} & \multicolumn{6}{c}{\bgroup\fontsize{12}{14}\selectfont \makecell{Monthly $L\_TURN$}\egroup{}} & \multicolumn{1}{c}{\bgroup\fontsize{12}{14}\selectfont \makecell{$TURN$ \\ Rank}\egroup{}} & \multicolumn{1}{c}{\bgroup\fontsize{12}{14}\selectfont \makecell{Next-day \\ $L\_TURN$}\egroup{}} & \multicolumn{1}{c}{\bgroup\fontsize{12}{14}\selectfont \makecell{Next-week \\ $L\_TURN$}\egroup{}} \\
+\cmidrule(l{3pt}r{3pt}){2-7} \cmidrule(l{3pt}r{3pt}){8-8} \cmidrule(l{3pt}r{3pt}){9-9} \cmidrule(l{3pt}r{3pt}){10-10}
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)} & {(6)} & {(7)} & {(8)} & {(9)}\\
+\midrule
+\endfirsthead
+\caption[]{Cross-sectional regression: different specifications \textit{(continued)}}\\
+\toprule
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)} & {(6)} & {(7)} & {(8)} & {(9)}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+$STD\_DEV$ &  & 1.545*** & 1.272*** & 1.557*** & 1.460*** & 1.092*** & 0.139*** & 1.499*** & 1.536***\\
+ &  & (24.067) & (15.226) & (24.419) & (28.262) & (18.766) & (19.566) & (21.862) & (23.198)\\
+\addlinespace
+$FDISP$ & 0.030*** & 0.011* &  & 0.013** & 0.009 & 0.016** & 0.034*** & 0.007 & 0.008\\
+ & (4.498) & (1.743) &  & (1.997) & (1.384) & (2.493) & (5.508) & (0.999) & (1.172)\\
+\addlinespace
+$PRC\_DISP$ &  &  & 1.009*** &  &  &  &  &  & \\
+ &  &  & (14.318) &  &  &  &  &  & \\
+\addlinespace
+$L\_ME$ &  &  &  & 0.107*** &  &  &  &  & \\
+ &  &  &  & (9.970) &  &  &  &  & \\
+\addlinespace
+$NASDAQ$ & 0.141*** & 0.122*** & 0.009 & 0.165*** & 0.118*** & 0.127*** & 0.040*** & 0.069*** & 0.098***\\
+ & (6.175) & (5.430) & (0.322) & (7.538) & (5.309) & (5.641) & (6.482) & (3.050) & (4.301)\\
+\addlinespace
+$RET^+$ & 1.701*** & 1.522*** & 1.094*** & 1.521*** & 1.457*** & 1.625*** & 0.126*** & 2.385*** & 2.028***\\
+ & (25.922) & (25.529) & (17.233) & (25.201) & (25.269) & (25.874) & (46.224) & (26.646) & (28.155)\\
+\addlinespace
+$RET^-$ & -2.438*** & -2.210*** & -2.014*** & -2.214*** & -2.116*** & -2.342*** & -0.154*** & -3.238*** & -2.779***\\
+ & (-29.884) & (-29.507) & (-22.778) & (-29.303) & (-29.057) & (-29.891) & (-47.884) & (-36.001) & (-36.772)\\
+\addlinespace
+$LEV$ & 0.076*** & 0.062*** & 0.025** & 0.059*** & 0.053*** & 0.065*** & 0.087*** & 0.063*** & 0.062***\\
+ & (9.601) & (8.189) & (2.272) & (7.825) & (7.180) & (8.540) & (11.398) & (7.730) & (7.844)\\
+\addlinespace
+$CAPM\_\beta$ & 0.081** & 0.085*** & 0.119*** & 0.080*** & 0.087*** & 0.085*** & 0.008 & 0.116** & 0.092***\\
+ & (2.524) & (2.813) & (3.269) & (2.619) & (2.940) & (2.733) & (1.263) & (2.362) & (2.816)\\
+\addlinespace
+$BTM$ & 0.002 & 0.024* & -0.019 & 0.048*** & 0.028** & 0.018 & -0.061*** & 0.006 & 0.018\\
+ & (0.128) & (1.871) & (-1.089) & (3.764) & (2.186) & (1.351) & (-6.726) & (0.410) & (1.314)\\
+\addlinespace
+$L\_PRC$ & 0.192*** & 0.229*** & 0.176*** & 0.148*** & 0.242*** & 0.218*** & 0.221*** & 0.304*** & 0.264***\\
+ & (16.253) & (19.148) & (11.145) & (10.638) & (20.212) & (18.217) & (18.994) & (23.458) & (21.468)\\
+\addlinespace
+$L\_FAGE$ & -0.160*** & -0.134*** & -0.108*** & -0.156*** & -0.124*** & -0.143*** & -0.098*** & -0.099*** & -0.128***\\
+ & (-12.253) & (-10.547) & (-6.119) & (-11.895) & (-9.809) & (-11.135) & (-9.845) & (-7.302) & (-9.751)\\
+\addlinespace
+$ESURP$ & 0.277*** & 0.232*** & 0.174*** & 0.220*** & 0.218*** & 0.248*** & 0.069*** & 0.222*** & 0.255***\\
+ & (7.631) & (7.005) & (3.716) & (6.420) & (6.807) & (7.273) & (22.049) & (5.607) & (6.979)\\
+\addlinespace
+$EVOL$ & 0.148*** & 0.021 & 0.197** & 0.021 & -0.029 & 0.055 & 0.048*** & -0.053 & -0.038\\
+ & (3.059) & (0.443) & (2.391) & (0.441) & (-0.603) & (1.161) & (6.307) & (-1.002) & (-0.756)\\
+\addlinespace
+$NUMEST$ & 0.035*** & 0.033*** & 0.024*** & 0.020*** & 0.034*** & 0.033*** & 0.010*** & 0.038*** & 0.035***\\
+ & (23.284) & (22.717) & (13.175) & (12.029) & (23.029) & (22.716) & (24.610) & (24.894) & (23.541)\\
+\midrule
+$\textrm{Adj.} \: R^2$ & 0.392 & 0.407 & 0.360 & 0.413 & 0.413 & 0.401 & 0.289 & 0.374 & 0.391\\*
+\end{xltabular}
+\end{spacing}
+\endgroup{}
+\end{landscape}

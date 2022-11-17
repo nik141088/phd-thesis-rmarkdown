@@ -1,0 +1,77 @@
+
+\newgeometry{margin=1in}
+\begin{landscape}\begingroup\fontsize{12}{14}\selectfont
+
+\begin{ThreePartTable}
+\begin{TableNotes}
+\item[a] GRT adjustment is carried out in two steps. In the first step, the variable to be adjusted, $X$ is regressed on linear and quadratic time trends as well as calendar month dummies: $X_t \sim \beta_0 + \beta_1 \cdot t + \beta_2 \cdot t^2 + \gamma \cdot D_{1 \dots 11} + \epsilon_t$. Here $D_{1 \dots 11}$ represents 11 monthly dummies. In the next step squared residuals are regressed on the same set of variables: $\log (\epsilon_t^2) \sim \beta_0 + \beta_1 \cdot t + \beta_2 \cdot t^2 + \gamma \cdot D_{1 \dots 11} + u_t$. Then the GRT adjusted series is defined as $X\_GRT_t = \exp(u_t/2)$. Finally, $X\_GRT$ is linearly transformed so that its mean and variance matches that of $X$
+\item[b] Value weighted market turnover is $\sum_{i=1}^{D_t} \frac{ME_{i,t}}{\widehat{ME_t}} \cdot TURN_{i,t}$, and equal-weighted market turnover is $\frac{1}{D_t} \cdot \sum_{i=1}^{D_t} TURN_{i,t}$, where $\widehat{ME_t} = \sum_{i=1}^{D_t} ME_{i,t}$ and $D_t$ is the number of firms at time $t$.
+\end{TableNotes}
+\begin{spacing}{1.0}
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{5.2cm}>{\raggedright\arraybackslash}p{15.6cm}}
+\caption[Variable Definitions]{\label{tab:var_def}Variable Definitions}\\
+\toprule
+Variable & Definition\\
+\midrule
+\endfirsthead
+\caption[]{Variable Definitions \textit{(continued)}}\\
+\toprule
+Variable & Definition\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\insertTableNotes
+\endlastfoot
+$NASDAQ$ & Dummy set to 1 if the stock is traded at NASDAQ ($exchcd = 3$)\\
+\addlinespace
+$RET^+$ and $RET^-$ & Monthly return is decomposed into two variables based on its sign. $RET^+ = \max(ret, 0)$ and $RET^- = \min(ret ,0)$. $ret$ is adjusted for delisting of firms.\\
+\addlinespace
+$BE$, $ME$ and $BTM$ & The book value of equity, the market value of equity, and the ratio of book value to the market value of equity. Construction of book equity is described in Appendix \ref{appendix-a1-construction-of-anomalies}.\\
+\addlinespace
+$LEV$ & Ratio of long-term debt to book value of equity.\\
+\addlinespace
+$CAPM\_BETA$ & The slope coefficient from regressing a firm's excess returns on market excess returns. Regression parameters are obtained in a rolling fashion using the past 60 months of returns data (from $t$ to $t-59$). Additionally, at least 24 non-missing return observations are required to estimate the regression.\\
+\addlinespace
+$PRC$ & Stock price adjusted for splits, rights issues, and other corporate events that affect the face value of a share.\\
+\addlinespace
+$L\_FAGE$ & Firm age is the natural log of months since the firm first appeared on the CRSP monthly database.\\
+\addlinespace
+$ESURP$ & Absolute earning surprise is the absolute difference between the most recent quarterly earnings per share $(EPS_q)$ and EPS 4 quarters ago $(EPS_{q-4})$ scaled by quarter-end stock price $(P_q)$. EPS and stock price is adjusted for splits. $ESURP = \frac{\lvert EPS_q - EPS_{q-4} \rvert }{P_q}$ for quarter $q$.\\
+\addlinespace
+$EVOL$ & Volatility of earnings is the standard deviation of eight recent quarterly earnings per share scaled by the quarter-end stock price. $EVOL = \frac{1}{7 \cdot P_q} \cdot \sum_{i=0}^{7} (EPS_{q-i} - \overline{EPS_q})^2$, where $\overline{EPS_q}$ is the mean EPS over the same period.\\
+\addlinespace
+$NUMEST$ & Number of analysts following a firm in a given month\\
+\addlinespace
+$FDISP$ & Standard deviation of analyst forecasts following a firm scaled by the absolute value of mean forecast estimate. I require that at least two analysts are following the firm $(NUMEST \geq 2)$\\
+\addlinespace
+$STD\_DEV$ & Standard deviation of all signals for a firm in a month. I require that at least ten signals are present to estimate standard deviation reliably.\\
+\addlinespace
+$TURN$ & Monthly share turnover calculated as monthly share volume divided by adjusted shares outstanding.\\
+\addlinespace
+$TURN\_GRT$ & Turnover adjusted as per \cite{grt1992}. Non-stationarity and calendar effects are removed from both the mean and variance of turnover time-series.\textsuperscript{a}\\
+\addlinespace
+$VW\_L\_TURN$ and $EW\_L\_TURN$ & Residuals from regressing $L\_TURN$ on an intercept and log of value (equal) weighted market turnover\textsuperscript{b}.\\
+\addlinespace
+$EPS\_DISP$, $EPS\_AFE$, $EPS\_RANGE$ and $EPS\_MEAN\_EST$ & The standard deviation of analysts' earnings estimates, the absolute difference of actual earnings and mean estimate, and the difference between highest and lowest estimates, respectively. All are scaled by mean eps forecast estimate, $EPS\_MEAN\_EST$, fetched directly from IBES eps summary file. $EPS\_DISP$ is same as $FDISP$\\
+\addlinespace
+$PRC\_DISP$, $PRC\_AFE$, $PRC\_RANGE$, $PRC\_NUMEST$ and $PRC\_MEAN\_EST$ & The standard deviation of 12-month ahead target price estimates, the absolute difference of target price estimate and twelve months ahead stock price, and the difference between highest and lowest price target estimates. All are scaled by mean price target estimate, $PRC\_MEAN\_EST$, which, along with the number of analysts following a stock, $PRC\_NUMEST$, are fetched directly from the IBES price target summary file.\\
+\addlinespace
+$EARN\_CHANGE$ & Difference between current earnings and previous year earnings scaled by previous year earnings $\left( \frac{ib_t - ib_{t-1}}{ib_{t-1}} \right)$.\\
+\addlinespace
+$LOSS\_FIRM$ & Dummy variable taking value one if a firm reports zero or negative actual earnings in the IBES eps summary file.\\
+\addlinespace
+$SALES\_TO\_ASSETS$ & Ratio of revenues to assets $\left( \frac{revt}{at} \right)$.\\
+\addlinespace
+$RET\_VOL$ & Monthly return volatility computed as the standard deviation of daily stocks returns.\\
+\addlinespace
+$LENGTH$ and $DOC\_SIZE$ & The total number of words and the file size of EDGAR 10-K filing in megabytes. Both the variables are borrowed from the LM summary file compiled by Bill McDonald at \url{https://sraf.nd.edu/}\\
+\addlinespace
+$CMP\_WORDS$ & Number of unique occurrences of 374 complex words in firm's 10-K filing. The list of complex words is from \cite{lm_2020_firm_complexity}.\\*
+\end{longtable}
+\end{spacing}
+\end{ThreePartTable}
+\endgroup{}
+\end{landscape}
+\restoregeometry

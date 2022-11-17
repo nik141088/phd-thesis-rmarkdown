@@ -1,0 +1,72 @@
+
+\begin{landscape}
+\begin{table}
+
+
+
+\caption[Bivariate Portfolio Sorts by NBUY/NSELL]{\label{tab:bivariate_sorts_nbuy_nsell}Bivariate Sorts: Disagreement, turnover, and return over portfolios of number of buy/sell signals}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}}
+\multicolumn{10}{p{\linewidth}}{Average ranks and levels of disagreement, turnover, and return measured over nine (3x3) portfolios of lagged number of buy signals $(NBUY_{t-1})$ and lagged number of sell signals $(NSELL_{t-1})$. In panel A (panel B), entire sample is divided into three groups based on $NBUY_{t-1}$ $(NSELL_{t-1})$; each of the three groups thus formed are further divided into three portfolios based on $NSELL_{t-1}$ ($NBUY_{t-1}$) giving a total of 9 portfolios. In panel A (panel B), $T_{i,j}$ is the average rank for $i^{th}$ $NBUY_{t-1}$ ($NSELL_{t-1}$) portfolio and $j^{th}$ $NSELL_{t-1}$ ($NBUY_{t-1}$) portfolio. First three row presents the ranks of lagged disagreement, current log turnover and current returns respectively. The next three rows present their levels. Last row gives the number of observations in each portfolio. Ranks are multiplied by 100, returns are multiplied by 1200 so they represent annual percentages. Turnover and disagreement are unscaled. In panel A (panel B), within a row, each $NBUY_{t-1}$ ($NSELL_{t-1}$) portfolio is represented as a group of three values. There are three groups each corresponding to a different $NBUY_{t-1}$ ($NSELL_{t-1}$) portfolio. The second and third entries in each group presents difference in average value over two successive portfolio. $T_{i,j} - T_{i,j^\prime}$ is the difference between $NSELL_{t-1}$ ($NBUY_{t-1}$) portfolio $j$ and $j^\prime$ within $NBUY_{t-1}$ ($NSELL_{t-1}$) portfolio $i$. Corresponding signficance levels are from a t-test of sample means across corresponding portfolio pairs. Statistical significance of 5\% and 1\% are indicated by * and ** respectively}\\
+\multicolumn{10}{p{\linewidth}}{\textbf{Panel A: $3 \times 3$ portfolios on $NBUY_{t-1}$ and then $NSELL_{t-1}$}}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{$\mathbf{NBUY_{t-1} \in [1,5]}$} & \multicolumn{3}{c}{$\mathbf{NBUY_{t-1} \in [6,9]}$} & \multicolumn{3}{c}{$\mathbf{NBUY_{t-1} \in [10,\infty]}$} \\
+\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
+\multicolumn{1}{c}{$\mathbf{NSELL_{t-1} \in}$} & \multicolumn{1}{c}{$[1,6]$} & \multicolumn{1}{c}{$[7,11]$} & \multicolumn{1}{c}{$[12,\infty]$} & \multicolumn{1}{c}{$[1,5]$} & \multicolumn{1}{c}{$[6,10]$} & \multicolumn{1}{c}{$[11,\infty]$} & \multicolumn{1}{c}{$[1,4]$} & \multicolumn{1}{c}{$[5,8]$} & \multicolumn{1}{c}{$[9,\infty]$} \\
+\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4} \cmidrule(l{3pt}r{3pt}){5-5} \cmidrule(l{3pt}r{3pt}){6-6} \cmidrule(l{3pt}r{3pt}){7-7} \cmidrule(l{3pt}r{3pt}){8-8} \cmidrule(l{3pt}r{3pt}){9-9} \cmidrule(l{3pt}r{3pt}){10-10}
+ & $T_{11}$ & $T_{12} - T_{11}$ & $T_{13} - T_{12}$ & $T_{21}$ & $T_{22} - T_{21}$ & $T_{23} - T_{22}$ & $T_{31}$ & $T_{32} - T_{31}$ & $T_{33} - T_{32}$\\
+\midrule
+$STD\_DEV\_R_{t-1}$ & 18.149 & 8.871** & 3.991** & 16.744 & 14.071** & 24.838** & 16.521 & 22.050** & 33.350**\\
+\addlinespace
+$L\_TURN\_R_t$ & 41.045 & 6.688** & 8.391** & 41.138 & 3.865** & 11.402** & 43.626 & 3.970** & 6.804**\\
+\addlinespace
+$RET\_R_t$ & 49.653 & -0.927** & -2.454** & 50.569 & -0.550** & -2.309** & 51.195 & -0.661** & -1.799**\\
+\addlinespace
+$STD\_DEV_{t-1}$ & 0.603 & 0.059** & 0.027** & 0.610 & 0.080** & 0.094** & 0.623 & 0.099** & 0.121**\\
+\addlinespace
+$L\_TURN_t$ & -3.141 & 0.339** & 0.278** & -3.071 & 0.193** & 0.405** & -2.951 & 0.165** & 0.255**\\
+\addlinespace
+$RET_t$ & 13.210 & -3.068** & -8.978** & 16.658 & -2.674** & -2.858** & 20.304 & -1.317** & 2.131**\\
+\addlinespace
+$N$ & 32283 & 61018 & 99744 & 75460 & 191639 & 310682 & 138803 & 335649 & 613972\\
+\bottomrule
+\end{tabular}
+
+
+\phantom{-}\\
+\phantom{-}\\
+
+
+\centering\fontsize{9}{11}\selectfont
+
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.6cm}>{\raggedright\arraybackslash}p{2.2cm}}
+\multicolumn{10}{p{\linewidth}}{\textbf{Panel B: $3 \times 3$ portfolios on $NSELL_{t-1}$ and then $NBUY_{t-1}$}}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{$\mathbf{NSELL_{t-1} \in [1,5]}$} & \multicolumn{3}{c}{$\mathbf{NSELL_{t-1} \in [6,9]}$} & \multicolumn{3}{c}{$\mathbf{NSELL_{t-1} \in [10,\infty]}$} \\
+\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-10}
+\multicolumn{1}{c}{$\mathbf{NBUY_{t-1} \in}$} & \multicolumn{1}{c}{$[1,6]$} & \multicolumn{1}{c}{$[7,10]$} & \multicolumn{1}{c}{$[11,\infty]$} & \multicolumn{1}{c}{$[1,6]$} & \multicolumn{1}{c}{$[7,10]$} & \multicolumn{1}{c}{$[11,\infty]$} & \multicolumn{1}{c}{$[1,5]$} & \multicolumn{1}{c}{$[6,8]$} & \multicolumn{1}{c}{$[9,\infty]$} \\
+\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4} \cmidrule(l{3pt}r{3pt}){5-5} \cmidrule(l{3pt}r{3pt}){6-6} \cmidrule(l{3pt}r{3pt}){7-7} \cmidrule(l{3pt}r{3pt}){8-8} \cmidrule(l{3pt}r{3pt}){9-9} \cmidrule(l{3pt}r{3pt}){10-10}
+ & $T_{11}$ & $T_{12} - T_{11}$ & $T_{13} - T_{12}$ & $T_{21}$ & $T_{22} - T_{21}$ & $T_{23} - T_{22}$ & $T_{31}$ & $T_{32} - T_{31}$ & $T_{33} - T_{32}$\\
+\midrule
+$STD\_DEV\_R_{t-1}$ & 17.515 & -1.074** & 4.938** & 24.413 & 6.834** & 15.158** & 30.769 & 20.125** & 21.606**\\
+\addlinespace
+$L\_TURN\_R_t$ & 40.540 & 0.934** & 3.166** & 44.613 & 0.359** & 4.160** & 54.761 & 0.554** & -0.147*\\
+\addlinespace
+$RET\_R_t$ & 49.879 & 0.884** & 0.316** & 49.489 & 0.716** & 0.128 & 46.711 & 1.038** & 0.753**\\
+\addlinespace
+$STD\_DEV_{t-1}$ & 0.600 & 0.013** & 0.035** & 0.650 & 0.042** & 0.059** & 0.687 & 0.080** & 0.078**\\
+\addlinespace
+$L\_TURN_t$ & -3.166 & 0.127** & 0.132** & -2.916 & 0.044** & 0.136** & -2.567 & 0.055** & 0.010**\\
+\addlinespace
+$RET_t$ & 14.371 & 3.092** & 2.564** & 11.875 & 3.032** & 4.932** & 2.978 & 7.066** & 10.123**\\
+\addlinespace
+$N$ & 36623 & 86763 & 191940 & 71899 & 173495 & 292263 & 126226 & 250573 & 629468\\
+\bottomrule
+\end{tabular}
+
+
+\end{table}
+\end{landscape}

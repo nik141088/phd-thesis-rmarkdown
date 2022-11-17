@@ -1,0 +1,52 @@
+
+\begin{landscape}\begin{table}
+
+\caption[Regression: Different splitting criterion]{\label{tab:reg_diff_splits}Monthly cross-sectional regression: disagreement by different stock splits}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}}
+\multicolumn{11}{p{\linewidth}}{Log turnover regressed on a set of controls and disagreement constructed using stocks from either NASDAQ, NYSE/AMEX, or both (ALL) stock exchanges. It also gives disagreement measures based on different splitting criteria. A 70/30 stock split assigns the top 30\% stocks to buy category, the bottom 30\% stocks to sell category, and the rest to hold category. Similarly for 80/20 and 50/50 splits. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\%, and 1\% are indicated by *, **, and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{10}{c}{$L\_TURN_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-11}
+\multicolumn{2}{c}{ } & \multicolumn{3}{c}{All Stocks} & \multicolumn{3}{c}{NYSE/AMEX Stocks} & \multicolumn{3}{c}{NASDAQ Stocks} \\
+\cmidrule(l{3pt}r{3pt}){3-5} \cmidrule(l{3pt}r{3pt}){6-8} \cmidrule(l{3pt}r{3pt}){9-11}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3) & \phantom{-}(4) & \phantom{-}(5) & \phantom{-}(6) & \phantom{-}(7) & \phantom{-}(8) & \phantom{-}(9) & \phantom{-}(10)\\
+\midrule
+$^{ALL}STD\_DEV^{80/20}_{t-1}$ &  & $\phantom{-}1.463$*** &  &  &  &  &  &  &  & \\
+ &  & (\phantom{-}$0.052$) &  &  &  &  &  &  &  & \\
+\addlinespace
+$^{ALL}STD\_DEV^{70/30}_{t-1}$ &  &  & $\phantom{-}1.568$*** &  &  &  &  &  &  & \\
+ &  &  & (\phantom{-}$0.062$) &  &  &  &  &  &  & \\
+\addlinespace
+$^{ALL}STD\_DEV^{50/50}_{t-1}$ &  &  &  & $-0.145$* &  &  &  &  &  & \\
+ &  &  &  & (\phantom{-}$0.080$) &  &  &  &  &  & \\
+\addlinespace
+$^{NYSE}STD\_DEV^{80/20}_{t-1}$ &  &  &  &  & $\phantom{-}1.097$*** &  &  &  &  & \\
+ &  &  &  &  & (\phantom{-}$0.068$) &  &  &  &  & \\
+\addlinespace
+$^{NYSE}STD\_DEV^{70/30}_{t-1}$ &  &  &  &  &  & $\phantom{-}1.164$*** &  &  &  & \\
+ &  &  &  &  &  & (\phantom{-}$0.078$) &  &  &  & \\
+\addlinespace
+$^{NYSE}STD\_DEV^{50/50}_{t-1}$ &  &  &  &  &  &  & $-0.276$*** &  &  & \\
+ &  &  &  &  &  &  & (\phantom{-}$0.099$) &  &  & \\
+\addlinespace
+$^{NASDAQ}STD\_DEV^{80/20}_{t-1}$ &  &  &  &  &  &  &  & $\phantom{-}1.338$*** &  & \\
+ &  &  &  &  &  &  &  & (\phantom{-}$0.067$) &  & \\
+\addlinespace
+$^{NASDAQ}STD\_DEV^{70/30}_{t-1}$ &  &  &  &  &  &  &  &  & $\phantom{-}1.425$*** & \\
+ &  &  &  &  &  &  &  &  & (\phantom{-}$0.081$) & \\
+\addlinespace
+$^{NASDAQ}STD\_DEV^{50/50}_{t-1}$ &  &  &  &  &  &  &  &  &  & $\phantom{-}0.110$\\
+ &  &  &  &  &  &  &  &  &  & (\phantom{-}$0.111$)\\
+ &  &  &  &  &  &  &  &  &  \vphantom{1} & \\
+\midrule
+ &  &  &  &  &  &  &  &  &  & \\
+$\textrm{Adj.} \: R^2$ & {$\phantom{-}0.393$} & {$\phantom{-}0.414$} & {$\phantom{-}0.408$} & {$\phantom{-}0.393$} & {$\phantom{-}0.495$} & {$\phantom{-}0.491$} & {$\phantom{-}0.481$} & {$\phantom{-}0.399$} & {$\phantom{-}0.394$} & {$\phantom{-}0.383$}\\
+$\% \: R^2 \: \textrm{Explained}$ & {} & {$\phantom{-}6.140$} & {$\phantom{-}5.200$} & {$\phantom{-}0.000$} & {$\phantom{-}6.200$} & {$\phantom{-}4.680$} & {$\phantom{-}0.780$} & {$\phantom{-}14.990$} & {$\phantom{-}13.100$} & {$\phantom{-}8.650$}\\
+$\textrm{Observations}$ & {\phantom{-}878,810} & {\phantom{-}878,810} & {\phantom{-}878,810} & {\phantom{-}878,810} & {\phantom{-}463,573} & {\phantom{-}463,573} & {\phantom{-}463,573} & {\phantom{-}415,237} & {\phantom{-}415,237} & {\phantom{-}415,237}\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}

@@ -1,0 +1,11 @@
+\usepackage{letltxmacro}
+
+\LetLtxMacro\Oldfootnote\footnote
+
+\newcommand{\EnableFootNotes}{%
+  \LetLtxMacro\footnote\Oldfootnote%
+}
+
+\newcommand{\DisableFootNotes}{%
+  \renewcommand{\footnote}[2][]{\relax}
+}

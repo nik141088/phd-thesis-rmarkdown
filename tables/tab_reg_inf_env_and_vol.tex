@@ -1,0 +1,33 @@
+\begin{table}
+
+\caption[Regression: Information Environment, Volatility and, Spread]{\label{tab:reg_inf_env_and_vol}Monthly cross-sectional regression: Information environment, return volatility and bid-ask spread}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3.7cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}}
+\multicolumn{7}{p{\linewidth}}{Return Volatility and bid-ask spread regressed on disagreement, firm size and information environment. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Within $R^2$ is the $R^2$ for within-groups variation with fixed effects projected out while Adj. $R^2$ is for the entire model. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\%, and 1\% are indicated by *, **, and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{$RET\_VOL_t$} & \multicolumn{3}{c}{$SPREAD_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3) & \phantom{-}(4) & \phantom{-}(5) & \phantom{-}(6)\\
+\midrule
+$STD\_DEV_{t-1}$ & $\phantom{-}0.032$*** & $\phantom{-}0.031$*** & $\phantom{-}0.031$*** & $\phantom{-}0.004$*** & $\phantom{-}0.001$** & $\phantom{-}0.002$***\\
+ & (\phantom{-}$0.001$) & (\phantom{-}$0.001$) & (\phantom{-}$0.001$) & (\phantom{-}$0.001$) & (\phantom{-}$0.000$) & (\phantom{-}$0.001$)\\
+\addlinespace
+$L\_ME_{t-1}$ & $-0.003$*** & $-0.003$*** & $-0.003$*** & $-0.002$*** & $-0.002$*** & $-0.002$***\\
+ & (\phantom{-}$0.000$) & (\phantom{-}$0.000$) & (\phantom{-}$0.000$) & (\phantom{-}$0.000$) & (\phantom{-}$0.000$) & (\phantom{-}$0.000$)\\
+\addlinespace
+$INF\_ENV_{t-1}$ &  & $\phantom{-}0.001$*** &  &  & $\phantom{-}0.003$*** & \\
+ &  & (\phantom{-}$0.000$) &  &  & (\phantom{-}$0.000$) & \\
+\addlinespace
+$INF\_ENV\_R_{t-1}$ &  &  & $\phantom{-}0.019$*** &  &  & $\phantom{-}0.035$***\\
+ &  &  & (\phantom{-}$0.004$) &  &  & (\phantom{-}$0.002$)\\
+ &  &  &  &  &  \vphantom{1} & \\
+\midrule
+ &  &  &  &  &  & \\
+$\textrm{Within} \: R^2$ & {$\phantom{-}0.173$} & {$\phantom{-}0.175$} & {$\phantom{-}0.174$} & {$\phantom{-}0.165$} & {$\phantom{-}0.194$} & {$\phantom{-}0.175$}\\
+$\textrm{Adj.} \: R^2$ & {$\phantom{-}0.324$} & {$\phantom{-}0.325$} & {$\phantom{-}0.325$} & {$\phantom{-}0.227$} & {$\phantom{-}0.253$} & {$\phantom{-}0.236$}\\
+$\textrm{Observations}$ & {\phantom{-}278,798} & {\phantom{-}278,798} & {\phantom{-}278,798} & {\phantom{-}278,798} & {\phantom{-}278,798} & {\phantom{-}278,798}\\
+\bottomrule
+\end{tabular}
+\end{table}

@@ -1,0 +1,30 @@
+
+\begin{table}
+
+
+
+\caption[Regression: EDGAR adoption]{\label{tab:reg_edgar_adoption}Cross-sectional regression: EDGAR adoption}
+\centering
+\fontsize{12}{14}\selectfont
+\begin{tabularx}{\linewidth}{X * {4}{S[table-format=5.3]}}
+\multicolumn{5}{p{\linewidth}}{Log turnover regressed on lagged disagreement, controls, and the EDGAR adoption dummy. $EDGAR\_ADOPTION$ is set to 1 for firms having filed a 10-K report before December 1996. For brevity, controls are not shown. The sample period starts in Jan 1993 and ends in Dec 1996 (48 months). I require all firms to have non-missing variables for all 48 months. $L\_TURN_{i,t} = \beta \cdot STD\_DEV_{i,t-1} + \alpha \cdot CONTROLS_{i,t-1} + \gamma \cdot DUMMIES_{i,t-1} + \epsilon_{i,t}$. All specifications have 66,576 firm-month observations. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. Standard errors are not clustered. All regression specifications have industry and year fixed effects. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{\bgroup\fontsize{12}{14}\selectfont  \egroup{}} & \multicolumn{4}{c}{\bgroup\fontsize{12}{14}\selectfont \makecell{Monthly $L\_TURN$}\egroup{}} \\
+\cmidrule(l{3pt}r{3pt}){2-5}
+ & {(1)} & {(2)} & {(3)} & {(4)}\\
+\midrule
+$STD\_DEV$ & 1.712*** & 1.709*** & 1.763*** & 1.859***\\
+ & (50.636) & (50.565) & (51.339) & (33.113)\\
+\addlinespace
+$EDGAR\_ADOPTION$ &  & -0.051*** &  & 0.097**\\
+ &  & (-7.944) &  & (2.166)\\
+\addlinespace
+$STD\_DEV~\times EDGAR\_ADOPTION$ &  &  & -0.076*** & -0.211***\\
+ &  &  & (-8.344) & (-3.345)\\
+\midrule
+$\textrm{Adj.} \: R^2$ & 0.371 & 0.372 & 0.372 & 0.372\\
+\bottomrule
+\end{tabularx}
+
+\end{table}

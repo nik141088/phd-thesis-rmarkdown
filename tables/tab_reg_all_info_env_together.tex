@@ -1,0 +1,52 @@
+\begingroup\fontsize{12}{14}\selectfont
+
+\begin{spacing}{1.0}
+\begin{longtable}[t]{>{\raggedright\arraybackslash}p{6.5cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}>{\raggedright\arraybackslash}p{2.2cm}}
+\caption[Information Environment: Summary of Regression Splits]{\label{tab:reg_all_info_env_together}Information Environment: Summary of Regression Splits}\\
+\multicolumn{4}{p{\linewidth}}{The table summarizes turnover regressions across portfolios made using several variables related to the firm's information environment. Two sets of regressions corresponding to specifications 1 and 2 of Table \ref{tab:reg_compact_main} are estimated for each portfolio. Forecast dispersion is included in both regressions. Other explanatory variables (Table \ref{tab:reg_compact_main}), standard errors, and $R^2$ statistics are skipped for brevity. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively.}\\
+\toprule
+\multicolumn{1}{c}{\textbf{\makecell{Portfolio Criterion}}} & \multicolumn{1}{c}{\textbf{w/o STD\_DEV}} & \multicolumn{2}{c}{\textbf{with STD\_DEV}} \\
+\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-4}
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{$FDISP_{t-1}$} & \multicolumn{1}{c}{$FDISP_{t-1}$} & \multicolumn{1}{c}{$STD\_DEV_{t-1}$} \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
+\endfirsthead
+\caption[]{Information Environment: Summary of Regression Splits \textit{(continued)}}\\
+\toprule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{10-K Document Size}}\\
+\hspace{1em}$DOC\_SIZE - 1$ & $\phantom{-}0.034$*** & $\phantom{-}0.019$* & $\phantom{-}1.482$***\\
+\hspace{1em}$DOC\_SIZE - 2$ & $\phantom{-}0.014$ & $-0.000$ & $\phantom{-}1.433$***\\
+\hspace{1em}$DOC\_SIZE - 3$ & $\phantom{-}0.026$** & $\phantom{-}0.010$ & $\phantom{-}1.651$***\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{10-K Report Length}}\\
+\hspace{1em}$LENGTH - 1$ & $\phantom{-}0.032$** & $\phantom{-}0.016$ & $\phantom{-}1.353$***\\
+\hspace{1em}$LENGTH - 2$ & $\phantom{-}0.010$ & $-0.002$ & $\phantom{-}1.398$***\\
+\hspace{1em}$LENGTH - 3$ & $\phantom{-}0.019$** & $\phantom{-}0.002$ & $\phantom{-}1.670$***\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{10-K Complex Words}}\\
+\hspace{1em}$CMP\_WORDS - 1$ & $\phantom{-}0.025$ & $\phantom{-}0.009$ & $\phantom{-}1.371$***\\
+\hspace{1em}$CMP\_WORDS - 2$ & $\phantom{-}0.010$ & $-0.002$ & $\phantom{-}1.223$***\\
+\hspace{1em}$CMP\_WORDS - 3$ & $\phantom{-}0.024$ & $\phantom{-}0.012$ & $\phantom{-}1.440$***\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{Firm Size}}\\
+\hspace{1em}$FIRM\_SIZE - 1$ & $\phantom{-}0.026$*** & $\phantom{-}0.014$** & $\phantom{-}1.630$***\\
+\hspace{1em}$FIRM\_SIZE - 2$ & $\phantom{-}0.036$*** & $\phantom{-}0.009$ & $\phantom{-}1.932$***\\
+\hspace{1em}$FIRM\_SIZE - 3$ & $\phantom{-}0.085$*** & $\phantom{-}0.066$*** & $\phantom{-}1.135$***\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{Firm Age}}\\
+\hspace{1em}$FIRM\_AGE - 1$ & $\phantom{-}0.022$*** & $\phantom{-}0.007$ & $\phantom{-}1.754$***\\
+\hspace{1em}$FIRM\_AGE - 2$ & $\phantom{-}0.030$*** & $\phantom{-}0.014$ & $\phantom{-}1.359$***\\
+\hspace{1em}$FIRM\_AGE - 3$ & $\phantom{-}0.024$ & $\phantom{-}0.007$ & $\phantom{-}1.000$***\\
+\addlinespace[0.3em]
+\multicolumn{4}{l}{\textbf{Number of Analysts}}\\
+\hspace{1em}$NUMEST \in \{ 2,3 \}$ & $\phantom{-}0.021$*** & $\phantom{-}0.005$ & $\phantom{-}1.865$***\\
+\hspace{1em}$NUMEST \in \{ 4 \dots 10 \}$ & $\phantom{-}0.032$*** & $\phantom{-}0.014$** & $\phantom{-}1.738$***\\
+\hspace{1em}$NUMEST \geq 11$ & $\phantom{-}0.062$*** & $\phantom{-}0.043$*** & $\phantom{-}1.282$***\\*
+\end{longtable}
+\end{spacing}
+\endgroup{}

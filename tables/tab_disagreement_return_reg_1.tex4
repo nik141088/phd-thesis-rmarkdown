@@ -1,0 +1,47 @@
+
+\newgeometry{margin=1in}
+\begin{landscape}\begin{table}
+
+\caption[Disagreement Return Regression: Base Case]{\label{tab:disagreement_return_reg_1}Disagreement Return regression: turnover and disagreement}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.3cm}>{\raggedright\arraybackslash}p{0.8cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{12}{c}{$FF5\_ALPHA_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-13}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3) & \phantom{-}(4) & \phantom{-}(5) & \phantom{-}(6) & \phantom{-}(7) & \phantom{-}(8) & \phantom{-}(9) & \phantom{-}(10) & \phantom{-}(11) & \phantom{-}(12)\\
+\midrule
+$STD\_DEV_{t-1}$ &  & $\phantom{-}1.706$ &  & $\phantom{-}2.947$ &  & $-1.336$ &  & $-0.318$ &  & $-0.198$ &  & $\phantom{-}0.775$\\
+ &  & (\phantom{-}$5.970$) &  & (\phantom{-}$5.906$) &  & (\phantom{-}$4.646$) &  & (\phantom{-}$4.596$) &  & (\phantom{-}$4.449$) &  & (\phantom{-}$4.402$)\\
+\addlinespace
+$RES\_STD\_DEV^2_{t-1}$ &  & $\phantom{-}75.734$** &  & $\phantom{-}77.466$*** &  & $\phantom{-}71.388$** &  & $\phantom{-}72.744$** &  & $\phantom{-}77.209$*** &  & $\phantom{-}78.399$***\\
+ &  & (\phantom{-}$29.635$) &  & (\phantom{-}$29.396$) &  & (\phantom{-}$28.881$) &  & (\phantom{-}$28.634$) &  & (\phantom{-}$28.467$) &  & (\phantom{-}$28.222$)\\
+\addlinespace
+$RES\_COV_{t-1}$ &  &  & $-5.609$*** & $-5.601$*** &  &  & $-5.938$*** & $-5.912$*** &  &  & $-5.845$*** & $-5.817$***\\
+ &  &  & (\phantom{-}$1.599$) & (\phantom{-}$1.597$) &  &  & (\phantom{-}$1.603$) & (\phantom{-}$1.602$) &  &  & (\phantom{-}$1.606$) & (\phantom{-}$1.605$)\\
+\addlinespace
+$FDISP_{t-1}$ &  &  & $-2.204$*** & $-2.262$*** &  &  & $-2.305$*** & $-2.315$*** &  &  & $-2.257$*** & $-2.281$***\\
+ &  &  & (\phantom{-}$0.655$) & (\phantom{-}$0.631$) &  &  & (\phantom{-}$0.642$) & (\phantom{-}$0.628$) &  &  & (\phantom{-}$0.638$) & (\phantom{-}$0.626$)\\
+\addlinespace
+$L\_TURN_{t-1}$ &  &  &  &  & $\phantom{-}1.459$ & $\phantom{-}1.494$ & $\phantom{-}1.611$ & $\phantom{-}1.621$ & $\phantom{-}1.507$ & $\phantom{-}1.515$ & $\phantom{-}1.654$ & $\phantom{-}1.641$\\
+ &  &  &  &  & (\phantom{-}$1.101$) & (\phantom{-}$1.046$) & (\phantom{-}$1.101$) & (\phantom{-}$1.047$) & (\phantom{-}$1.095$) & (\phantom{-}$1.044$) & (\phantom{-}$1.096$) & (\phantom{-}$1.045$)\\
+\addlinespace
+$RES\_STD\_TURN_{t-1}$ &  &  &  &  &  &  &  &  & $-2.813$*** & $-2.839$*** & $-2.728$** & $-2.766$***\\
+ &  &  &  &  &  &  &  &  & (\phantom{-}$1.076$) & (\phantom{-}$1.050$) & (\phantom{-}$1.075$) & (\phantom{-}$1.051$)\\
+ &  &  &  &  &  &  &  &  &  &  &  \vphantom{1} & \\
+\midrule
+ &  &  &  &  &  &  &  &  &  &  &  & \\
+$\textrm{Within} \: R^2$ & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$} & {$\phantom{-}0.004$}\\
+$\textrm{Adj.} \: R^2$ & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$} & {$\phantom{-}0.028$}\\
+$\% \: R^2 \: \textrm{Explained}$ & {} & {$\phantom{-}0.000$} & {} & {$\phantom{-}0.000$} & {} & {$\phantom{-}0.000$} & {} & {$\phantom{-}0.000$} & {} & {$\phantom{-}0.000$} & {} & {$\phantom{-}0.000$}\\
+$\textrm{Observations}$ & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902} & {\phantom{-}674,902}\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item FF-5 alpha is regressed on set of controls, turnover and disagreement. Some of the controls like $L\_ME_{t-1}$, $BTM_{t-1}$, $L\_PRC_{t-1}$, $RET\_3\_t\_2$, $RET\_6\_t\_4$, $RET\_12\_t\_7$ and $DIV\_12M_{t-1}$ are skipped from the table. All explanatory variables are one month lagged. Definitions of all the variables appears in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Within $R^2$ is the $R^2$ for within groups variation with fixed effects projected out while Adj. $R^2$ is for the entire model. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{landscape}
+\restoregeometry

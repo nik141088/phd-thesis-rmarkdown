@@ -1,0 +1,50 @@
+
+\newgeometry{margin=1in}
+\begin{landscape}\begin{table}
+
+\caption[Univariate Portfolio Sorts: Excess Returns over Turnover Deciles]{\label{tab:univariate_sorts_return_1}Univariate Sorts: Excess return by turnover deciles}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.5cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{10}{c}{Deciles made on $L\_TURN_{t-1}$} \\
+\cmidrule(l{3pt}r{3pt}){2-11}
+ & $D_{1}$ & $D_{2} - D_{1}$ & $D_{3} - D_{2}$ & $D_{4} - D_{3}$ & $D_{5} - D_{4}$ & $D_{6} - D_{5}$ & $D_{7} - D_{6}$ & $D_{8} - D_{7}$ & $D_{9} - D_{8}$ & $D_{10} - D_{9}$\\
+\midrule
+$L\_TURN_{t-1}$ & -4.85 & 0.95** & 0.47** & 0.34** & 0.28** & 0.25** & 0.26** & 0.29** & 0.37** & 0.72**\\
+\addlinespace
+$EXCESS\_RET_t$ & 8.91 & 3.22** & 1.12* & -0.16 & 0.67 & -0.30 & -0.11 & -1.05 & 0.18 & -3.67**\\
+\addlinespace
+$CAPM\_ALPHA_t$ & 2.45 & 0.07 & 0.05 & -0.03 & 0.03 & 0.14** & 0.12* & 0.21** & 0.17** & 0.44**\\
+\addlinespace
+$CAPM\_ALPHA\_ERR_t$ & 0.70 & 2.79** & 0.86 & -0.26 & 0.61 & 0.05 & -0.40 & -0.64 & 0.41 & -4.05**\\
+\addlinespace
+$FF3\_ALPHA_t$ & -4.61 & 0.06 & 0.06 & -0.05 & 0.02 & 0.13* & 0.05 & -0.01 & 0.04 & 0.26**\\
+\addlinespace
+$FF3\_ALPHA\_ERR_t$ & -5.86 & 2.62** & 0.91* & -0.11 & 0.52 & 0.04 & -0.52 & -0.83 & 0.38 & -4.11**\\
+\addlinespace
+$FF5\_ALPHA_t$ & -3.30 & 0.12* & 0.02 & -0.09 & -0.01 & 0.08 & 0.01 & -0.02 & 0.02 & 0.24**\\
+\addlinespace
+$L\_TURN\_R_{t-1}$ & 5.00 & 10.00** & 10.00** & 10.00** & 10.00** & 10.00** & 10.00** & 10.00** & 10.00** & 9.99**\\
+\addlinespace
+$EXCESS\_RET\_R_t$ & 48.45 & 0.57** & 0.21* & 0.14 & 0.24** & -0.10 & -0.08 & -0.34** & -0.24** & -0.97**\\
+\addlinespace
+$CAPM\_ALPHA\_R_t$ & 44.69 & 0.19** & 0.10 & -0.09 & -0.05 & -0.04 & 0.05 & 0.06 & 0.18** & 0.33**\\
+\addlinespace
+$CAPM\_ALPHA\_ERR\_R_t$ & 48.74 & 0.60** & 0.27** & 0.18* & 0.23** & -0.06 & -0.07 & -0.32** & -0.22* & -1.13**\\
+\addlinespace
+$FF3\_ALPHA\_R_t$ & 44.92 & 0.14 & 0.12 & -0.05 & 0.01 & 0.06 & 0.08 & 0.08 & 0.21** & 0.42**\\
+\addlinespace
+$FF3\_ALPHA\_ERR\_R_t$ & 48.73 & 0.60** & 0.27** & 0.18* & 0.22** & -0.06 & -0.07 & -0.31** & -0.22* & -1.12**\\
+\addlinespace
+$FF5\_ALPHA\_R_t$ & 43.29 & 0.24** & 0.04 & -0.10 & -0.06 & 0.02 & 0.03 & 0.09 & 0.18* & 0.36**\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item Several measures of excess return and their ranks averaged over univariate decile sorts of $L\_TURN_{t-1}$. At each month, the cross-section of stocks is assigned to 10 portfolios based on lagged turnover and then several measures of excess returns are avergaed over these portfolios. This procedure is repeated for each month. First row gives the average turnover across turnover deciles. In the second row, $D_i$ is the $i^{th}$ decile, $D_j - D_i$ is the difference of average $EXCESS\_RET_t$ in $D_j$ and $D_i$. Similarly for other rows as well. All return variables are in annualized percentages. All rank variables are in percentage (0-100) ranks. Corresponding signficance levels are from a t-test of sample means across corresponding decile pairs. Statistical significance of 5\% and 1\% are indicated by * and ** respectively
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{landscape}
+\restoregeometry

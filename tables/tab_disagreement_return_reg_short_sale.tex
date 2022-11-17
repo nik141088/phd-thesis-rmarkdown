@@ -1,0 +1,51 @@
+
+\newgeometry{margin=1in}
+\begin{landscape}\begin{table}
+
+\caption[Disagreement Return Regression: Short-sale Constraints]{\label{tab:disagreement_return_reg_short_sale}Disagreement Return regression: Short sale constraints}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3.9cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.7cm}>{\raggedright\arraybackslash}p{1.7cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{8}{c}{$FF5\_ALPHA_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-9}
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{Short Interest ($SI$)} & \multicolumn{3}{c}{Inst. Ownership ($IO$)} & \multicolumn{2}{c}{$SI \: \& \: IO$} \\
+\cmidrule(l{3pt}r{3pt}){2-4} \cmidrule(l{3pt}r{3pt}){5-7} \cmidrule(l{3pt}r{3pt}){8-9}
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{$T_1$} & \multicolumn{1}{c}{$T_2$} & \multicolumn{1}{c}{$T_3$} & \multicolumn{1}{c}{$T_1$} & \multicolumn{1}{c}{$T_2$} & \multicolumn{1}{c}{$T_3$} & \multicolumn{1}{c}{$T^{SI}_3 \: \& \: T^{IO}_1$} & \multicolumn{1}{c}{$T^{SI}_1 \: \& \: T^{IO}_3$} \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4} \cmidrule(l{3pt}r{3pt}){5-5} \cmidrule(l{3pt}r{3pt}){6-6} \cmidrule(l{3pt}r{3pt}){7-7} \cmidrule(l{3pt}r{3pt}){8-8} \cmidrule(l{3pt}r{3pt}){9-9}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3) & \phantom{-}(4) & \phantom{-}(5) & \phantom{-}(6) & \phantom{-}(7) & \phantom{-}(8)\\
+\midrule
+$L\_TURN_{t-1}$ & $\phantom{-}0.071$ & $\phantom{-}0.203$ & $\phantom{-}0.122$ & $\phantom{-}0.261$** & $\phantom{-}0.180$ & $\phantom{-}0.064$ & $\phantom{-}0.032$ & $\phantom{-}0.001$\\
+ & (\phantom{-}$0.085$) & (\phantom{-}$0.147$) & (\phantom{-}$0.123$) & (\phantom{-}$0.104$) & (\phantom{-}$0.112$) & (\phantom{-}$0.110$) & (\phantom{-}$0.188$) & (\phantom{-}$0.117$)\\
+\addlinespace
+$RES\_STD\_TURN_{t-1}$ & $\phantom{-}0.151$ & $\phantom{-}0.103$ & $\phantom{-}0.152$*** & $\phantom{-}0.296$** & $\phantom{-}0.114$* & $\phantom{-}0.057$ & $\phantom{-}0.343$** & $\phantom{-}0.419$\\
+ & (\phantom{-}$0.148$) & (\phantom{-}$0.067$) & (\phantom{-}$0.056$) & (\phantom{-}$0.127$) & (\phantom{-}$0.060$) & (\phantom{-}$0.068$) & (\phantom{-}$0.133$) & (\phantom{-}$0.326$)\\
+\addlinespace
+$RES\_COV_{t-1}$ & $\phantom{-}0.210$ & $\phantom{-}0.103$ & $\phantom{-}0.192$ & $-0.385$ & $\phantom{-}0.108$ & $\phantom{-}0.223$ & $\phantom{-}0.168$ & $\phantom{-}0.322$\\
+ & (\phantom{-}$0.178$) & (\phantom{-}$0.195$) & (\phantom{-}$0.191$) & (\phantom{-}$0.324$) & (\phantom{-}$0.208$) & (\phantom{-}$0.169$) & (\phantom{-}$0.655$) & (\phantom{-}$0.216$)\\
+\addlinespace
+$FDISP_{t-1}$ & $\phantom{-}0.224$** & $\phantom{-}0.193$** & $\phantom{-}0.251$*** & $\phantom{-}0.183$* & $\phantom{-}0.192$** & $\phantom{-}0.297$*** & $\phantom{-}0.281$** & $\phantom{-}0.638$***\\
+ & (\phantom{-}$0.103$) & (\phantom{-}$0.086$) & (\phantom{-}$0.088$) & (\phantom{-}$0.101$) & (\phantom{-}$0.081$) & (\phantom{-}$0.095$) & (\phantom{-}$0.136$) & (\phantom{-}$0.178$)\\
+\addlinespace
+$STD\_DEV_{t-1}$ & $\phantom{-}1.016$** & $-0.232$ & $-0.663$* & $\phantom{-}1.981$** & $-0.390$ & $-0.646$*** & $\phantom{-}5.451$*** & $\phantom{-}0.506$\\
+ & (\phantom{-}$0.435$) & (\phantom{-}$0.234$) & (\phantom{-}$0.382$) & (\phantom{-}$0.796$) & (\phantom{-}$0.340$) & (\phantom{-}$0.241$) & (\phantom{-}$1.817$) & (\phantom{-}$0.466$)\\
+\addlinespace
+$RES\_STD\_DEV^2_{t-1}$ & $\phantom{-}3.430$ & $-1.293$ & $\phantom{-}0.024$ & $\phantom{-}4.804$ & $-0.193$ & $-2.352$ & $-2.490$ & $\phantom{-}2.084$\\
+ & (\phantom{-}$3.898$) & (\phantom{-}$1.937$) & (\phantom{-}$2.103$) & (\phantom{-}$8.255$) & (\phantom{-}$2.392$) & (\phantom{-}$1.691$) & (\phantom{-}$20.269$) & (\phantom{-}$5.364$)\\
+ &  &  &  &  &  &  &  \vphantom{1} & \\
+\midrule
+ &  &  &  &  &  &  &  & \\
+$\textrm{Within} \: R^2$ & {$\phantom{-}0.005$} & {$\phantom{-}0.009$} & {$\phantom{-}0.009$} & {$\phantom{-}0.004$} & {$\phantom{-}0.009$} & {$\phantom{-}0.009$} & {$-0.018$} & {$-0.003$}\\
+$\textrm{Adj.} \: R^2$ & {$\phantom{-}0.867$} & {$\phantom{-}0.875$} & {$\phantom{-}0.877$} & {$\phantom{-}0.831$} & {$\phantom{-}0.866$} & {$\phantom{-}0.889$} & {$\phantom{-}0.796$} & {$\phantom{-}0.898$}\\
+$\% \: R^2 \: \textrm{Explained}$ & {$\phantom{-}0.010$} & {$-0.000$} & {$\phantom{-}0.010$} & {$\phantom{-}0.040$} & {$-0.000$} & {$\phantom{-}0.010$} & {$\phantom{-}0.210$} & {$-0.020$}\\
+$\textrm{Observations}$ & {\phantom{-}29,871} & {\phantom{-}82,317} & {\phantom{-}59,296} & {\phantom{-}15,834} & {\phantom{-}72,020} & {\phantom{-}83,630} & {\phantom{-}2,826} & {\phantom{-}7,755}\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item FF-5 alpha is regressed on set of controls, turnover and disagreement across 70/30 terciles made on short interest ($SI$) and institutional ownership ($IO$). The last two columns consits of data with both $SI$ and $IO$ filters. Some of the controls like $L\_ME_{t-1}$, $BTM_{t-1}$, $L\_PRC_{t-1}$, $RET\_3\_t\_2$, $RET\_6\_t\_4$, $RET\_12\_t\_7$ and $DIV\_12M_{t-1}$ are skipped from the table. All explanatory variables are one month lagged. Definitions of all the variables appears in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Within $R^2$ is the $R^2$ for within groups variation with fixed effects projected out while Adj. $R^2$ is for the entire model. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{landscape}
+\restoregeometry

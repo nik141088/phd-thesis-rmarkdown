@@ -1,0 +1,90 @@
+\begingroup\fontsize{12}{14}\selectfont
+
+\begin{xltabular}{\linewidth}{X * {6}{S[table-format=4.3]}}
+\caption[Analyst Forecasts and Disagreement]{\label{tab:reg_disagreement_and_forecast_accuracy}Analyst Forecasts and Disagreement}\\
+\multicolumn{7}{p{\linewidth}}{\textbf{Panel A: EPS Forecasts}}\\
+\multicolumn{7}{p{\linewidth}}{Several measures of earnings forecast accuracy are regressed on a set of controls (including log turnover rank, $L\_TURN\_R_t$) and lagged disagreement rank $(STD\_DEV\_R_{t-1})$. Following controls (not shown) were used: $L\_ME\_R_t$, $BTM\_R_t$, $CAPM\_BETA\_R_t$, $ret.12t2\_R_t$, $EVOL\_R_t$, $EARN\_CHANGE\_R_t$, $LOSS\_FIRM_t$, $CAPM\_IVOL\_R_t$, $NUMEST_t$, $LEV\_R_t$, $SALES\_TO\_ASSETS\_R_t$, $EPS\_MEAN\_EST\_R_t$ and, $L\_PRC\_R_t$.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{$EPS\_DISP\_R_t$} & \multicolumn{2}{c}{$EPS\_AFE\_R_t$} & \multicolumn{2}{c}{$EPS\_RANGE\_R_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)} & {(6)}\\
+\midrule
+\endfirsthead
+\caption[]{Analyst Forecasts and Disagreement \textit{(continued)}}\\
+\toprule
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)} & {(6)}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+$L\_TURN\_R_t$ & 0.097*** & 0.086*** & 0.093*** & 0.086*** & 0.231*** & 0.223***\\
+ & (11.973) & (10.724) & (15.198) & (14.125) & (26.123) & (25.298)\\
+$STD\_DEV\_R_{t-1}$ &  & 0.066*** &  & 0.045*** &  & 0.049***\\
+ &  & (9.241) &  & (7.491) &  & (6.340)\\
+\midrule
+$\textrm{Adj.} \: R^2$ & {0.380} & {0.382} & {0.322} & {0.323} & {0.312} & {0.312}\\
+$\textrm{Observations}$ & {491,907} & {491,907} & {491,907} & {491,907} & {491,907} & {491,907}\\*
+\end{xltabular}
+\endgroup{}\begingroup\fontsize{12}{14}\selectfont
+
+\begin{xltabular}{\linewidth}{X * {6}{S[table-format=4.3]}}
+\multicolumn{7}{p{\linewidth}}{\textbf{Panel B: Target Price Forecasts}}\\
+\multicolumn{7}{p{\linewidth}}{Several measures of target price forecast accuracy are regressed on a set of controls (including log turnover rank, $L\_TURN\_R_t$) and lagged disagreement rank $(STD\_DEV\_R_{t-1})$. Following controls (not shown) were used: $L\_ME\_R_t$, $BTM\_R_t$, $CAPM\_BETA\_R_t$, $ret.12t2\_R_t$, $RET\_SD\_R_t$, $LOSS\_FIRM_t$, $CAPM\_IVOL\_R_t$, $PRC\_NUMEST_t$, $LEV\_R_t$, $SALES\_TO\_ASSETS\_R_t$, $PRC\_MEAN\_EST\_R_t$ and, $L\_PRC\_R_t$.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{$PRC\_DISP\_R_t$} & \multicolumn{2}{c}{$PRC\_AFE\_R_t$} & \multicolumn{2}{c}{$PRC\_RANGE\_R_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)} & {(6)}\\
+\midrule
+\endfirsthead
+\caption[]{Analyst Forecasts and Disagreement \textit{(continued)}}\\
+\toprule
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)} & {(6)}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+$L\_TURN\_R_t$ & 0.210*** & 0.192*** & 0.168*** & 0.151*** & 0.246*** & 0.231***\\
+ & (19.802) & (17.950) & (16.294) & (15.153) & (23.741) & (22.036)\\
+$STD\_DEV\_R_{t-1}$ &  & 0.101*** &  & 0.098*** &  & 0.085***\\
+ &  & (11.885) &  & (12.015) &  & (10.187)\\
+\midrule
+$\textrm{Adj.} \: R^2$ & {0.301} & {0.305} & {0.138} & {0.142} & {0.410} & {0.413}\\
+$\textrm{Observations}$ & {251,377} & {251,377} & {251,377} & {251,377} & {251,377} & {251,377}\\*
+\end{xltabular}
+\endgroup{}\begingroup\fontsize{12}{14}\selectfont
+
+\begin{xltabular}{\linewidth}{X * {6}{S[table-format=4.3]}}
+\multicolumn{7}{p{\linewidth}}{\textbf{Panel C: BKLS Variables}}\\
+\multicolumn{7}{p{\linewidth}}{Uncertainty variables derived from \cite{barron_etal1998} (BKLS) are regressed on a set of controls (including log turnover rank, $L\_TURN\_R_t$) and lagged disagreement rank $(STD\_DEV\_R_{t-1})$. Following controls (not shown) were used: $L\_ME\_R_t$, $BTM\_R_t$, $CAPM\_BETA\_R_t$, $ret.12t2\_R_t$, $EVOL\_R_t$, $EARN\_CHANGE\_R_t$, $LOSS\_FIRM_t$, $CAPM\_IVOL\_R_t$, $NUMEST_t$, $LEV\_R_t$, $SALES\_TO\_ASSETS\_R_t$, $EPS\_MEAN\_EST\_R_t$ and, $L\_PRC\_R_t$.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{2}{c}{$TOTAL\_UNC\_R_t$} & \multicolumn{2}{c}{$COMMON\_UNC\_R_t$} & \multicolumn{2}{c}{$RESIDUAL\_UNC\_R_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-3} \cmidrule(l{3pt}r{3pt}){4-5} \cmidrule(l{3pt}r{3pt}){6-7}
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)} & {(6)}\\
+\midrule
+\endfirsthead
+\multicolumn{7}{@{}l}{\textit{(continued)}}\\
+\toprule
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)} & {(6)}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\multicolumn{7}{p{\linewidth}}{\textit{Note: }Definitions of all the variables appears in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively.}\\
+\endlastfoot
+$L\_TURN\_R_t$ & 0.102*** & 0.094*** & 0.096*** & 0.093*** & 0.086*** & 0.078***\\
+ & (15.404) & (14.317) & (15.458) & (14.868) & (10.332) & (9.402)\\
+$STD\_DEV\_R_{t-1}$ &  & 0.050*** &  & 0.019*** &  & 0.051***\\
+ &  & (7.935) &  & (3.278) &  & (6.880)\\
+\midrule
+$\textrm{Adj.} \: R^2$ & {0.369} & {0.370} & {0.173} & {0.173} & {0.326} & {0.327}\\
+$\textrm{Observations}$ & {539,300} & {539,300} & {539,300} & {539,300} & {539,300} & {539,300}\\*
+\end{xltabular}
+\endgroup{}

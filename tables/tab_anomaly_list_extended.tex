@@ -1,0 +1,79 @@
+
+\begin{landscape}\begingroup\fontsize{10}{12}\selectfont
+
+\begin{spacing}{1.0}
+\begin{longtable}[t]{>{\raggedleft\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{2.7cm}>{\raggedright\arraybackslash}p{4.5cm}}
+\caption{\label{tab:anomaly_list_extended}Anomalies List}\\
+\multicolumn{6}{p{\linewidth}}{List of 39 anomalies used to construct the disagreement measure. Thirty-four anomalies are from \cite{roberts2018} and five momentum anomalies from \cite{mclean_pontiff2016}. The predicted relationship and the main table of findings is from the original study. Sixth column gives anomaly construction using CRSP/COMPUSTAT variables. Unless stated otherwise, $t$ captures time in years.}\\
+\toprule
+\textbf{Category / S.No.} & \textbf{Anomaly} & \textbf{Source} & \textbf{Predicted Relationship} & \textbf{Main Table} & \textbf{Construction}\\
+\midrule
+\endfirsthead
+\caption[]{Anomalies List \textit{(continued)}}\\
+\toprule
+\textbf{Category / S.No.} & \textbf{Anomaly} & \textbf{Source} & \textbf{Predicted Relationship} & \textbf{Main Table} & \textbf{Construction}\\
+\midrule
+\endhead
+
+\endfoot
+\bottomrule
+\endlastfoot
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Profitability}}\\
+\hspace{1em}1 & Gross Profitability & \cite*{novymarx2013} & Positive & Table 1 & $GrProf = \left( revt_t - cogs_t \right) / at_t$\\
+\hspace{1em}2 & Operating Profitability & \cite*{fama_french2015} & Positive & Table 1 Panel B & $OpProf = \left( revt_t - cogs_t - xint_t - xsga_t \right) / BE_t$\\
+\hspace{1em}3 & Return on Assets & \cite*{haugen1996} & Positive & Table 3 & $RoA = ib_t / at_t$\\
+\hspace{1em}4 & Return on Equity & \cite*{haugen1996} & Positive & Table 3 & $RoE = ib_t / BE_t$\\
+\hspace{1em}5 & Profit Margin & \cite*{soliman2008} & Positive & Table 4 & $PfMg = oiadp_t / revt_t$\\
+\hspace{1em}6 & Change in Asset Turnover & \cite*{soliman2008} & Positive & Table 4 & $ChgAssTurn = \Delta \left( revt_t / at_t \right)$\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Earnings Quality}}\\
+\hspace{1em}7 & Accruals & \cite*{sloan1996} & Negative & Table 6 and 7 & $Accr = \frac{(\Delta act_t - \Delta che_t) - (\Delta lct_t - \Delta dlc_t - \Delta txp_t) - dp_t}{at_t}$\\
+\hspace{1em}8 & Net Operating Assets & \cite*{hirshleifer_etal2004} & Negative & Table 5 & $NOA = \frac{(at_t - che_t ) - (at_t - dlc_t - dltt_t - BE_t)}{at_{t-1}}$\\
+\hspace{1em}9 & Changes in Net Working Capital & \cite*{soliman2008} & Negative & Table 7 & $ChgNWC = \frac{\Delta (act_t - che_t) - \Delta (lct_t - dlc_t)}{at_t}$\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Valuation}}\\
+\hspace{1em}10 & Book to market & \cite*{fama_french1992} & Positive & Table 6 & $BTM = BE_t / ME_t$\\
+\hspace{1em}11 & Cash flow to price & \cite*{lakonishok_etal1994} & Positive & Table 4 & $CFP = \left( ib_t+dp_t \right) / ME_t$\\
+\hspace{1em}12 & Earnings to Price & \cite*{basu1977} & Positive & Table 4 & $EP_t = ib_t / ME_t$\\
+\hspace{1em}13 & Enterprise Multiple & \cite*{loughran_wellman2011} & Negative & Table 2 & $EntMult = \left( ME_t + dlc_t + dltt_t + pstkrv_t - che_t \right) / oibdp_t$\\
+\hspace{1em}14 & Sales to price & \cite*{barbee_etal1996} & Positive & Table 2 & $SP = revt_t / ME_t$\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Momentum}}\\
+\hspace{1em}15 & Short term momentum & \cite*{jegadeesh_titman1993} & Positive & Table 7 & $ret.6t2$, where $t$ is the current month\\
+\hspace{1em}16 & Lagged Momentum & \cite*{novymarx2012} & Positive & Table 1 & $ret.12t7$, where $t$ is the current month\\
+\hspace{1em}17 & Short-term reversal & \cite*{jegadeesh_titman1993} & Negative & Table 7 & $ret.1t1$, where $t$ is the current month\\
+\hspace{1em}18 & Medium-term reversal & \cite*{jegadeesh_titman1993} & Negative & Table 7 & $ret.18t13$, where $t$ is the current month\\
+\hspace{1em}19 & Long-term reversal & \cite*{debondt_thaler1985} & Negative &  & $ret.60t13$, where $t$ is the current month\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Investment}}\\
+\hspace{1em}20 & Asset Growth & \cite*{cooper_etal2008} & Negative & Table III & $AssGr = \Delta at_t / at_{t-1}$\\
+\hspace{1em}21 & Inventory Growth & \cite*{thomas_zhang2002} & Negative & Table 1 & $ChgInvt = \Delta invt_t  /  \overline{at_t}$\\
+\hspace{1em}22 & Sales Growth & \cite*{lakonishok_etal1994} & Negative & Table 4 & $SalesGr = 5r_t + 4r_{t-1} + 3r_{t-2} + 2r_{t-3} + r_{t-4}$, where $r_t$ is the sales rank in year $t$\\
+\hspace{1em}23 & Sustainable Growth & \cite*{lockwood2010} & Negative & Table 6 & $SustGr = \Delta BE_t  /  BE_{t-1}$\\
+\hspace{1em}24 & CAPX Growth & \cite*{abarbanell_bushee1998} & Negative & Table 2 Panel B & $CapxGr = \left( capx_t - \overline{capx_{t-1}} \right)  /  \overline{capx_{t-1}}$\\
+\hspace{1em}25 & Growth in Sales minus growth in Inventory & \cite*{abarbanell_bushee1998} & Positive & Table 2 Panel B & $SalesGr\_InvtGr = \left( \frac{revt_t - \overline{rev_{t-1}}}{\overline{rev_{t-1}}} \right)  /  \left( \frac{invt_t - \overline{invt_{t-1}}}{\overline{invt_{t-1}}} \right)$\\
+\hspace{1em}26 & Investment Growth & \cite*{xing2007} & Negative & Table 4 & $InvstGr = \Delta capx_t / capx_{t-1}$\\
+\hspace{1em}27 & Abnormal CAPX & \cite*{titman_etal2004} & Negative & Table 6 & $AbCapInvst = \left( \frac{capx_t/revt_t}{\frac{1}{3} \cdot \sum_{s=t-3}^{s=t-1} capx_s/rev_s} \right)$\\
+\hspace{1em}28 & Investment to Capital Ratio & \cite*{xing2007} & Negative & Table 4 & $IK = capx_t / ppent_{t-1}$\\
+\hspace{1em}29 & Investment to Asset Ratio & \cite*{lyandres_etal2007} & Negative & Section 4 & $IA = \left( \Delta ppent_t + \Delta invt_t \right)  /  at_{t-1}$\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Financing}}\\
+\hspace{1em}30 & Increase in Debt Issuance & \cite*{spiess1999} & Negative &  & $DebtIssueInd = \left( \Delta dlc_t + \Delta dltt_t \right) / at_t$\\
+\hspace{1em}31 & Leverage & \cite*{bhandari1988} & Positive & Table 2 Panel A & $LEV = dltt_t / ME_t$\\
+\hspace{1em}32 & One year Share Issuance & \cite*{pontiff_woodgate2008} & Negative & Table 3 & $ShIssue\_1 = \left( shrout_t\ \cdot\ cfacshr_t \right)  /  \left( shrout_{t-1}\ \cdot\ cfacshr_{t-1} \right)$\\
+\hspace{1em}33 & Five year Share Issuance & \cite*{daniel_titman2006} & Negative & Table 3 & $ShIssue\_1 = \left( shrout_t\ \cdot\ cfacshr_t \right)  /  \left( shrout_{t-5}\ \cdot\ cfacshr_{t-5} \right)$\\
+\hspace{1em}34 & External Financing – I & \cite*{bradshaw_etal2006} & Negative & Table 5 & $ExtFin = \frac{(ShIssue\_1_t - 1) \cdot ME_t + \Delta dlc_t + \Delta dltt_t - dvc_t}{at_t}$\\
+\hspace{1em}35 & External Financing – II & \cite*{bradshaw_etal2006} & Negative & Table 5 & $ExtFin2 = \frac{sstk_t - prstkc_t + dltis_t - dltr_t + dlcch_t - dv_t}{at_t}$\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Distress}}\\
+\hspace{1em}36 & O-Score & \cite*{dichev1998} & Negative & Table 4 & $O\_Score = -1.32 -0.407 \cdot \log(\frac{at_t}{cpiind_t}) + 6.03 \cdot \frac{lt_t}{at_t} - 1.43 \cdot \frac{act_t - lct_t}{at_t} + 0.076 \cdot \frac{lct_t}{act_t} - 1.72 \cdot 1_{lt_t - at_t > 0} -2.37 \cdot \frac{ib_t}{at_t} -1.83 \cdot \frac{oiadp_t}{lt_t} + 0.285 \cdot1_{ib_t < 0,\ ib_{t-1} < 0} -0.521 \cdot \frac{\Delta ib_t}{\lvert ib_t \rvert + \lvert ib_{t-1} \rvert}$\\
+\hspace{1em}37 & Z-Score & \cite*{dichev1998} & Positive & Table 3 & $Z\_Score = 1.2 \cdot \frac{act_t - lct_t}{at_t} + 1.4 \cdot \frac{re_t}{at_t} + 3.3 \cdot \frac{ni_t + xint_t + txp_t}{at_t} + 0.6 \cdot \frac{ME_t}{lt_t} + 1.0 \cdot \frac{revt_t}{at_t}$\\
+\hspace{1em}38 & Distress Risk & \cite*{campbell_etal_distress} & Negative & Table 6 & 12-month horizon regression from Table 6\\
+\addlinespace[0.3em]
+\multicolumn{6}{l}{\textbf{Miscellaneous}}\\
+\hspace{1em}39 & Industry Concentration & \cite*{industry_conc} & Negative & Table 3 & three-year simple average of the Herfindahl index computed on three-digit SIC codes and sales\\*
+\end{longtable}
+\end{spacing}
+\endgroup{}
+\end{landscape}

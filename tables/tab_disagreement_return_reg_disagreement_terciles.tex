@@ -1,0 +1,45 @@
+\begin{table}
+
+\caption[Disagreement Return Regression: Disagreement Terciles]{\label{tab:disagreement_return_reg_disagreement_terciles}Disagreement Return regression: Disagreement terciles}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{8cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{1.9cm}>{\raggedright\arraybackslash}p{1.9cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{3}{c}{$FF5\_ALPHA_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-4}
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{$T_1$} & \multicolumn{1}{c}{$T_2$} & \multicolumn{1}{c}{$T_3$} \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3)\\
+\midrule
+$L\_TURN_{t-1}$ & $\phantom{-}0.048$ & $\phantom{-}0.053$ & $\phantom{-}0.022$\\
+ & (\phantom{-}$0.061$) & (\phantom{-}$0.047$) & (\phantom{-}$0.056$)\\
+\addlinespace
+$RES\_STD\_TURN_{t-1}$ & $\phantom{-}0.065$ & $\phantom{-}0.072$ & $\phantom{-}0.210$***\\
+ & (\phantom{-}$0.071$) & (\phantom{-}$0.050$) & (\phantom{-}$0.071$)\\
+\addlinespace
+$RES\_COV_{t-1}$ & $\phantom{-}0.201$* & $\phantom{-}0.027$ & $\phantom{-}0.092$\\
+ & (\phantom{-}$0.117$) & (\phantom{-}$0.106$) & (\phantom{-}$0.154$)\\
+\addlinespace
+$FDISP_{t-1}$ & $\phantom{-}0.216$*** & $\phantom{-}0.093$** & $\phantom{-}0.056$\\
+ & (\phantom{-}$0.068$) & (\phantom{-}$0.043$) & (\phantom{-}$0.053$)\\
+\addlinespace
+$STD\_DEV_{t-1}$ & $-0.521$ & $\phantom{-}0.640$ & $\phantom{-}6.972$***\\
+ & (\phantom{-}$0.468$) & (\phantom{-}$0.643$) & (\phantom{-}$2.111$)\\
+\addlinespace
+$RES\_STD\_DEV^2_{t-1}$ & $-2.086$ & $-5.483$** & $-19.844$***\\
+ & (\phantom{-}$2.033$) & (\phantom{-}$2.581$) & (\phantom{-}$6.232$)\\
+ &  &  \vphantom{1} & \\
+\midrule
+ &  &  & \\
+$\textrm{Within} \: R^2$ & {$\phantom{-}0.009$} & {$\phantom{-}0.006$} & {$\phantom{-}0.008$}\\
+$\textrm{Adj.} \: R^2$ & {$\phantom{-}0.891$} & {$\phantom{-}0.885$} & {$\phantom{-}0.870$}\\
+$\% \: R^2 \: \textrm{Explained}$ & {$\phantom{-}0.000$} & {$\phantom{-}0.000$} & {$\phantom{-}0.080$}\\
+$\textrm{Observations}$ & {\phantom{-}269,305} & {\phantom{-}324,345} & {\phantom{-}84,459}\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item FF-5 alpha is regressed on set of controls, turnover and disagreement across three disagreement terciles using 70/30 stock splits. Some of the controls like $L\_ME_{t-1}$, $BTM_{t-1}$, $L\_PRC_{t-1}$, $RET\_3\_t\_2$, $RET\_6\_t\_4$, $RET\_12\_t\_7$ and $DIV\_12M_{t-1}$ are skipped from the table. All explanatory variables are one month lagged. Definitions of all the variables appears in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Within $R^2$ is the $R^2$ for within groups variation with fixed effects projected out while Adj. $R^2$ is for the entire model. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

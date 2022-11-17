@@ -1,0 +1,35 @@
+
+\newgeometry{margin=0.75in}
+\begin{landscape}\begin{table}
+
+\caption{\label{tab:disagreement_return_reg_3}\textbf{Disagreement Return regression: STD\_DEV deciles}}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{4.5cm}>{\raggedright\arraybackslash}p{1.0cm}>{\raggedright\arraybackslash}p{1.0cm}>{\raggedright\arraybackslash}p{1.0cm}>{\raggedright\arraybackslash}p{1.0cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.0cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{10}{c}{$STD\_DEV_{t-2}$ Deciles} & \multicolumn{1}{c}{$Adj.R^2$} \\
+\cmidrule(l{3pt}r{3pt}){2-11} \cmidrule(l{3pt}r{3pt}){12-12}
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & \\
+\midrule
+\addlinespace[0.3em]
+\multicolumn{12}{l}{\textbf{Combined Regression}}\\
+\hspace{1em}(1) &  & 1.170 & 2.036 & 2.559 & 2.909 & 3.094 & 3.264 & 2.916 & 1.427 & -3.876 & 0.167\\
+\hspace{1em}(2) w/ TURN &  & 1.338 & 2.334 & 2.946 & 3.432 & 3.799 & 4.156 & 4.061 & 2.955 & -1.434 & 0.181\\
+\hspace{1em}(3) w/ TURN and FDISP &  & 1.355 & 2.418 & 3.082 & 3.716 & 4.362 & 4.960 & 5.276 & 5.070 & 2.336 & 0.179\\
+\addlinespace[0.3em]
+\multicolumn{12}{l}{\textbf{Separate Regressions}}\\
+\hspace{1em}(1) & 5.732 & 7.845 & 26.706 & 21.076 & -4.876\# & -1.565\# & -1.182\# & 3.335\# & -45.364 & -77.715 & \\
+\hspace{1em}(2) w/ TURN & 6.495 & 8.804 & 29.438 & 24.999 & -2.521\# & 2.549\# & 5.878\# & 12.556\# & -32.927 & -46.145 & \\
+\hspace{1em}(3) w/ TURN and FDISP & 11.708 & 13.895 & 35.892 & 32.600 & 8.328\# & 4.226\# & 5.301\# & 35.153 & 11.820\# & -22.512\# & \\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item \textit{Note: } 
+\item Annualized (in \%) \cite{fama_french2015} alpha is regressed on a set of explanatory variables, lagged turnover, two month lagged forecast dispersion and disagreement. Only the coefficients for disagreement are shown. There are two sets of regressions: combined regression is a single regression which includes ten disagreement decile dummy variables while separate regression constitute ten separate regression where for each regression the sample is restricted to one particular disagreement decile. The explanatory variable in separate regressions is raw disagreement. There are three regression specifications under each category. First row in combined regression includes the controls and the ten disagreement deciles $STD\_DEV\_Dec_{t-2}$ as explanatory variables. For separate regression category, first row includes controls and raw disagreement. Second row includes $L\_TURN_{t-1}$ and $STD\_TURN_{t-1}$ over and above the variables in first row while third row includes $FDISP_{t-2}$ and all the variables from second row. For the combine dregression, the first decile is subsumed (redundant dummy variable) and the rest of the coefficients are changes in returns w.r.t. first decile. All regression specifications have industry and year fixed effects.
+\item[*] All coefficients are significant at 5\% level except the ones with a trailing '\#'.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{landscape}
+\restoregeometry

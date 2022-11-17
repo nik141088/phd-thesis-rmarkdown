@@ -1,0 +1,61 @@
+\begin{table}
+
+\caption[Regression: Different Specifications]{\label{tab:reg_diff_specs}Monthly cross-sectional regression: different specifications}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}>{\raggedright\arraybackslash}p{1.5cm}}
+\multicolumn{7}{p{\linewidth}}{Log turnover regressed on different set of explanatory variables: $L\_TURN_{i,t} = \beta \cdot STD\_DEV_{i,t-1} + \alpha \cdot CONTROLS_{i,t-1} + \gamma \cdot DUMMIES_{i,t-1} + \epsilon_{i,t}$. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Within $R^2$ is the $R^2$ for within-groups variation with fixed effects projected out while Adj. $R^2$ is for the entire model. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\%, and 1\% are indicated by *, **, and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{6}{c}{$L\_TURN_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-7}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3) & \phantom{-}(4) & \phantom{-}(5) & \phantom{-}(6)\\
+\midrule
+$STD\_DEV_{t-1}$ &  &  &  & $\phantom{-}1.575$*** & $\phantom{-}1.601$*** & $\phantom{-}1.742$***\\
+ &  &  &  & (\phantom{-}$0.062$) & (\phantom{-}$0.061$) & (\phantom{-}$0.066$)\\
+\addlinespace
+$FDISP_{t-1}$ & $\phantom{-}0.029$*** & $\phantom{-}0.031$*** &  & $\phantom{-}0.010$ & $\phantom{-}0.012$* & \\
+ & (\phantom{-}$0.006$) & (\phantom{-}$0.006$) &  & (\phantom{-}$0.006$) & (\phantom{-}$0.006$) & \\
+\addlinespace
+$NASDAQ$ & $\phantom{-}0.143$*** & $\phantom{-}0.141$*** & $\phantom{-}0.073$*** & $\phantom{-}0.125$*** & $\phantom{-}0.124$*** & $\phantom{-}0.056$**\\
+ & (\phantom{-}$0.022$) & (\phantom{-}$0.022$) & (\phantom{-}$0.024$) & (\phantom{-}$0.022$) & (\phantom{-}$0.022$) & (\phantom{-}$0.024$)\\
+\addlinespace
+$RET^+_{t-1}$ & $\phantom{-}1.735$*** & $\phantom{-}1.781$*** & $\phantom{-}1.690$*** & $\phantom{-}1.554$*** & $\phantom{-}1.578$*** & $\phantom{-}1.488$***\\
+ & (\phantom{-}$0.068$) & (\phantom{-}$0.067$) & (\phantom{-}$0.064$) & (\phantom{-}$0.062$) & (\phantom{-}$0.061$) & (\phantom{-}$0.057$)\\
+\addlinespace
+$RET^-_{t-1}$ & $-2.463$*** & $-2.471$*** & $-2.640$*** & $-2.232$*** & $-2.234$*** & $-2.376$***\\
+ & (\phantom{-}$0.082$) & (\phantom{-}$0.083$) & (\phantom{-}$0.084$) & (\phantom{-}$0.075$) & (\phantom{-}$0.075$) & (\phantom{-}$0.076$)\\
+\addlinespace
+$LEV_{t-1}$ & $\phantom{-}0.075$*** & $\phantom{-}0.083$*** & $\phantom{-}0.078$*** & $\phantom{-}0.061$*** & $\phantom{-}0.065$*** & $\phantom{-}0.062$***\\
+ & (\phantom{-}$0.007$) & (\phantom{-}$0.007$) & (\phantom{-}$0.007$) & (\phantom{-}$0.007$) & (\phantom{-}$0.007$) & (\phantom{-}$0.007$)\\
+\addlinespace
+$CAPM\_\beta_{t-1}$ & $\phantom{-}0.086$*** & $\phantom{-}0.086$*** & $\phantom{-}0.090$*** & $\phantom{-}0.089$*** & $\phantom{-}0.089$*** & $\phantom{-}0.093$***\\
+ & (\phantom{-}$0.031$) & (\phantom{-}$0.032$) & (\phantom{-}$0.032$) & (\phantom{-}$0.030$) & (\phantom{-}$0.030$) & (\phantom{-}$0.030$)\\
+\addlinespace
+$BTM_{t-1}$ & $\phantom{-}0.001$ & $\phantom{-}0.006$ & $-0.002$ & $\phantom{-}0.022$* & $\phantom{-}0.026$** & $\phantom{-}0.021$*\\
+ & (\phantom{-}$0.012$) & (\phantom{-}$0.012$) & (\phantom{-}$0.013$) & (\phantom{-}$0.012$) & (\phantom{-}$0.011$) & (\phantom{-}$0.012$)\\
+\addlinespace
+$L\_PRC_{t-1}$ & $\phantom{-}0.193$*** & $\phantom{-}0.183$*** & $\phantom{-}0.315$*** & $\phantom{-}0.231$*** & $\phantom{-}0.227$*** & $\phantom{-}0.355$***\\
+ & (\phantom{-}$0.012$) & (\phantom{-}$0.012$) & (\phantom{-}$0.012$) & (\phantom{-}$0.012$) & (\phantom{-}$0.012$) & (\phantom{-}$0.012$)\\
+\addlinespace
+$L\_FAGE_{t-1}$ & $-0.153$*** & $-0.153$*** & $-0.109$*** & $-0.128$*** & $-0.127$*** & $-0.084$***\\
+ & (\phantom{-}$0.013$) & (\phantom{-}$0.013$) & (\phantom{-}$0.013$) & (\phantom{-}$0.012$) & (\phantom{-}$0.012$) & (\phantom{-}$0.013$)\\
+\addlinespace
+$ESURP_{t-1}$ & $\phantom{-}0.290$*** &  & $\phantom{-}0.338$*** & $\phantom{-}0.248$*** &  & $\phantom{-}0.286$***\\
+ & (\phantom{-}$0.035$) &  & (\phantom{-}$0.035$) & (\phantom{-}$0.031$) &  & (\phantom{-}$0.031$)\\
+\addlinespace
+$EVOL_{t-1}$ & $\phantom{-}0.122$*** &  & $\phantom{-}0.153$*** & $\phantom{-}0.001$ &  & $\phantom{-}0.015$\\
+ & (\phantom{-}$0.045$) &  & (\phantom{-}$0.047$) & (\phantom{-}$0.044$) &  & (\phantom{-}$0.046$)\\
+\addlinespace
+$NUMEST_{t-1}$ & $\phantom{-}0.035$*** & $\phantom{-}0.035$*** &  & $\phantom{-}0.034$*** & $\phantom{-}0.034$*** & \\
+ & (\phantom{-}$0.001$) & (\phantom{-}$0.001$) &  & (\phantom{-}$0.001$) & (\phantom{-}$0.001$) & \\
+ &  &  &  &  &  \vphantom{1} & \\
+\midrule
+ &  &  &  &  &  & \\
+$\textrm{Within} \: R^2$ & {$\phantom{-}0.171$} & {$\phantom{-}0.169$} & {$\phantom{-}0.112$} & {$\phantom{-}0.192$} & {$\phantom{-}0.191$} & {$\phantom{-}0.138$}\\
+$\textrm{Adj.} \: R^2$ & {$\phantom{-}0.391$} & {$\phantom{-}0.390$} & {$\phantom{-}0.347$} & {$\phantom{-}0.406$} & {$\phantom{-}0.406$} & {$\phantom{-}0.366$}\\
+$\% \: R^2 \: \textrm{Explained}$ & {} & {} & {} & {$\phantom{-}4.550$} & {$\phantom{-}4.640$} & {$\phantom{-}5.230$}\\
+$\textrm{Observations}$ & {\phantom{-}954,029} & {\phantom{-}954,029} & {\phantom{-}954,029} & {\phantom{-}954,029} & {\phantom{-}954,029} & {\phantom{-}954,029}\\
+\bottomrule
+\end{tabular}
+\end{table}

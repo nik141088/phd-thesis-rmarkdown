@@ -1,0 +1,54 @@
+
+\newgeometry{margin=1in}
+\begin{landscape}\begin{table}
+
+\caption[Univariate Portfolio Sorts: Excess Returns over Disagreement Deciles]{\label{tab:univariate_sorts_return_2}Univariate Sorts: Excess return by disagreement deciles}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{3.5cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.3cm}>{\raggedright\arraybackslash}p{1.5cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{10}{c}{Deciles made on $STD\_DEV_{t-1}$} \\
+\cmidrule(l{3pt}r{3pt}){2-11}
+ & $D_{1}$ & $D_{2} - D_{1}$ & $D_{3} - D_{2}$ & $D_{4} - D_{3}$ & $D_{5} - D_{4}$ & $D_{6} - D_{5}$ & $D_{7} - D_{6}$ & $D_{8} - D_{7}$ & $D_{9} - D_{8}$ & $D_{10} - D_{9}$\\
+\midrule
+$STD\_DEV_{t-1}$ & 0.511 & 0.081** & 0.054** & 0.046** & 0.043** & 0.041** & 0.040** & 0.040** & 0.041** & 0.048**\\
+\addlinespace
+$L\_TURN_{t-1}$ & -2.996 & 0.059** & 0.080** & 0.071** & 0.078** & 0.065** & 0.040** & 0.019** & 0.040** & 0.123**\\
+\addlinespace
+$EXCESS\_RET_t$ & 11.160 & -0.523 & -0.547 & 0.499 & 0.301 & 0.580 & 2.067** & 1.919** & 2.880** & 1.895\\
+\addlinespace
+$CAPM\_ALPHA_t$ & 1.305 & -0.051 & 0.211** & 0.573** & 0.585** & 0.531** & 0.465** & 0.297** & 0.219** & 0.142\\
+\addlinespace
+$CAPM\_ALPHA\_ERR_t$ & 1.576 & -0.545 & 0.546 & 0.314 & 1.261** & -0.397 & 2.576** & 0.526 & 1.577* & 3.718**\\
+\addlinespace
+$FF3\_ALPHA_t$ & -5.164 & -0.195** & -0.060 & 0.352** & 0.367** & 0.193** & 0.317** & 0.219** & -0.154* & 0.330**\\
+\addlinespace
+$FF3\_ALPHA\_ERR_t$ & -4.463 & -0.491 & 0.107 & 0.642 & 0.719 & -0.935* & 2.023** & 0.847 & 1.501* & 3.301**\\
+\addlinespace
+$FF5\_ALPHA_t$ & -3.791 & -0.211** & -0.025 & 0.315** & 0.340** & 0.043 & 0.310** & 0.110 & -0.138* & 0.395**\\
+\addlinespace
+$STD\_DEV\_R_{t-1}$ & 5.855 & 9.379** & 9.845** & 9.945** & 9.859** & 10.007** & 10.017** & 9.989** & 9.891** & 9.433**\\
+\addlinespace
+$L\_TURN\_R_{t-1}$ & 42.094 & 1.454** & 1.995** & 2.066** & 2.502** & 2.448** & 1.074** & 0.458** & 0.591** & 2.857**\\
+\addlinespace
+$EXCESS\_RET\_R_t$ & 50.296 & -0.071 & -0.279** & -0.244** & -0.291** & -0.530** & -0.242** & -0.359** & -0.416** & -0.561**\\
+\addlinespace
+$CAPM\_ALPHA\_R_t$ & 43.739 & 0.158 & 0.527** & 0.279** & 0.423** & 0.100 & 0.236** & 0.577** & 0.427** & 0.853**\\
+\addlinespace
+$CAPM\_ALPHA\_ERR\_R_t$ & 50.534 & -0.219* & -0.134 & -0.238** & -0.218** & -0.553** & -0.234* & -0.514** & -0.615** & -0.431**\\
+\addlinespace
+$FF3\_ALPHA\_R_t$ & 44.098 & 0.334** & 0.325** & 0.193** & 0.399** & -0.027 & 0.260** & 0.576** & 0.366** & 0.925**\\
+\addlinespace
+$FF3\_ALPHA\_ERR\_R_t$ & 50.517 & -0.216* & -0.128 & -0.240** & -0.215** & -0.546** & -0.228* & -0.505** & -0.603** & -0.414**\\
+\addlinespace
+$FF5\_ALPHA\_R_t$ & 42.536 & 0.261** & 0.218** & 0.030 & 0.429** & -0.082 & 0.438** & 0.599** & 0.428** & 1.045**\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item Several measures of excess return and their ranks averaged over univariate decile sorts of $STD\_DEV_{t-1}$. At each month, the cross-section of stocks is assigned to 10 portfolios based on two period lagged disagreement and then several measures of excess returns are avergaed over these portfolios. This procedure is repeated for each month. The first and second row gives the average disagreement and turnover across disagreement deciles. In the third row, $D_i$ is the $i^{th}$ decile, $D_j - D_i$ is the difference of average $EXCESS\_RET_t$ in $D_j$ and $D_i$. Similarly for other rows as well. All return variables are in annualized percentages. All rank variables are in percentage (0-100) ranks. Corresponding signficance levels are from a t-test of sample means across corresponding decile pairs. Statistical significance of 5\% and 1\% are indicated by * and ** respectively
+\end{tablenotes}
+\end{threeparttable}
+\end{table}
+\end{landscape}
+\restoregeometry

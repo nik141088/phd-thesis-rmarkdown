@@ -1,0 +1,35 @@
+
+\begin{spacing}{1.0}
+\begin{table}
+
+
+
+\caption[DiD regression: EDGAR Implementation]{\label{tab:reg_edgar_DID_implementation}Difference-in-Difference regression: EDGAR Implementation}
+\centering
+\fontsize{11}{13}\selectfont
+\begin{tabularx}{\linewidth}{X * {4}{S[table-format=4.3]}}
+\multicolumn{5}{p{\linewidth}}{Log turnover is regressed on controls, lagged disagreement and its interaction with TREAT and POST. TREAT equals one for firm-months where the firm is amongst the firms adopting EDGAR and going online on January 17, 1994. POST is one for dates February 1994 to January 1995. Following controls are not shown: $NASDAQ$, $RET^+$, $RET^-$, $LEV$, $CAPM\_BETA$, $BTM$, $L\_PRC$, $L\_FAGE$, $ESURP$, $EVOL$, $NUMEST$, $FDISP$, $L\_ME$. Variables are transformed to their cross-sectional ranks. Independent variables are lagged by one-month. All specifications have 20,140 firm-month observations. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry fixed effects. \textit{t}-statistics are present in paranthesis based on standard errors clustered by firm. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{\bgroup\fontsize{11}{13}\selectfont  \egroup{}} & \multicolumn{4}{c}{\bgroup\fontsize{11}{13}\selectfont $L\_TURN$\egroup{}} \\
+\cmidrule(l{3pt}r{3pt}){2-5}
+ & {(1)} & {(2)} & {(3)} & {(4)}\\
+\midrule
+$STD\_DEV$ & 0.160*** & 0.169*** & 0.189*** & 0.171***\\
+ & (7.961) & (7.916) & (7.977) & (8.335)\\
+\addlinespace
+$STD\_DEV \times POST$ &  & -0.017 &  & \\
+ &  & (-1.148) &  & \\
+\addlinespace
+$STD\_DEV \times TREAT$ &  &  & -0.056** & \\
+ &  &  & (-2.284) & \\
+\addlinespace
+$STD\_DEV \times POST \times TREAT$ &  &  &  & -0.045***\\
+ &  &  &  & (-2.677)\\
+\midrule
+$\textrm{Adj.} \: R^2$ & 0.338 & 0.338 & 0.339 & 0.339\\
+\bottomrule
+\end{tabularx}
+
+\end{table}
+\end{spacing}

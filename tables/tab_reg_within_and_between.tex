@@ -1,0 +1,49 @@
+
+\begin{landscape}\begin{table}
+
+\caption[Regression: Within and between group disagreement]{\label{tab:reg_within_and_between}Monthly cross-sectional regression: Within and between group disagreement}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}>{\raggedright\arraybackslash}p{1.1cm}}
+\multicolumn{13}{p{\linewidth}}{Log turnover regressed on a set of controls and disagreement across and within several anomaly groups. 39 anomalies from Table \ref{tab:anomaly_list} are divided into six groups: profitability (P), earnings quality (E), valuation (V), momentum (M), investment (I) and, financing \& distress (F). $STD\_DEV^{g}_{t-1}$ is the disagreement across signals within the anomaly group $g$ where $g \in \{ P,E,V,M,I,F \}$. $STD\_DEV^{ALL}_{t-1}$, $STD\_DEV^{WITHIN}_{t-1}$ and, $STD\_DEV^{CROSS}_{t-1}$ is the total, within-group and cross-group disagreement respectively. In all regressions control variables are not shown for brevity. The controls used in regressions are $NASDAQ$, $RET^+$, $RET^-$, $LEV$, $CAPM\_\beta$, $BTM$, $L\_PRC$, $L\_FAGE$, $ESURP$, $EVOL$, $NUMEST$ and, $FDISP$. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. \% $R^2$ explained is the percent of unexplained variation explained by including disagreement in the regression. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\%, and 1\% are indicated by *, **, and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{ } & \multicolumn{12}{c}{$L\_TURN_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-13}
+ & \phantom{-}(1) & \phantom{-}(2) & \phantom{-}(3) & \phantom{-}(4) & \phantom{-}(5) & \phantom{-}(6) & \phantom{-}(7) & \phantom{-}(8) & \phantom{-}(9) & \phantom{-}(10) & \phantom{-}(11) & \phantom{-}(12)\\
+\midrule
+$STD\_DEV^{P}_{t-1}$ & $\phantom{-}0.363$*** &  &  &  &  &  & $\phantom{-}0.118$** &  &  &  &  & $\phantom{-}0.184$***\\
+ & (\phantom{-}$0.059$) &  &  &  &  &  & (\phantom{-}$0.056$) &  &  &  &  & (\phantom{-}$0.055$)\\
+\addlinespace
+$STD\_DEV^{E}_{t-1}$ &  & $\phantom{-}0.014$ &  &  &  &  & $-0.019$ &  &  &  &  & $\phantom{-}0.079$**\\
+ &  & (\phantom{-}$0.039$) &  &  &  &  & (\phantom{-}$0.037$) &  &  &  &  & (\phantom{-}$0.037$)\\
+\addlinespace
+$STD\_DEV^{V}_{t-1}$ &  &  & $\phantom{-}0.314$*** &  &  &  & $\phantom{-}0.014$ &  &  &  &  & $-0.093$\\
+ &  &  & (\phantom{-}$0.063$) &  &  &  & (\phantom{-}$0.059$) &  &  &  &  & (\phantom{-}$0.059$)\\
+\addlinespace
+$STD\_DEV^{M}_{t-1}$ &  &  &  & $\phantom{-}1.937$*** &  &  & $\phantom{-}1.836$*** &  &  &  &  & $\phantom{-}1.794$***\\
+ &  &  &  & (\phantom{-}$0.048$) &  &  & (\phantom{-}$0.047$) &  &  &  &  & (\phantom{-}$0.045$)\\
+\addlinespace
+$STD\_DEV^{I}_{t-1}$ &  &  &  &  & $\phantom{-}1.280$*** &  & $\phantom{-}1.011$*** &  &  &  &  & $\phantom{-}1.156$***\\
+ &  &  &  &  & (\phantom{-}$0.076$) &  & (\phantom{-}$0.072$) &  &  &  &  & (\phantom{-}$0.073$)\\
+\addlinespace
+$STD\_DEV^{F}_{t-1}$ &  &  &  &  &  & $\phantom{-}1.039$*** & $\phantom{-}0.690$*** &  &  &  &  & $\phantom{-}0.396$***\\
+ &  &  &  &  &  & (\phantom{-}$0.080$) & (\phantom{-}$0.078$) &  &  &  &  & (\phantom{-}$0.077$)\\
+\addlinespace
+$STD\_DEV^{ALL}_{t-1}$ &  &  &  &  &  &  &  & $\phantom{-}3.967$*** &  &  &  & \\
+ &  &  &  &  &  &  &  & (\phantom{-}$0.147$) &  &  &  & \\
+\addlinespace
+$STD\_DEV^{WITHIN}_{t-1}$ &  &  &  &  &  &  &  &  & $\phantom{-}3.788$*** &  & $\phantom{-}3.529$*** & \\
+ &  &  &  &  &  &  &  &  & (\phantom{-}$0.146$) &  & (\phantom{-}$0.141$) & \\
+\addlinespace
+$STD\_DEV^{CROSS}_{t-1}$ &  &  &  &  &  &  &  &  &  & $\phantom{-}1.924$*** & $\phantom{-}1.582$*** & $\phantom{-}1.779$***\\
+ &  &  &  &  &  &  &  &  &  & (\phantom{-}$0.105$) & (\phantom{-}$0.099$) & (\phantom{-}$0.103$)\\
+ &  &  &  &  &  &  &  &  &  &  &  \vphantom{1} & \\
+\midrule
+ &  &  &  &  &  &  &  &  &  &  &  & \\
+$\% \: R^2 \: \textrm{Explained}$ & {$-0.071$} & {$-0.007$} & {$\phantom{-}0.538$} & {$\phantom{-}6.033$} & {$\phantom{-}1.552$} & {$\phantom{-}0.807$} & {$\phantom{-}7.679$} & {$\phantom{-}6.532$} & {$\phantom{-}4.645$} & {$\phantom{-}2.347$} & {$\phantom{-}6.367$} & {$\phantom{-}9.451$}\\
+$\textrm{Observations}$ & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295} & {\phantom{-}950,295}\\
+\bottomrule
+\end{tabular}
+\end{table}
+\end{landscape}

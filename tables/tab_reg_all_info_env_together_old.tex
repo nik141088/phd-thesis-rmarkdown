@@ -1,0 +1,66 @@
+\begin{table}
+
+\caption[Information Environment: Summary of Regression Splits]{\label{tab:reg_all_info_env_together_old}Information Environment: Summary of Regression Splits}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{5.5cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.8cm}>{\raggedright\arraybackslash}p{1.8cm}}
+\toprule
+\multicolumn{1}{c}{\textbf{Portfolio Criterion}} & \multicolumn{1}{c}{\textbf{w/o STD\_DEV}} & \multicolumn{2}{c}{\textbf{with STD\_DEV}} & \multicolumn{1}{c}{\textbf{\% R2 Explained}} \\
+\cmidrule(l{3pt}r{3pt}){1-1} \cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-4} \cmidrule(l{3pt}r{3pt}){5-5}
+\multicolumn{1}{c}{ } & \multicolumn{1}{c}{$FDISP_{t-1}$} & \multicolumn{1}{c}{$FDISP_{t-1}$} & \multicolumn{1}{c}{$STD\_DEV_{t-1}$} & \multicolumn{1}{c}{ } \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4}
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{Number of Analysts}}\\
+\hspace{1em}$NUMEST \in \{ 2,3 \}$ & $\phantom{-}0.021$*** & $\phantom{-}0.005$ & $\phantom{-}1.865$*** & {$\phantom{-}3.150$}\\
+\hspace{1em}$NUMEST \in \{ 4 \dots 10 \}$ & $\phantom{-}0.032$*** & $\phantom{-}0.014$** & $\phantom{-}1.738$*** & {$\phantom{-}3.970$}\\
+\hspace{1em}$NUMEST \geq 11$ & $\phantom{-}0.062$*** & $\phantom{-}0.043$*** & $\phantom{-}1.282$*** & {$\phantom{-}2.970$}\\
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{Firm Age}}\\
+\hspace{1em}$FIRM\_AGE - 1$ & $\phantom{-}0.022$*** & $\phantom{-}0.007$ & $\phantom{-}1.754$*** & {$\phantom{-}2.700$}\\
+\hspace{1em}$FIRM\_AGE - 2$ & $\phantom{-}0.030$*** & $\phantom{-}0.014$ & $\phantom{-}1.359$*** & {$\phantom{-}1.900$}\\
+\hspace{1em}$FIRM\_AGE - 3$ & $\phantom{-}0.024$ & $\phantom{-}0.007$ & $\phantom{-}1.000$*** & {$\phantom{-}1.490$}\\
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{10-K Document Size}}\\
+\hspace{1em}$DOC\_SIZE - 1$ & $\phantom{-}0.034$*** & $\phantom{-}0.019$* & $\phantom{-}1.482$*** & {$\phantom{-}2.000$}\\
+\hspace{1em}$DOC\_SIZE - 2$ & $\phantom{-}0.014$ & $-0.000$ & $\phantom{-}1.433$*** & {$\phantom{-}2.160$}\\
+\hspace{1em}$DOC\_SIZE - 3$ & $\phantom{-}0.026$** & $\phantom{-}0.010$ & $\phantom{-}1.651$*** & {$\phantom{-}2.860$}\\
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{10-K Report Length}}\\
+\hspace{1em}$LENGTH - 1$ & $\phantom{-}0.032$** & $\phantom{-}0.016$ & $\phantom{-}1.353$*** & {$\phantom{-}1.770$}\\
+\hspace{1em}$LENGTH - 2$ & $\phantom{-}0.010$ & $-0.002$ & $\phantom{-}1.398$*** & {$\phantom{-}2.000$}\\
+\hspace{1em}$LENGTH - 3$ & $\phantom{-}0.019$** & $\phantom{-}0.002$ & $\phantom{-}1.670$*** & {$\phantom{-}3.040$}\\
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{10-K Unique Words}}\\
+\hspace{1em}$UNQ\_WORDS - 1$ & $\phantom{-}0.023$ & $\phantom{-}0.007$ & $\phantom{-}1.346$*** & {$\phantom{-}1.730$}\\
+\hspace{1em}$UNQ\_WORDS - 2$ & $\phantom{-}0.016$** & $\phantom{-}0.002$ & $\phantom{-}1.440$*** & {$\phantom{-}2.100$}\\
+\hspace{1em}$UNQ\_WORDS - 3$ & $\phantom{-}0.019$* & $\phantom{-}0.004$ & $\phantom{-}1.712$*** & {$\phantom{-}3.250$}\\
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{Number of Segments}}\\
+\hspace{1em}$TOT\_SEG = 1$ & $\phantom{-}0.015$ & $\phantom{-}0.003$ & $\phantom{-}1.582$*** & {$\phantom{-}2.270$}\\
+\hspace{1em}$TOT\_SEG > 1$ & $\phantom{-}0.028$** & $\phantom{-}0.009$ & $\phantom{-}1.531$*** & {$\phantom{-}2.720$}\\
+\hspace{1em}$UNQ\_SEG = 1$ & $\phantom{-}0.021$** & $\phantom{-}0.008$ & $\phantom{-}1.516$*** & {$\phantom{-}2.200$}\\
+\hspace{1em}$UNQ\_SEG > 1$ & $\phantom{-}0.025$ & $\phantom{-}0.005$ & $\phantom{-}1.609$*** & {$\phantom{-}3.020$}\\
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{10-K Complex Words}}\\
+\hspace{1em}$CMP\_WORDS - 1$ & $\phantom{-}0.025$ & $\phantom{-}0.009$ & $\phantom{-}1.371$*** & {$\phantom{-}1.780$}\\
+\hspace{1em}$CMP\_WORDS - 2$ & $\phantom{-}0.010$ & $-0.002$ & $\phantom{-}1.223$*** & {$\phantom{-}1.600$}\\
+\hspace{1em}$CMP\_WORDS - 3$ & $\phantom{-}0.024$ & $\phantom{-}0.012$ & $\phantom{-}1.440$*** & {$\phantom{-}2.570$}\\
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{Ownership Percentage}}\\
+\hspace{1em}$OWN (\%) \in [0,0.5]$ & $\phantom{-}0.032$*** & $\phantom{-}0.015$* & $\phantom{-}1.699$*** & {$\phantom{-}2.490$}\\
+\hspace{1em}$OWN (\%) \in (0.5,0.75)$ & $\phantom{-}0.032$*** & $\phantom{-}0.014$ & $\phantom{-}1.402$*** & {$\phantom{-}2.710$}\\
+\hspace{1em}$OWN (\%) \in [0.75,100]$ & $\phantom{-}0.025$*** & $\phantom{-}0.005$ & $\phantom{-}1.493$*** & {$\phantom{-}4.110$}\\
+\addlinespace[0.3em]
+\multicolumn{5}{l}{\textbf{Months (s) Since 10-K Filing}}\\
+\hspace{1em}$s \in \{1,2,3\}$ & $\phantom{-}0.023$** & $\phantom{-}0.006$ & $\phantom{-}1.580$*** & {$\phantom{-}2.440$}\\
+\hspace{1em}$s \in \{4,5,6\}$ & $\phantom{-}0.022$** & $\phantom{-}0.003$ & $\phantom{-}1.645$*** & {$\phantom{-}2.580$}\\
+\hspace{1em}$s \in \{7,8,9\}$ & $\phantom{-}0.028$** & $\phantom{-}0.008$ & $\phantom{-}1.682$*** & {$\phantom{-}2.830$}\\
+\hspace{1em}$s \geq 10$ & $-0.002$ & $-0.021$* & $\phantom{-}1.621$*** & {$\phantom{-}2.510$}\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item The table presents summary of turnover regressions across portfolios made using several variables related to firm's information environment. Two sets of regressions, corresponding to base specifications 1 and 2 of Table \ref{tab:reg_compact_main} are estimated for each portfolio. Forecast dispersion is included in both regressions. Last column gives the percentage increase in unexplained $R^2$ after including disagreement in the regression. Other explanatory variables (Table \ref{tab:reg_compact_main}), standard errors, and $R^2$ statistics are skipped for brevity. Definitions of all the variables appears in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. Standard errors are double clustered by firm and year-month. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively.
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

@@ -1,0 +1,477 @@
+---
+title: Internet Appendix for Return Anomalies, Disagreement and Trading Volume
+author: Nikhil Vidhani
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+documentclass: article
+classoption:
+  - a4paper # letterpaper, #a5paper
+  - twoside # oneside
+  - onecolumn #onecolumn, #twocolumn. #Note that twocolumn doesn't work with longtable
+geometry:
+  - top=1.0in
+  - bottom=1.0in
+  - right=1.0in
+  - left=1.0in
+link-citations: yes
+urlcolor: blue
+linkcolor: red
+citecolor: blue
+fontsize: 11pt
+# for font use the latex command \usepackage{"FONT_PACKAGE"}. See https://www.overleaf.com/learn/latex/font_typefaces#Reference_guide
+# fontfamily: fouriernc
+# linestretch controls the spacing between lines. I use latex command: `\singlespacing` for this
+# linestretch: 1.0
+indent: true
+output:
+  pdf_document:
+    # The entire list of options is available from documentation: rmarkdown::pdf_document().
+    # Also see https://bookdown.org/yihui/rmarkdown/pdf-document.html and https://pandoc.org/MANUAL.html#templates
+    toc: false
+    toc_depth: 2
+    number_sections: true
+    # fig_width: 6.5
+    # fig_height: 4.5
+    # fig_crop: true
+    fig_caption: true
+    dev: pdf
+    df_print: default
+    highlight: default
+    template: default
+    keep_tex: true
+    keep_md: true
+    latex_engine: pdflatex
+    # citation_package: natbib
+    includes:
+      in_header:
+        - "../preamble.tex"
+      before_body:
+        - "../doc-prefix.tex"
+      after_body:
+        - "../doc-suffix.tex"
+    md_extensions: null
+    output_extensions: null
+    # pandoc_args:
+    #   - --filter
+    #   - C:/Users/nikhi/AppData/Roaming/Python/Python38/Scripts/pandoc-secnos
+    extra_dependencies: null
+# Either use \bibliography{bibliography} wherever you want references OR uncomment the below line. You can't use both.
+# bibliography: bibliography.bib
+# Download citation style files (.csl) from https://www.zotero.org/styles
+# csl: "journal-of-finance.csl"
+# lof: true
+# lot: true
+# classoption: draft
+header-includes:
+    - \usepackage[T1]{fontenc}
+    - \usepackage[utf8]{inputenc}
+  # For font
+    # - \usepackage{fouriernc} # this is for Journal of Finance type fonts
+    # - \usepackage{mathptmx} # this is for times new roman font
+    - \usepackage{booktabs}
+    - \usepackage{longtable}
+    - \usepackage{array}
+    - \usepackage{multirow}
+    - \usepackage{wrapfig}
+    - \usepackage{float}
+    - \usepackage{colortbl}
+    - \usepackage{setspace}
+    - \usepackage{pdflscape}
+    - \usepackage{tabu}
+    - \usepackage{threeparttable}
+    - \usepackage{threeparttablex}
+    - \usepackage[normalem]{ulem}
+    - \usepackage{makecell}
+    - \usepackage{xcolor}  
+    - \usepackage{rotating}
+    - \usepackage{mathtools}
+    - \usepackage{commath}
+    - \usepackage[all]{hypcap}
+    - \usepackage{placeins}
+    - \usepackage{microtype}
+    - \usepackage{tcolorbox}
+    - \usepackage{pagecolor}
+    - \usepackage{titling}
+    - \setlength{\droptitle}{-10em} # to reduce space before title appears
+    - \usepackage{amsmath}
+    - \usepackage{siunitx}
+    - \usepackage{xltabular}
+    - \usepackage[font=normalfont]{subcaption}
+    - \usepackage[skip=1ex, font=bf]{caption}
+    - \setlength{\abovetopsep}{0.5ex}
+    - \setlength{\belowrulesep}{0.5ex}
+    - \usepackage{textcomp}
+  # the below produces figure, table and equation number in the format "SEC_NUM.FIG_NUM". The below doesn't work when plots and tables are put at the end of the document.
+    - \usepackage{chngcntr}
+    # - \counterwithin{figure}{section}
+    # - \counterwithin{table}{section}
+    # - \counterwithin{equation}{section}
+    - \usepackage{ltablex}
+  # For commenting out sections of document. Note that commenting out doesn't stop Rmarkdown pre-processing and expansion!
+    - \usepackage{comment}
+  # comment the below lines, if you wish to use usual footnotes as they appear on each page. Another option is to do the following: \usepackage{enotez} \setenotez{backref=true}. Then in the end do \printendnotes
+    # start commenting here ------------>
+    # - \usepackage[continuous]{pagenote}
+    # - \makepagenote
+    # - \renewcommand*{\notedivision}{\section*{\notesname}}
+    # - \renewcommand*{\pagenotesubhead}[2]{}
+    # - \let\footnote=\pagenote
+    # <------------- stop commenting here
+  # Disable/Enable footnotes (latex code in preamble.tex). \DisableFootNotes \EnableFootNotes
+    - \EnableFootNotes
+    # - \pagecolor{lightgray!40}
+    # - \usepackage{breqn}
+    # - \usepackage{indentfirst}
+  # Line spacing
+    # - \doublespacing
+    - \onehalfspacing
+    # - \singlespacing
+    # - \setstretch{1.1}
+  # Footnote spacing
+    - \usepackage{footmisc}
+    - \setlength{\footnotemargin}{\parindent} # footnotes will be indented by this amount
+    - \renewcommand{\footnotelayout}{\setstretch{1}} # line-spacing in footnotes
+    - \setlength{\footnotesep}{\baselineskip} # the space between two footnotes. Use 1.67\baselineskip for a double space
+    - \renewcommand{\footnotesize}{\small} # size of footnote text. \scriptsize gives footnote size 3pt smaller than main text font size, \footnotesize gives 2pt smaller, \small gives 1pt smaller, \normalsize gives same size
+  # Header and footers
+    - \usepackage{fancyhdr}
+    - \pagestyle{fancy} # use fancy header instead of default header
+    - \fancyhf{} # clear existing header formatting
+    # - \renewcommand{\headrulewidth}{0.5pt} # header-line width
+    # - \renewcommand{\footrulewidth}{0.5pt} # footer-line width
+    - \fancyhead[LE]{Nikhil Vidhani} # name on left-side on even pages
+    - \fancyhead[RE]{Internet Appendix} # Internet Appendix on right-side of even pages
+    - \fancyhead[CO]{Return Anomalies, Disagreement and Trading Volume} # title at centre of all odd pages
+    - \fancyfoot[C]{\thepage} # centred footer on all pages
+  # APA style bibliography.
+    - \usepackage[natbibapa]{apacite}
+    - \bibliographystyle{apacite} # you can try jf, rfs, jfe here!
+params:
+  table_caption: Table caption missing
+  fig_caption: Figure caption missing
+---
+
+
+```{r global_options, include=F}
+base_dir = "C:/Users/nikhi/Dropbox/research/trading_volume/";
+
+source2(file = "C:/Users/nikhi/Dropbox/research/trading_volume/signal_dispersion_ESSENTIALS.R", echo = F);
+
+library(knitr);
+library(kableExtra);
+library(stringr);
+setwd(base_dir);
+setwd("paper_latex/jof_paper");
+# .aux file causes lot of issues if it's content are not deleted befre each run
+if(file.exists("internet_appendix.aux")) {
+  file.remove("internet_appendix.aux");
+}
+file.create("internet_appendix.aux");
+# knitr::opts_knit$set(root.dir = "C:/Users/nikhi/Dropbox/research/trading_volume/paper_latex/);
+
+
+
+# title
+paper_title = "Internet Appendix for Trading Volume and Dispersion of Signals"
+
+
+# Options
+my_options = list(cite_all_anomalies = T,
+                  keep_all_vars_in_appendix = F,
+                  eval_tables = T,
+                  tables_at_end = F, # set this to F for standalone files, else you need to execute plots_at_end
+                  plots_at_end = F, # routine (see last section in jof_paper.Rmd or some other main text Rmd file)
+                  landscape_margin = "1in",
+                  global_table_font_size = NA);
+
+
+exclude_sections = list(nature_of_disagreement = F,
+                        information_env = F);
+
+
+# process yaml options
+temp = readLines("jof_paper.Rmd");
+idx = which(temp == "---"); # identify yaml portion of Rmd file
+temp = temp[idx[1]:idx[2]];
+yaml = yaml::yaml.load(temp);
+
+# find optimal width for figures and tables. Every column is separated by 12 points. A paper has 72 spaces in both width and height. It turns out that col_spacing_width is 0.1666 inches for all paper types
+avlbl_width = avlbl_height = col_spacing_width = col_spacing_height = NA;
+if("a4paper" %in% yaml$classoption) {
+  size = c(8.3, 11.7);
+  col_spacing_width = (12/595)*size[1];
+  col_spacing_height = (12/842)*size[2];
+} else {
+  # assuming letter
+  size = c(8.5, 11);
+  col_spacing_width = (12/612)*size[1];
+  col_spacing_height = (12/792)*size[2];
+}
+temp = yaml$geometry %>% strsplit("=") %>% unlist;
+idx = match(c("top", "bottom", "right", "left"), temp);
+margins = temp[idx+1] %>% substr(., 1, nchar(.) - 2) %>% as.numeric;
+names(margins) = temp[idx];
+margins = as.list(margins);
+# subtract n*col_spacing_width from the table where n is the no. of columns
+# The spacing is 6 pt on either side of every column, i.e. each column contributes 12 pt of spacing
+avlbl_width = size[1] - margins$right - margins$left - 0.2;
+avlbl_height = size[2] - margins$top - margins$bottom - 0.2;
+
+
+
+list_of_plots = NULL;
+saveRDS(list_of_plots, "list_of_plots.RData");
+
+list_of_tables = NULL;
+saveRDS(list_of_tables, "list_of_tables.RData");
+
+combined_list = NULL;
+saveRDS(combined_list, "combined_list_of_plots_and_tables.RData");
+
+
+# print a figure or a text saying: Insert figure x here
+rmd_print_figure = function(pdf_file, insert_at_end = my_options$plots_at_end, skip = F, is_landscape = F, landscape_margin = "1in") {
+  
+  if(skip) {
+    return(knitr::raw_latex(""));
+  }
+  
+  fig = readRDS(paste0(base_dir, "paper_latex/.fig.RData"));
+  
+  search_pdf = pdf_file %>% strsplit("/") %>% {.[[1]]} %>% last;
+
+  idx = match(paste0(base_dir, search_pdf), fig$pdf_file);
+  
+  if(length(idx) > 1 || is.na(idx)) {
+    stop("Figure: ", pdf_file, " doesn't exists in figure_captions.Rmd");
+  }
+  
+  # copy file to current directory
+  file.copy(from = paste0(base_dir, search_pdf), to = search_pdf, overwrite = T)
+  
+  temp = paste0("\n", "\\begin{figure}",
+                "\n", "\\caption{", fig$small_caption[idx], "}",
+                "\n", fig$label[idx],
+                "\n", "\\subcaption*{", fig$caption[idx], "}",
+                "\n", "\\rule[0.25ex]{\\linewidth}{1pt}",
+                "\n", "\\begin{center}",
+                "\n", "\\includegraphics{", search_pdf, "}",
+                "\n", "\\end{center}",
+                "\n", "\\end{figure}"
+                );
+  
+  if(is_landscape) {
+    temp = paste0("\n", "\\newgeometry{margin=", landscape_margin, "}",
+                  "\n", "\\begin{landscape}",
+                  temp,
+                  "\n", "\\end{landscape}",
+                  "\n", "\\restoregeometry");
+  }
+
+  if(insert_at_end == F) {
+    return(knitr::raw_latex(temp));
+  } else {
+    list_of_plots = readRDS("list_of_plots.RData");
+    list_of_plots = c(list_of_plots, temp) %>% unique;
+    TRY_CATCH(expression = saveRDS(list_of_plots, "list_of_plots.RData"),
+              print.attempts = F, max.attempts = 10, ret_val = NULL, sleep = 50);
+    # save in common file now
+    combined_list = readRDS("combined_list_of_plots_and_tables.RData");
+    combined_list = c(combined_list, temp) %>% unique;
+    TRY_CATCH(expression = saveRDS(combined_list, "combined_list_of_plots_and_tables.RData"),
+              print.attempts = F, max.attempts = 10, ret_val = NULL, sleep = 50);
+
+    
+    fig_name = pdf_file %>% strsplit("/") %>% {.[[1]]} %>% last %>% substr(., 1, nchar(.) - 4);
+    
+    return(paste0("\\begin{center} { [Insert Figure \\ref{fig:",
+                  fig$obj[idx],
+                  "} here] } \\end{center}"));
+
+    # return(paste0("\\begin{center} \\tcbox[colframe=green, colback=white]{",
+    #               " [Insert Figure \\ref{fig:", fig$obj[idx], "} here.] ",
+    #               "} \\end{center}"));
+
+  }
+  
+}
+
+
+
+# print a table or a text saying: Insert table x here
+rmd_print_table = function(file, insert_at_end = my_options$tables_at_end, skip = F) {
+  
+  if(skip) {
+    return(knitr::raw_latex(""));
+  }
+  
+  if(insert_at_end == F) {
+    temp = readRDS(file);
+    return(knitr::raw_latex(temp));
+  } else {
+    list_of_tables = readRDS("list_of_tables.RData");
+    list_of_tables = c(list_of_tables, file) %>% unique;
+    TRY_CATCH(expression = saveRDS(list_of_tables, "list_of_tables.RData"),
+              print.attempts = F, max.attempts = 10, ret_val = NULL, sleep = 50);
+    # save in common file now
+    combined_list = readRDS("combined_list_of_plots_and_tables.RData");
+    combined_list = c(combined_list, file) %>% unique;
+    TRY_CATCH(expression = saveRDS(combined_list, "combined_list_of_plots_and_tables.RData"),
+              print.attempts = F, max.attempts = 10, ret_val = NULL, sleep = 50);
+
+        
+    tab_name = file %>% strsplit("/") %>% {.[[1]]} %>% last %>% substr(., 5, nchar(.) - 10);
+
+    return(paste0("\\begin{center} { [Insert Table \\ref{tab:",
+                  tab_name,
+                  "} here] } \\end{center}"));
+    
+    # return(paste0("\\begin{center} \\tcbox[colframe=green, colback=white]{",
+    #               " [Insert Table \\ref{tab:", tab_name, "} here.] ",
+    #               "} \\end{center}"));
+    
+  }
+  
+}
+
+
+```
+
+
+
+
+
+<!-- Figure captions are evaluated in the below file. The below file (tables.Rmd) is not meant to be knitted as standalone. The necessary options and latex packages are included in jof_paper.Rmd. Pls compile jof_paper.Rmd directly.-->
+```{r child = '../figure_captions.Rmd'}
+```
+
+
+<!-- Tables are evaluated (constructed) in the below file. The below file (tables.Rmd) is not meant to be knitted as standalone. The necessary options and latex packages are included in jof_paper.Rmd. Pls compile jof_paper.Rmd directly. The below file is created just for separately placing tables. It serves no other purpose!-->
+```{r child = '../tables.Rmd'}
+```
+
+
+
+
+\renewcommand{\thesection}{IA.\arabic{section}}
+\renewcommand{\thesubsection}{IA.\arabic{section}.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{IA.\arabic{section}.\arabic{subsection}.\arabic{subsubsection}}
+
+\setcounter{page}{1}
+\setcounter{figure}{0}
+\setcounter{table}{0}
+\setcounter{equation}{0}
+
+\renewcommand{\thepage}{IA\textendash\arabic{page}}
+\renewcommand\thefigure{IA.\arabic{figure}}    
+\renewcommand\thetable{IA.\arabic{table}}    
+\renewcommand\theequation{IA.\arabic{equation}}    
+
+
+
+# Definition of Anomalies
+
+Table \ref{tab:anomaly_list_extended} gives the list of thirty-nine anomalies. Except for the momentum category, which are from \cite{mclean_pontiff2016}, all other anomalies are from \cite{roberts2018}. I also mention the original study and its findings, construction using CRSP/COMPUSTAT variables.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_anomaly_list_extended.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+# Robustness Checks
+
+In this section I report several robustness regressions to strengthen the trading volume results reported in Section 6.2.
+
+## Regressions with size included
+
+Evidence from Panel B of Table 3 suggests that the largest correlations occur between $L\_PRC$, $L\_ME$, and $NUMEST$; hence I chose to exclude size ($L\_ME$) from regressions. Table \ref{tab:reg_diff_specs_with_size} below presents regressions specifications by augmenting logarithm of market size to the base specification from Table 4.
+
+The inclusion of $L\_ME$ has a minute impact on STD_DEV coefficient and $R^2$ (columns 1 and 3). Most noticeably, the coefficients on $BTM$ and $EVOL$ become insignificant. This could be explained by a size being in the denominator of these variables, and its inclusion takes away any mechanical correlation of these variables with turnover. The coefficients of $L\_PRC$ and $NUMEST$ also decline substantially, proving the multi-collinearity concern evident from correlations. Interestingly, the exclusion of $L\_PRC$ in columns 4 and 6 make FDISP insignificant while increasing the coefficient on $L\_ME$. The coefficient of disagreement also reduces slightly owing to the price being in the denominator of several anomalies. The relative stability of the disagreement coefficient strengthens the case of anomaly-driven disagreement, causing trading volume. Additionally, the instability of FDISP casts doubts on its applicability as a measure of disagreement. The negative correlation between $FDISP$ and $L\_PRC$ (Table 3 Panel B) may be driving the positive association with turnover.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_diff_specs_with_size.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## Financial Firms
+
+Table \ref{tab:reg_fin_and_nonfin_firms} shows regression results for all firms, financial firms ,and non-financial firms. Results indicate that the disagreement-volume relationship is significant both statistically and economically, irrespective of whether financial firms are included in the sample. Interestingly, in the smaller sample of just financial firms (columns 3 and 4), the coefficients on $NASDAQ$, $LEV$, $BTM$, $FAGE$, and $FDISP$ lose significance.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_fin_and_nonfin_firms.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## S\&P 500 Membership
+
+Evidence from Table \ref{tab:reg_sp500_membership} suggests that the disagreement-volume relationship is stronger for non S\&P-500 firms.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_sp500_membership.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## Book to market splits
+
+Investment using accounting fundamentals and related ratios is popular among value investors. Several books on value investing give prominence to price to book ratio as an indicator of value firms[^value_firms]. Value investment attempts to estimate the intrinsic value of a stock using information from the balance sheet and profit and loss statements. The intrinsic value is then compared to the current stock price, and a buy (sell) trade is initiated when the intrinsic value is smaller than the current price. Price to book ratio is also a proxy for visibility where a firm with high valuations, i.e., growth firms, is often talked about in media and followed more by analysts[^corr_btwn_numest_and_btm]. Thus the information environment of value firms is limited, and hence the use of anomalies would be higher. We should expect the disagreement-volume relation to be stronger for the high book to market firms since these firms fall into the category of value firms and are more likely to be evaluated using return anomalies originating from accounting fundamentals.
+
+[^value_firms]: Lower P/B ratio (or high book to market) signifies that a firm's market price does not accurately reflect its book value and is undervalued. \cite{graham1965} is a popular investing book following value investing tenets.
+
+[^corr_btwn_numest_and_btm]: Number of analyst following and book to market ratio has a rank correlation of $-0.12$.
+
+Table \ref{tab:reg_btm_terciles} gives the regression results for $BTM$ terciles. The coefficient on $STD\_DEV$ is highest for high $BTM$ stocks, i.e., value stocks. Across the three terciles, a one SD change in $STD\_DEV$ predicts 4.9%, 8.9%, and 12.5% higher turnover in the next month, respectively. Thus, disagreement arising from fundamental anomalies has more explanatory power for value stocks. This also provides evidence in favor of the hypothesis that investors in value stocks primarily use return anomalies for their trading decisions, and hence disagreement among the anomalies strongly predicts next month's trading volume.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_btm_terciles.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## NASDAQ stocks
+
+NASDAQ stocks are structurally different from NYSE/AMEX stocks. The exchange was constituted in 1971 with the electronic stock market. The stocks at the NASDAQ exchange tend to be young and small technology firms. As of December 2018, the average NYSE/AMEX firm is 2.6 times bigger and nine years older than the average NASDAQ firm. Results from Table 7 suggest that small and young stocks have a bigger disagreement coefficient. Since NASDAQ stocks generally have both these characteristics, we should expect to see larger coefficients than base regression (column (2) of Table 4). Table \ref{tab:reg_nasdaq} below gives the regression summary for NASDAQ stocks.
+
+<!-- The code for above looks somethig like:
+funda.anomaly.all[exchcd %in% c(1,2), lapply(.SD, mean, na.rm = T), .SDcols = c("ME", "BE", "LEV")];
+data.crsp.cln[Date == "Dec 2018" & exchcd %in% c(1,2), mean(age, na.rm = T)] - data.crsp.cln[Date == "Dec 2018" & exchcd %in% 3, mean(age, na.rm = T)]
+-->
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_reg_nasdaq.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+## Portfolio sorts
+
+In Table \ref{tab:univariate_sorts_std_dev_and_turn}, Panel A gives the changes in average turnover over deciles made on different disagreement measures. Panel B presents portfolio averages of different turnover measures with portfolios sorted on $STD\_DEV$. Turnover is measured at time $t$ while portfolios are made at time $t-1$.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_univariate_sorts_std_dev_and_turn.tex.RData", insert_at_end = F, skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+# Disagreement and Returns
+
+Table \ref{tab:returns_wrt_fdisp_and_std_dev} shows average portfolio returns with respect to two measures of disagreement: forecast dispersion ($FDISP$) and anomaly disagreement ($STD\_DEV$). I follow \cite{diether_etal2002} in constructing portfolios where I first sort the sample into five quintiles based on size ($ME$) and then each of the size quintiles are sorted based on disagreement ($FDISP$ in panel A and $STD\_DEV$ in panel B). I also include regression alpha from 3-factor return regressions on market return, SMB and HML factors (\cite{fama_french1992}). Overall, the results for both $FDISP$ and $STD\_DEV$ are consitent with a negative association between disagreement and future returns.
+
+<!-- Insert Table! -->
+`r rmd_print_table("../tables/tab_returns_wrt_fdisp_and_std_dev.tex.RData", skip = F) %>% str_replace("\\\\ref\\{appendix-a2-variable-definitions\\}", "A.2")`
+
+
+# Turnover $R^2$ and Anomaly Groups
+
+Which anomalies are most used by investors? To answer this question, I drop one anomaly group from the set of anomalies and compare the $R^2$ from the reduced-set disagreement and full-set disagreement. A sharp reduction in $R^2$ corroborates with higher usage of that anomaly group and sheds light on investor behavior with respect to anomaly-driven investment strategies. Figure \ref{fig:dropping_one_anomaly_group} shows the result for seven broad anomaly categories. Out of these, the momentum and investment groups show substantial dips in regression $R^2$. Surprisingly, for profitability anomaly the effect is opposite, i.e., removing profitability anomalies while constructing disagreement, increases the $R^2$.
+
+`r rmd_print_figure("../../dropping_one_anomaly_group.pdf", skip = F)`
+
+# Turnover and Anomaly Deciles
+
+Average turnover ranks for each anomaly decile are presented in figures \ref{fig:trading_with_anomaly_deciles_1} and \ref{fig:trading_with_anomaly_deciles_2}.
+
+`r rmd_print_figure("../../trading_with_anomaly_deciles_1.pdf", skip = F, is_landscape = T)`
+`r rmd_print_figure("../../trading_with_anomaly_deciles_2.pdf", skip = F, is_landscape = T)`
+
+
+
+\clearpage
+
+# References {-}
+
+\bibliography{../bibliography}
+\clearpage
+
+
+
+
+

@@ -1,0 +1,13 @@
+% I need the below command to appear after natbib package in thesis_paper.tex file. This accomplishes that! I can't do that by including the below in preamble.tex
+\renewcommand\bibsection{}
+%\renewcommand\bibsection{\section*{\refname}}
+
+\sisetup{input-open-uncertainty= ,  % <-- new
+         input-close-uncertainty= , % <-- new
+         table-space-text-pre=(,    % <-- new
+         table-space-text-post=),   % <-- new
+         table-align-text-pre=false,% <-- new
+         table-format=1.3}
+
+\defcitealias{kandel_pearson1995}{KP}
+\defcitealias{chordia_etal2006}{CHS}

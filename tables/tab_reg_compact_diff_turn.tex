@@ -1,0 +1,62 @@
+
+\begin{spacing}{1.0}
+\begin{table}
+
+
+
+\caption[Regression: Different Measures of Turnover]{\label{tab:reg_compact_diff_turn}Cross-sectional regression: different measures of turnover}
+\centering
+\fontsize{11}{13}\selectfont
+\begin{tabularx}{\linewidth}{X * {5}{S[table-format=4.3]}}
+\multicolumn{6}{p{\linewidth}}{Different measures of turnover regressed on lagged disagreement and controls. $TURNOVER_{i,t} = \beta \cdot STD\_DEV_{i,t-1} + \alpha \cdot CONTROLS_{i,t-1} + \gamma \cdot DUMMIES_{i,t-1} + \epsilon_{i,t}$. $\Delta L\_TURN_t$ is $L\_TURN_{i,t} - L\_TURN_{i,t-1}$, GRT adj. $L\_TURN$ is adjusted log turnover proposed by \citetalias{chordia_etal2006} and, VW $L\_TURN$ (EW $L\_TURN$) is the residual from regressing $L\_TURN$ on value-weighted (equal-weighted) market turnover. All specifications have 947,909 firm-month observations. All independent variables are one-month lagged variables. Definitions of all the variables appear in Appendix \ref{appendix-a2-variable-definitions}. All regression specifications have industry and year fixed effects. \textit{t}-statistics are present in paranthesis based on standard errors double clustered by firm and year-month. Statistical significance of 10\%, 5\% and 1\% are indicated by *, ** and *** respectively.}\\
+\toprule
+
+\multicolumn{1}{c}{\bgroup\fontsize{11}{13}\selectfont  \egroup{}} & \multicolumn{1}{c}{\bgroup\fontsize{11}{13}\selectfont $L\_TURN$\egroup{}} & \multicolumn{1}{c}{\bgroup\fontsize{11}{13}\selectfont $\Delta L\_TURN$\egroup{}} & \multicolumn{1}{c}{\bgroup\fontsize{11}{13}\selectfont \makecell{GRT adj. \\ $L\_TURN$}\egroup{}} & \multicolumn{1}{c}{\bgroup\fontsize{11}{13}\selectfont \makecell{VW \\ $L\_TURN$}\egroup{}} & \multicolumn{1}{c}{\bgroup\fontsize{11}{13}\selectfont \makecell{EW \\ $L\_TURN$}\egroup{}} \\
+\cmidrule(l{3pt}r{3pt}){2-2} \cmidrule(l{3pt}r{3pt}){3-3} \cmidrule(l{3pt}r{3pt}){4-4} \cmidrule(l{3pt}r{3pt}){5-5} \cmidrule(l{3pt}r{3pt}){6-6}
+ & {(1)} & {(2)} & {(3)} & {(4)} & {(5)}\\
+\midrule
+$STD\_DEV$ & 1.575*** & 0.022** & 0.941*** & 0.504*** & 0.512***\\
+ & (25.522) & (2.533) & (16.520) & (17.909) & (18.282)\\
+\addlinespace
+$FDISP$ & 0.010 & -0.003*** & 0.013** & -0.006* & -0.008**\\
+ & (1.638) & (-3.106) & (2.212) & (-1.797) & (-2.311)\\
+\addlinespace
+$NASDAQ$ & 0.128*** & 0.001 & 0.110*** & 0.069*** & 0.057***\\
+ & (5.828) & (0.721) & (5.880) & (8.174) & (6.326)\\
+\addlinespace
+$RET^+$ & 1.497*** & -0.744*** & 0.753*** & 0.992*** & 0.969***\\
+ & (24.849) & (-18.660) & (18.823) & (20.202) & (21.558)\\
+\addlinespace
+$RET^-$ & -2.144*** & 0.710*** & -0.899*** & -1.381*** & -1.531***\\
+ & (-28.905) & (11.784) & (-14.538) & (-25.452) & (-33.715)\\
+\addlinespace
+$LEV$ & 0.062*** & 0.002*** & 0.045*** & 0.014*** & 0.015***\\
+ & (9.116) & (4.064) & (7.405) & (5.091) & (5.157)\\
+\addlinespace
+$CAPM\_\beta$ & 0.086*** & 0.038 & 0.011 & 0.056** & 0.016\\
+ & (2.902) & (1.002) & (0.374) & (2.320) & (0.774)\\
+\addlinespace
+$BTM$ & 0.024** & 0.002 & 0.050*** & -0.010** & -0.010**\\
+ & (2.048) & (1.354) & (4.664) & (-2.005) & (-2.159)\\
+\addlinespace
+$L\_PRC$ & 0.229*** & -0.015*** & 0.095*** & 0.124*** & 0.135***\\
+ & (19.331) & (-5.469) & (9.779) & (19.714) & (19.561)\\
+\addlinespace
+$L\_FAGE$ & -0.130*** & -0.005*** & -0.421*** & 0.002 & 0.007\\
+ & (-10.652) & (-3.534) & (-30.552) & (0.469) & (1.644)\\
+\addlinespace
+$ESURP$ & 0.245*** & 0.025** & 0.077*** & 0.116*** & 0.144***\\
+ & (7.764) & (2.181) & (2.889) & (5.967) & (7.860)\\
+\addlinespace
+$EVOL$ & 0.000 & 0.014 & 0.177*** & -0.083*** & -0.101***\\
+ & (0.007) & (1.049) & (4.661) & (-2.819) & (-3.194)\\
+\addlinespace
+$NUMEST$ & 0.033*** & 0.000 & 0.031*** & -0.001*** & 0.000\\
+ & (23.747) & (0.280) & (23.327) & (-2.631) & (0.873)\\
+\midrule
+$\textrm{Adj.} \: R^2$ & 0.404 & 0.018 & 0.243 & 0.083 & 0.088\\
+\bottomrule
+\end{tabularx}
+
+\end{table}
+\end{spacing}

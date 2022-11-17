@@ -1,0 +1,32 @@
+\begin{table}
+
+\caption{\label{tab:reg_std_dev_deciles}\textbf{Monthly cross-sectional regression: STD\_DEV deciles}}
+\centering
+\fontsize{10}{12}\selectfont
+\begin{threeparttable}
+\begin{tabular}[t]{lllllllllll}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{10}{c}{$STD\_DEV_{t-1}$ Deciles} \\
+\cmidrule(l{3pt}r{3pt}){2-11}
+ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+\midrule
+\addlinespace[0.3em]
+\multicolumn{11}{l}{\textbf{Combined Regression}}\\
+\hspace{1em}Decile coef. &  & 0.059 & 0.101 & 0.121 & 0.156 & 0.207 & 0.235 & 0.278 & 0.354 & 0.526\\
+\addlinespace[0.3em]
+\multicolumn{11}{l}{\textbf{Separate Regressions}}\\
+\hspace{1em}Decile coef. & 0.394 & 0.712 & 0.738 & 1.843 & 0.432 & 1.354 & 0.769 & 1.145 & 2.403 & 4.033\\
+\hspace{1em}$Within R^2$ & 0.414 & 0.387 & 0.36 & 0.345 & 0.34 & 0.334 & 0.323 & 0.304 & 0.291 & 0.259\\
+\hspace{1em}Observations & 51850 & 47865 & 45536 & 42079 & 42129 & 39270 & 37453 & 34255 & 29834 & 21545\\
+\addlinespace[0.3em]
+\multicolumn{11}{l}{\textbf{Overall Sample}}\\
+\hspace{1em}Median $L\_TURN_t$ & 3.145 & 3.175 & 3.203 & 3.228 & 3.288 & 3.347 & 3.383 & 3.421 & 3.429 & 3.518\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item \textit{Note: } 
+\item Log turnover measured over monthly intervals, is regressed on a set of explanatory variables and deciles of one-month lagged disagreement measure $STD\_DEV_{t-1}$. In the combined regression, the explanatory variables are the controls and the 10 deciles of $STD\_DEV_{t-1}$, i.e. $STD\_DEV\_Dec_{t-1}$. For separate regressions, the explanatory variables are controls and $STD\_DEV_{t-1}$ but for each regression, the sample is limited to one particular decile. Last row gives the median turnover for the 10 deciles over the full sample. All regression specifications have industry and year fixed effects. $Within R^2$ is for the model with fixed effects excluded.
+\item[*] All coefficients are significant at 1\%
+\end{tablenotes}
+\end{threeparttable}
+\end{table}

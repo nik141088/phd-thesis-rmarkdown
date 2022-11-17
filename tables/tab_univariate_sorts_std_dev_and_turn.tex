@@ -1,0 +1,70 @@
+
+\newgeometry{margin=1in}
+\begin{landscape}
+\begin{table}
+
+
+
+\caption[Univariate Portfolio Sorts: Different disagreement and turnover measures]{\label{tab:univariate_sorts_std_dev_and_turn}Univariate Sorts: Different disagreement and turnover measures}
+\centering
+\fontsize{9}{11}\selectfont
+\begin{threeparttable}
+\phantom{ }\\
+\textbf{Panel A: Disagreement Measures}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.5cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{10}{c}{$L\_TURN_t$} \\
+\cmidrule(l{3pt}r{3pt}){2-11}
+ & $D_{1}$ & $D_{2} - D_{1}$ & $D_{3} - D_{2}$ & $D_{4} - D_{3}$ & $D_{5} - D_{4}$ & $D_{6} - D_{5}$ & $D_{7} - D_{6}$ & $D_{8} - D_{7}$ & $D_{9} - D_{8}$ & $D_{10} - D_{9}$\\
+\midrule
+$STD\_DEV_{t-1}$ & -2.897 & 0.015** & 0.041** & 0.070** & 0.074** & 0.077** & 0.068** & 0.039** & 0.053** & 0.085**\\
+\addlinespace
+$ABS\_DEV_{t-1}$ & -2.912 & 0.022** & 0.052** & 0.065** & 0.080** & 0.086** & 0.057** & 0.044** & 0.064** & 0.083**\\
+\addlinespace
+$CONT\_DEV_{t-1}$ & -3.008 & 0.061** & 0.031** & 0.047** & 0.072** & 0.082** & 0.097** & 0.070** & 0.048** & 0.080**\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item 
+\end{tablenotes}
+\end{threeparttable}
+
+
+
+\centering\fontsize{9}{11}\selectfont
+
+\begin{threeparttable}
+\phantom{ }\\
+\textbf{Panel B: Turnover Measures}
+\begin{tabular}[t]{>{\raggedright\arraybackslash}p{2.8cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}>{\raggedright\arraybackslash}p{1.4cm}}
+\toprule
+\multicolumn{1}{c}{ } & \multicolumn{10}{c}{Deciles made on $STD\_DEV_{t-1}$} \\
+\cmidrule(l{3pt}r{3pt}){2-11}
+ & $D_{1}$ & $D_{2} - D_{1}$ & $D_{3} - D_{2}$ & $D_{4} - D_{3}$ & $D_{5} - D_{4}$ & $D_{6} - D_{5}$ & $D_{7} - D_{6}$ & $D_{8} - D_{7}$ & $D_{9} - D_{8}$ & $D_{10} - D_{9}$\\
+\midrule
+$L\_TURN\_1d_{t}$ & -6.169 & 0.003 & 0.036** & 0.050** & 0.061** & 0.063** & 0.044** & 0.022** & 0.036** & 0.069**\\
+\addlinespace
+$L\_TURN\_5d_{t}$ & -4.463 & -0.003 & 0.031** & 0.065** & 0.072** & 0.067** & 0.061** & 0.032** & 0.044** & 0.085**\\
+\addlinespace
+$L\_TURN_{t}$ & -2.897 & 0.015** & 0.041** & 0.070** & 0.074** & 0.077** & 0.068** & 0.039** & 0.053** & 0.085**\\
+\addlinespace
+$L\_TURN\_GRT_{t}$ & -3.000 & 0.022** & 0.048** & 0.078** & 0.082** & 0.090** & 0.075** & 0.064** & 0.052** & 0.086**\\
+\addlinespace
+$L\_TURN\_D_{t}$ & -0.039 & 0.007** & 0.016** & 0.014** & 0.010** & 0.007** & 0.008** & -0.002 & 0.003 & 0.007*\\
+\addlinespace
+$L\_TURN\_ILLIQ_{t}$ & -0.083 & 0.013** & 0.015** & 0.018** & 0.015** & 0.020** & 0.026** & 0.021** & 0.022** & 0.023**\\
+\addlinespace
+$VW\_L\_TURN_{t}$ & -0.057 & 0.015** & 0.015** & 0.013** & 0.008** & 0.008** & 0.009** & -0.001 & 0.004 & 0.011**\\
+\addlinespace
+$EW\_L\_TURN_{t}$ & -0.028 & 0.009** & 0.013** & 0.012** & 0.007** & 0.006** & 0.008** & -0.002 & 0.002 & 0.014**\\
+\bottomrule
+\end{tabular}
+\begin{tablenotes}
+\item In Panel A, average log turnover is measured over univariate portfolio decile sorts of several measures of lagged disagreement. In Panel B, different measures of turnover are averaged over univariate decile sorts of $STD\_DEV_{t-1}$. At each month, the cross-section of stocks is assigned to 10 portfolios based on the sorting variable. This procedure is repeated for each month. In Panel A, $D_i$ is the average turnover in $i^{th}$ disagreement decile, $D_j - D_i$ is the difference of average $L\_TURN$ in $D_j$ and $D_i$. For Panel B, in the fourth row for instance, $D_i$ is avergae GRT adjusted log turnover in the $i^{th}$ $STD\_DEV_{t-1}$ decile, $D_j - D_i$ is the difference of average $L\_TURN\_GRT$ in $D_j$ and $D_i$. Corresponding signficance levels are from a t-test of sample means across corresponding decile pairs. Statistical significance of 5\% and 1\% are indicated by * and ** respectively
+\end{tablenotes}
+\end{threeparttable}
+
+
+\end{table}
+\end{landscape}
+\restoregeometry
